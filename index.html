@@ -3,1085 +3,692 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mohammed Ahmed, MD | Hip &amp; Knee Replacement</title>
+<title>Mohammed Ahmed, MD | Hip &amp; Knee Replacement | Western Chicago Suburbs</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <style>
-/* ─── RESET ──────────────────────────────────────────── */
+/* ── RESET ───────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --navy:  #1B2B4B;
-  --gold:  #B8943F;
-  --cream: #F8F7F2;
-  --white: #FFFFFF;
-  --muted: #64748b;
-  --border: #E5E3DC;
-}
-
 html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  color: var(--navy);
-  background: var(--white);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; }
+body { font-family: 'Lato', sans-serif; font-size: 15px; color: #292929; background: #fff; overflow-x: hidden; line-height: 1.65; }
 img { display: block; max-width: 100%; }
 a { text-decoration: none; color: inherit; }
+h1,h2,h3,h4,h5 { font-family: 'Raleway', sans-serif; }
 
-/* ─── SCROLL ANIMATIONS ──────────────────────────────── */
-.fade-up {
-  opacity: 0;
-  transform: translateY(48px);
-  transition: opacity 0.75s cubic-bezier(.22,.68,0,1.2), transform 0.75s cubic-bezier(.22,.68,0,1.2);
-}
-.fade-left {
-  opacity: 0;
-  transform: translateX(-48px);
-  transition: opacity 0.75s cubic-bezier(.22,.68,0,1.2), transform 0.75s cubic-bezier(.22,.68,0,1.2);
-}
-.fade-right {
-  opacity: 0;
-  transform: translateX(48px);
-  transition: opacity 0.75s cubic-bezier(.22,.68,0,1.2), transform 0.75s cubic-bezier(.22,.68,0,1.2);
-}
-.fade-up.visible, .fade-left.visible, .fade-right.visible {
-  opacity: 1;
-  transform: translate(0, 0);
+/* ── VARIABLES ───────────────────────────────────── */
+:root {
+  --navy:  #003364;
+  --green: #00a66c;
+  --green2:#008f5c;
+  --white: #ffffff;
+  --light: #f4f7fa;
+  --grey:  #efefef;
+  --text:  #292929;
+  --muted: #666;
 }
 
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.2s; }
-.delay-3 { transition-delay: 0.3s; }
-.delay-4 { transition-delay: 0.4s; }
-.delay-5 { transition-delay: 0.5s; }
+/* ── SCROLL ANIMATIONS ───────────────────────────── */
+.reveal { opacity:0; transform:translateY(36px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.left  { transform:translateX(-36px); }
+.reveal.right { transform:translateX(36px); }
+.reveal.visible { opacity:1; transform:translate(0,0); }
+.d1{transition-delay:.1s} .d2{transition-delay:.2s} .d3{transition-delay:.3s} .d4{transition-delay:.4s} .d5{transition-delay:.5s}
 
-/* ─── NAVIGATION ─────────────────────────────────────── */
-nav {
+/* ── TOP UTILITY BAR ─────────────────────────────── */
+.top-bar {
+  background: var(--navy);
+  color: rgba(255,255,255,.85);
+  font-size: 12.5px;
+  padding: 8px 0;
+}
+.top-bar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.top-bar-left { display:flex; align-items:center; gap:22px; }
+.top-bar-left span { display:flex; align-items:center; gap:6px; }
+.top-bar-right { display:flex; align-items:center; gap:14px; }
+.top-social {
+  width:28px; height:28px; border:1px solid rgba(255,255,255,.3); border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:11px; font-weight:700; color:rgba(255,255,255,.75);
+  transition: background .2s, border-color .2s;
+}
+.top-social:hover { background:var(--green); border-color:var(--green); color:#fff; }
+.top-bar .divider { width:1px; height:14px; background:rgba(255,255,255,.2); }
+
+/* ── LOGO BAR ────────────────────────────────────── */
+.logo-bar {
+  background: #fff;
+  padding: 14px 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+.logo-bar-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo-wrap { display:flex; align-items:center; gap:14px; }
+.logo-wrap img { height:58px; width:auto; object-fit:contain; }
+.logo-text-main { font-family:'Raleway',sans-serif; font-size:20px; font-weight:700; color:var(--navy); letter-spacing:.5px; line-height:1.2; }
+.logo-text-sub { font-size:11px; font-weight:500; letter-spacing:2px; text-transform:uppercase; color:var(--green); display:block; margin-top:2px; }
+
+.logo-bar-right { display:flex; align-items:center; gap:28px; }
+.phone-cta { display:flex; align-items:center; gap:10px; }
+.phone-cta-icon { width:44px; height:44px; background:var(--green); border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.phone-cta-text .label { font-size:11px; color:var(--muted); letter-spacing:.5px; }
+.phone-cta-text .number { font-family:'Raleway',sans-serif; font-size:19px; font-weight:700; color:var(--navy); }
+.btn-appt {
+  padding:12px 24px; background:var(--green); color:#fff;
+  font-family:'Raleway',sans-serif; font-size:13px; font-weight:600; letter-spacing:.5px;
+  border:none; cursor:pointer; border-radius:3px; text-transform:uppercase;
+  transition: background .2s, transform .15s;
+}
+.btn-appt:hover { background:var(--green2); transform:translateY(-1px); }
+
+/* ── NAV BAR ─────────────────────────────────────── */
+.nav-bar {
+  background: var(--navy);
   position: sticky;
   top: 0;
   z-index: 999;
-  background: rgba(255,255,255,0.97);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
-  padding: 0 48px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 72px;
-  transition: box-shadow 0.3s;
+  transition: box-shadow .3s;
 }
-
-nav.scrolled { box-shadow: 0 2px 20px rgba(27,43,75,0.08); }
-
-.nav-brand {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-}
-
-.nav-brand img {
-  height: 46px;
-  width: auto;
-  object-fit: contain;
-}
-
-.brand-name {
-  display: block;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 16.5px;
-  font-weight: 600;
-  color: var(--navy);
-  letter-spacing: 0.3px;
-  line-height: 1.2;
-}
-
-.brand-sub {
-  display: block;
-  font-size: 9px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.nav-links {
-  display: flex;
-  gap: 26px;
-  list-style: none;
-}
-
-.nav-links a {
-  font-size: 13px;
-  color: var(--navy);
-  font-weight: 400;
-  letter-spacing: 0.2px;
-  transition: color 0.2s;
-  white-space: nowrap;
-  position: relative;
-  padding-bottom: 2px;
-}
-
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 1.5px;
-  background: var(--gold);
-  transition: width 0.25s ease;
-}
-
-.nav-links a:hover { color: var(--gold); }
-.nav-links a:hover::after { width: 100%; }
-
-.nav-links .has-dd a::after { display: none; }
-.nav-links .has-dd > a { padding-right: 14px; }
-.nav-links .has-dd > a::before {
-  content: '▾';
-  position: absolute;
-  right: 0;
-  top: 0;
-  font-size: 10px;
-  opacity: 0.5;
-}
-
-.nav-actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.btn-consult {
-  padding: 9px 18px;
-  border: 1.5px solid var(--gold);
-  color: var(--gold);
-  background: transparent;
-  font-family: 'Inter', sans-serif;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-  white-space: nowrap;
-}
-
-.btn-consult:hover { background: var(--gold); color: var(--white); }
-
-.nav-phone {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--navy);
-  white-space: nowrap;
-}
-
-/* ─── HERO ───────────────────────────────────────────── */
-.hero {
-  max-width: 1280px;
+.nav-bar.scrolled { box-shadow: 0 3px 18px rgba(0,51,100,.25); }
+.nav-inner {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 60px 48px 52px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 56px;
-  align-items: center;
-  min-height: 620px;
-}
-
-.hero-tag {
-  font-size: 10.5px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 500;
-  margin-bottom: 18px;
-}
-
-.hero h1 {
-  font-size: 60px;
-  font-weight: 600;
-  color: var(--navy);
-  line-height: 1.0;
-  margin-bottom: 4px;
-}
-
-.hero h1 .gold-italic {
-  font-style: italic;
-  color: var(--gold);
-  display: block;
-}
-
-.hero-body {
-  font-size: 15.5px;
-  line-height: 1.75;
-  color: #4a5568;
-  margin: 22px 0 34px;
-  max-width: 430px;
-}
-
-.hero-btns {
+  padding: 0 24px;
   display: flex;
-  gap: 14px;
-  margin-bottom: 46px;
-  flex-wrap: wrap;
-  align-items: center;
+  align-items: stretch;
 }
-
-.btn-primary {
-  padding: 14px 26px;
-  background: var(--navy);
-  color: var(--white);
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.15s;
-}
-
-.btn-primary:hover { background: #243860; transform: translateY(-1px); }
-
-.btn-outline {
-  padding: 13px 20px;
-  background: transparent;
-  color: var(--navy);
-  border: 1.5px solid #c8d0dc;
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: border-color 0.2s, color 0.2s, transform 0.15s;
-}
-
-.btn-outline:hover { border-color: var(--navy); transform: translateY(-1px); }
-
-.play-btn {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  border: 1.5px solid currentColor;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 8px;
-  padding-left: 2px;
-  flex-shrink: 0;
-}
-
-.hero-stats {
+.nav-inner a {
   display: flex;
-  gap: 32px;
-  padding-top: 32px;
-  border-top: 1px solid var(--border);
-  flex-wrap: wrap;
-}
-
-.h-stat { display: flex; flex-direction: column; gap: 3px; }
-
-.h-stat-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 24px;
+  align-items: center;
+  padding: 0 20px;
+  height: 50px;
+  font-family: 'Raleway', sans-serif;
+  font-size: 13px;
   font-weight: 600;
-  color: var(--navy);
-  line-height: 1;
-}
-
-.h-stat-stars { color: var(--gold); font-size: 13px; letter-spacing: 3px; }
-
-.h-stat-label {
-  font-size: 9.5px;
-  letter-spacing: 1px;
+  color: rgba(255,255,255,.9);
+  letter-spacing: .3px;
   text-transform: uppercase;
-  color: #94a3b8;
-  line-height: 1.5;
-  max-width: 110px;
-}
-
-.hero-img-wrap {
   position: relative;
-  height: 580px;
+  white-space: nowrap;
+  transition: color .2s, background .2s;
+}
+.nav-inner a::after {
+  content:''; position:absolute; bottom:0; left:0; right:0; height:3px;
+  background:var(--green); transform:scaleX(0); transition:transform .25s;
+}
+.nav-inner a:hover { color:#fff; background:rgba(255,255,255,.06); }
+.nav-inner a:hover::after { transform:scaleX(1); }
+.nav-inner a.active { color:#fff; }
+.nav-inner a.active::after { transform:scaleX(1); }
+.nav-inner .has-dd { position:relative; }
+.nav-inner .has-dd > a::before { content:'▾'; font-size:10px; margin-left:4px; }
+
+/* ── HERO ────────────────────────────────────────── */
+.hero {
+  position: relative;
+  height: 620px;
   overflow: hidden;
-  border-radius: 2px;
 }
-
-.hero-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  transition: transform 0.6s ease;
+.hero-bg {
+  position:absolute; inset:0;
 }
+.hero-bg img {
+  width:100%; height:100%; object-fit:cover; object-position:top center;
+  transform:scale(1.03);
+  transition:transform 8s ease;
+}
+.hero.loaded .hero-bg img { transform:scale(1); }
+.hero-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(105deg, rgba(0,51,100,.88) 0%, rgba(0,51,100,.65) 50%, rgba(0,51,100,.2) 100%);
+}
+.hero-content {
+  position:relative; z-index:2;
+  height:100%; max-width:1200px; margin:0 auto; padding:0 24px;
+  display:flex; flex-direction:column; justify-content:center;
+  max-width:680px;
+}
+.hero-tag {
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--green); color:#fff;
+  font-family:'Raleway',sans-serif; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase;
+  padding:6px 14px; border-radius:2px; margin-bottom:20px;
+  width:fit-content;
+}
+.hero h1 {
+  font-size:48px; font-weight:800; color:#fff; line-height:1.1; margin-bottom:18px;
+  text-shadow:0 2px 12px rgba(0,0,0,.3);
+}
+.hero h1 span { color:var(--green); }
+.hero-sub {
+  font-size:16px; color:rgba(255,255,255,.88); line-height:1.7; margin-bottom:32px; max-width:520px;
+}
+.hero-btns { display:flex; gap:14px; flex-wrap:wrap; margin-bottom:40px; }
+.btn-hero-primary {
+  padding:14px 28px; background:var(--green); color:#fff;
+  font-family:'Raleway',sans-serif; font-size:13px; font-weight:700; letter-spacing:.5px; text-transform:uppercase;
+  border:2px solid var(--green); border-radius:3px; cursor:pointer;
+  transition:background .2s, color .2s, transform .15s;
+}
+.btn-hero-primary:hover { background:var(--green2); border-color:var(--green2); transform:translateY(-1px); }
+.btn-hero-outline {
+  padding:14px 28px; background:transparent; color:#fff;
+  font-family:'Raleway',sans-serif; font-size:13px; font-weight:700; letter-spacing:.5px; text-transform:uppercase;
+  border:2px solid rgba(255,255,255,.7); border-radius:3px; cursor:pointer;
+  display:inline-flex; align-items:center; gap:10px;
+  transition:background .2s, border-color .2s, transform .15s;
+}
+.btn-hero-outline:hover { background:rgba(255,255,255,.1); border-color:#fff; transform:translateY(-1px); }
+.play-circle {
+  width:28px; height:28px; border-radius:50%; border:2px solid #fff;
+  display:inline-flex; align-items:center; justify-content:center; font-size:9px; padding-left:2px;
+}
+.hero-stats {
+  display:flex; gap:0; border-top:1px solid rgba(255,255,255,.2); padding-top:28px;
+}
+.h-stat { padding:0 28px 0 0; border-right:1px solid rgba(255,255,255,.2); margin-right:28px; }
+.h-stat:last-child { border-right:none; }
+.h-stat-num { font-family:'Raleway',sans-serif; font-size:30px; font-weight:800; color:var(--green); line-height:1; }
+.h-stat-label { font-size:11px; color:rgba(255,255,255,.7); letter-spacing:.5px; margin-top:4px; text-transform:uppercase; }
 
-.hero-img-wrap:hover img { transform: scale(1.02); }
-
-/* ─── CREDENTIAL STRIP ───────────────────────────────── */
+/* ── GREEN CREDENTIALS STRIP ─────────────────────── */
 .cred-strip {
   background: var(--navy);
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  padding: 0;
+  display:grid; grid-template-columns:repeat(4,1fr);
 }
-
 .cred-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  padding: 30px 36px;
-  border-right: 1px solid rgba(255,255,255,0.1);
-  transition: background 0.2s;
+  padding:26px 28px;
+  border-right:1px solid rgba(255,255,255,.1);
+  display:flex; align-items:flex-start; gap:14px;
+  transition:background .2s;
 }
-
-.cred-item:last-child { border-right: none; }
-.cred-item:hover { background: rgba(255,255,255,0.04); }
-
-.cred-circle {
-  width: 42px;
-  height: 42px;
-  border: 1.5px solid rgba(184,148,63,0.45);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-top: 2px;
+.cred-item:last-child { border-right:none; }
+.cred-item:hover { background:rgba(0,166,108,.08); }
+.cred-icon-box {
+  width:44px; height:44px; background:var(--green); border-radius:50%;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
 }
+.cred-label { font-family:'Raleway',sans-serif; font-size:13px; font-weight:700; color:#fff; margin-bottom:4px; text-transform:uppercase; letter-spacing:.5px; }
+.cred-desc { font-size:12.5px; color:rgba(255,255,255,.7); line-height:1.5; }
 
-.cred-title {
-  font-size: 9.5px;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 500;
-  margin-bottom: 5px;
+/* ── SECTION HELPERS ─────────────────────────────── */
+.section-eyebrow {
+  font-family:'Raleway',sans-serif; font-size:12px; font-weight:700;
+  letter-spacing:2.5px; text-transform:uppercase; color:var(--green);
+  margin-bottom:10px; display:flex; align-items:center; gap:10px;
 }
-
-.cred-desc { font-size: 13px; color: rgba(255,255,255,0.8); line-height: 1.55; }
-
-/* ─── SECTION HELPERS ────────────────────────────────── */
-.section-tag {
-  font-size: 10.5px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 500;
-  margin-bottom: 14px;
+.section-eyebrow::before { content:''; display:block; width:32px; height:3px; background:var(--green); }
+.section-h2 { font-size:34px; font-weight:800; color:var(--navy); line-height:1.15; margin-bottom:16px; }
+.section-body { font-size:15px; color:var(--muted); line-height:1.8; margin-bottom:24px; }
+.btn-green {
+  display:inline-block; padding:12px 26px; background:var(--green); color:#fff;
+  font-family:'Raleway',sans-serif; font-size:12.5px; font-weight:700; letter-spacing:.5px; text-transform:uppercase;
+  border-radius:3px; border:2px solid var(--green); cursor:pointer;
+  transition:background .2s, transform .15s;
 }
-
-.section-title {
-  font-size: 38px;
-  font-weight: 600;
-  color: var(--navy);
-  line-height: 1.1;
-  margin-bottom: 16px;
+.btn-green:hover { background:var(--green2); transform:translateY(-1px); }
+.btn-navy {
+  display:inline-block; padding:12px 26px; background:var(--navy); color:#fff;
+  font-family:'Raleway',sans-serif; font-size:12.5px; font-weight:700; letter-spacing:.5px; text-transform:uppercase;
+  border-radius:3px; border:2px solid var(--navy); cursor:pointer;
+  transition:background .2s, transform .15s;
 }
-
-.section-body {
-  font-size: 14px;
-  line-height: 1.8;
-  color: var(--muted);
-  margin-bottom: 26px;
+.btn-navy:hover { background:#004080; transform:translateY(-1px); }
+.btn-outline-white {
+  display:inline-block; padding:12px 26px; background:transparent; color:#fff;
+  font-family:'Raleway',sans-serif; font-size:12.5px; font-weight:700; letter-spacing:.5px; text-transform:uppercase;
+  border-radius:3px; border:2px solid rgba(255,255,255,.7); cursor:pointer;
+  transition:background .2s, border-color .2s, transform .15s;
 }
+.btn-outline-white:hover { background:rgba(255,255,255,.1); border-color:#fff; transform:translateY(-1px); }
 
-.link-arrow {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--navy);
-  border-bottom: 1px solid var(--navy);
-  padding-bottom: 2px;
-  display: inline-block;
-  transition: color 0.2s, border-color 0.2s;
+/* ── ABOUT SECTION ───────────────────────────────── */
+.about-section { background:#fff; padding:80px 0; }
+.about-inner { max-width:1200px; margin:0 auto; padding:0 24px; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+.about-img-wrap { position:relative; }
+.about-img-wrap img { width:100%; height:520px; object-fit:cover; object-position:top center; border-radius:4px; }
+.about-img-badge {
+  position:absolute; bottom:28px; left:-20px;
+  background:var(--green); color:#fff; padding:18px 24px; border-radius:4px;
+  box-shadow:0 8px 30px rgba(0,0,0,.2);
 }
-.link-arrow:hover { color: var(--gold); border-color: var(--gold); }
+.about-img-badge .badge-num { font-family:'Raleway',sans-serif; font-size:38px; font-weight:800; line-height:1; }
+.about-img-badge .badge-text { font-size:12px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; margin-top:4px; opacity:.9; }
+.about-list { list-style:none; margin:20px 0 28px; display:flex; flex-direction:column; gap:10px; }
+.about-list li { display:flex; align-items:flex-start; gap:10px; font-size:14.5px; color:#444; }
+.about-list li::before { content:''; width:8px; height:8px; background:var(--green); border-radius:50%; flex-shrink:0; margin-top:7px; }
+.about-btns { display:flex; gap:14px; flex-wrap:wrap; }
 
-/* ─── PROCEDURES ─────────────────────────────────────── */
-.proc-outer { background: var(--cream); padding: 80px 0; }
-
-.proc-inner {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 48px;
-  display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: 56px;
-  align-items: start;
-}
-
-.proc-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
-}
-
+/* ── PROCEDURES ──────────────────────────────────── */
+.proc-section { background:var(--light); padding:80px 0; }
+.proc-inner { max-width:1200px; margin:0 auto; padding:0 24px; }
+.proc-header { text-align:center; max-width:640px; margin:0 auto 50px; }
+.proc-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
 .proc-card {
-  background: var(--white);
-  display: flex;
-  flex-direction: column;
-  transition: box-shadow 0.25s, transform 0.25s;
-  cursor: pointer;
+  background:#fff; border-radius:4px; overflow:hidden;
+  box-shadow:0 2px 12px rgba(0,51,100,.07);
+  transition:box-shadow .25s, transform .25s;
+  display:flex; flex-direction:column;
 }
-
-.proc-card:hover {
-  box-shadow: 0 12px 40px rgba(27,43,75,0.12);
-  transform: translateY(-4px);
-}
-
-.proc-card-img {
-  height: 168px;
-  overflow: hidden;
-}
-
-.proc-card-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.proc-card:hover .proc-card-img img { transform: scale(1.05); }
-
-.proc-card-body { padding: 18px 16px 20px; flex: 1; display: flex; flex-direction: column; }
-
-.proc-cat {
-  font-size: 9.5px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 500;
-  margin-bottom: 7px;
-}
-
-.proc-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--navy);
-  line-height: 1.2;
-  margin-bottom: 10px;
-}
-
-.proc-desc {
-  font-size: 12.5px;
-  line-height: 1.65;
-  color: var(--muted);
-  flex: 1;
-  margin-bottom: 14px;
-}
-
+.proc-card:hover { box-shadow:0 10px 36px rgba(0,51,100,.14); transform:translateY(-5px); }
+.proc-card-img { height:176px; overflow:hidden; }
+.proc-card-img img { width:100%; height:100%; object-fit:cover; transition:transform .4s; }
+.proc-card:hover .proc-card-img img { transform:scale(1.06); }
+.proc-card-body { padding:20px; flex:1; display:flex; flex-direction:column; }
+.proc-cat { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--green); margin-bottom:8px; }
+.proc-title { font-family:'Raleway',sans-serif; font-size:18px; font-weight:700; color:var(--navy); line-height:1.25; margin-bottom:10px; }
+.proc-desc { font-size:13px; color:var(--muted); line-height:1.65; flex:1; margin-bottom:16px; }
 .proc-link {
-  font-size: 10.5px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--navy);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: color 0.2s;
+  display:inline-flex; align-items:center; gap:6px;
+  font-family:'Raleway',sans-serif; font-size:12px; font-weight:700; letter-spacing:.5px; text-transform:uppercase;
+  color:var(--green); border-bottom:2px solid transparent;
+  transition:border-color .2s;
 }
+.proc-link:hover { border-color:var(--green); }
 
-.proc-link:hover { color: var(--gold); }
-
-/* ─── MY APPROACH ────────────────────────────────────── */
-.approach-outer {
-  background: var(--white);
-  border-top: 1px solid var(--border);
-  padding: 80px 0;
+/* ── APPROACH DARK SECTION ───────────────────────── */
+.approach-section {
+  background:var(--navy);
+  padding:80px 0;
+  position:relative; overflow:hidden;
 }
-
-.approach-inner {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 48px;
-  display: grid;
-  grid-template-columns: 1fr 1.1fr 1fr;
-  gap: 0;
-  align-items: start;
+.approach-section::before {
+  content:'';
+  position:absolute; top:0; right:0; width:40%; height:100%;
+  background:url('https://drahmedtest.lovable.app/assets/dr-patient-Ccpom9ar.jpg') center/cover no-repeat;
+  opacity:.18;
 }
+.approach-inner { max-width:1200px; margin:0 auto; padding:0 24px; display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; position:relative; z-index:1; }
+.approach-left .section-eyebrow::before { background:var(--green); }
+.approach-left .section-h2 { color:#fff; }
+.approach-left .section-body { color:rgba(255,255,255,.75); }
+.approach-img { width:100%; height:460px; object-fit:cover; border-radius:4px; border:3px solid rgba(255,255,255,.1); }
 
-.approach-left { padding-right: 48px; }
-
-.approach-title {
-  font-size: 36px;
-  font-weight: 600;
-  color: var(--navy);
-  line-height: 1.15;
-  margin-bottom: 16px;
+.steps-list { display:flex; flex-direction:column; gap:0; margin:28px 0 32px; }
+.step-item {
+  display:flex; align-items:flex-start; gap:18px;
+  padding:18px 0; border-bottom:1px solid rgba(255,255,255,.1);
 }
-
-.steps { margin-top: 34px; display: flex; flex-direction: column; gap: 24px; }
-
-.step {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
+.step-item:last-child { border-bottom:none; }
+.step-num {
+  width:40px; height:40px; background:var(--green); border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Raleway',sans-serif; font-size:16px; font-weight:800; color:#fff; flex-shrink:0;
 }
+.step-title { font-family:'Raleway',sans-serif; font-size:14px; font-weight:700; color:#fff; text-transform:uppercase; letter-spacing:.5px; margin-bottom:4px; }
+.step-body { font-size:13.5px; color:rgba(255,255,255,.72); line-height:1.6; }
+.approach-btns { display:flex; gap:14px; flex-wrap:wrap; }
 
-.step-icon {
-  width: 42px;
-  height: 42px;
-  background: var(--navy);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+/* ── CREDENTIALS TIMELINE ────────────────────────── */
+.creds-section { background:#fff; padding:80px 0; }
+.creds-inner { max-width:1200px; margin:0 auto; padding:0 24px; }
+.creds-header { text-align:center; max-width:600px; margin:0 auto 54px; }
+.creds-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:28px; }
+.cred-card {
+  text-align:center; padding:36px 24px;
+  border:2px solid var(--grey); border-radius:4px;
+  transition:border-color .25s, box-shadow .25s, transform .25s;
 }
-
-.step-head {
-  font-size: 9.5px;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 500;
-  margin-bottom: 4px;
+.cred-card:hover { border-color:var(--green); box-shadow:0 8px 28px rgba(0,166,108,.12); transform:translateY(-4px); }
+.cred-card-icon {
+  width:72px; height:72px; background:var(--light); border-radius:50%;
+  display:flex; align-items:center; justify-content:center; margin:0 auto 18px;
+  transition:background .25s;
 }
+.cred-card:hover .cred-card-icon { background:var(--green); }
+.cred-card:hover .cred-card-icon svg { stroke:#fff; }
+.cred-card-title { font-family:'Raleway',sans-serif; font-size:13px; font-weight:700; color:var(--muted); text-transform:uppercase; letter-spacing:1px; margin-bottom:8px; }
+.cred-card-val { font-family:'Raleway',sans-serif; font-size:15px; font-weight:700; color:var(--navy); line-height:1.4; margin-bottom:6px; }
+.cred-card-sub { font-size:13px; color:var(--muted); line-height:1.5; }
 
-.step-body { font-size: 13px; color: var(--muted); line-height: 1.6; }
-
-.approach-center { padding: 0 22px; }
-
-.approach-photo {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  border-radius: 2px;
-}
-
-.approach-right { padding-left: 48px; }
-
-.surgeon-photo {
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
-  object-position: top center;
-  border-radius: 2px;
-  margin-bottom: 28px;
-}
-
-.surgeon-label {
-  font-size: 9.5px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 500;
-  margin-bottom: 12px;
-}
-
-.surgeon-quote { font-size: 13.5px; line-height: 1.75; color: #4a5568; margin-bottom: 14px; }
-
-.surgeon-sig {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 21px;
-  font-style: italic;
-  color: var(--navy);
-  margin-bottom: 26px;
-}
-
-.cred-list { display: flex; flex-direction: column; gap: 15px; }
-
-.cred-row { display: flex; align-items: flex-start; gap: 12px; }
-.cred-row-icon { color: var(--gold); flex-shrink: 0; margin-top: 2px; }
-.cred-row-head { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: #aaa; font-weight: 500; margin-bottom: 2px; }
-.cred-row-val { font-size: 12.5px; color: var(--navy); line-height: 1.45; }
-
-/* ─── JOURNEY ────────────────────────────────────────── */
-.journey-outer {
-  position: relative;
-  padding: 80px 48px;
-  overflow: hidden;
-}
-
-.journey-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-
-.journey-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 40%;
-}
-
-.journey-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right,
-    rgba(27,43,75,0.95) 0%,
-    rgba(27,43,75,0.80) 45%,
-    rgba(27,43,75,0.65) 100%
-  );
-}
-
-.journey-inner {
-  position: relative;
-  z-index: 1;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.journey-tag {
-  font-size: 10.5px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 500;
-  margin-bottom: 10px;
-}
-
-.journey-title {
-  font-size: 40px;
-  font-weight: 600;
-  color: var(--white);
-  margin-bottom: 58px;
-}
-
-.journey-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  position: relative;
-}
-
+/* ── JOURNEY SECTION ─────────────────────────────── */
+.journey-section { background:var(--light); padding:80px 0; }
+.journey-inner { max-width:1200px; margin:0 auto; padding:0 24px; }
+.journey-header { text-align:center; max-width:620px; margin:0 auto 60px; }
+.journey-grid { display:grid; grid-template-columns:repeat(4,1fr); position:relative; }
 .journey-grid::before {
-  content: '';
-  position: absolute;
-  top: 29px;
-  left: 72px;
-  right: 72px;
-  border-top: 1px dashed rgba(184,148,63,0.5);
-  z-index: 0;
+  content:''; position:absolute; top:35px; left:12.5%; right:12.5%;
+  border-top:2px dashed #c0cfe0; z-index:0;
 }
-
-.j-step {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 0 28px;
-  position: relative;
-  z-index: 1;
+.j-card { display:flex; flex-direction:column; align-items:center; text-align:center; padding:0 20px; position:relative; z-index:1; }
+.j-circle {
+  width:70px; height:70px; border:3px solid var(--navy); border-radius:50%;
+  display:flex; align-items:center; justify-content:center; background:#fff;
+  margin-bottom:20px; transition:background .25s, border-color .25s;
 }
+.j-card:hover .j-circle { background:var(--navy); }
+.j-card:hover .j-circle svg { stroke:#fff; }
+.j-phase { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--green); margin-bottom:7px; }
+.j-title { font-family:'Raleway',sans-serif; font-size:18px; font-weight:800; color:var(--navy); margin-bottom:10px; }
+.j-desc { font-size:13.5px; color:var(--muted); line-height:1.65; }
 
-.j-icon {
-  width: 58px;
-  height: 58px;
-  border: 1.5px solid var(--gold);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--gold);
-  background: rgba(27,43,75,0.9);
-  margin-bottom: 18px;
-  transition: background 0.3s, transform 0.3s;
+/* ── TESTIMONIAL SECTION ─────────────────────────── */
+.testimonial-section { background:var(--navy); padding:80px 0; }
+.testimonial-inner { max-width:1000px; margin:0 auto; padding:0 24px; text-align:center; }
+.testimonial-inner .section-eyebrow { justify-content:center; }
+.testimonial-inner .section-eyebrow::before { display:none; }
+.testimonial-inner .section-h2 { color:#fff; margin-bottom:48px; }
+.testimonial-card {
+  background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12);
+  border-radius:6px; padding:40px 48px;
 }
+.t-quote { font-family:'Raleway',sans-serif; font-size:22px; font-weight:400; font-style:italic; color:rgba(255,255,255,.9); line-height:1.65; margin-bottom:28px; }
+.t-quote::before { content:'\201C'; color:var(--green); font-size:60px; line-height:0.4; vertical-align:-20px; margin-right:4px; }
+.t-quote::after  { content:'\201D'; color:var(--green); font-size:60px; line-height:0.4; vertical-align:-20px; margin-left:4px; }
+.t-stars { color:var(--green); font-size:20px; letter-spacing:4px; margin-bottom:12px; }
+.t-author { font-family:'Raleway',sans-serif; font-size:14px; font-weight:700; color:#fff; }
+.t-role { font-size:12.5px; color:rgba(255,255,255,.5); }
+.rating-row { display:flex; align-items:center; justify-content:center; gap:48px; margin-top:44px; flex-wrap:wrap; }
+.rating-box { text-align:center; }
+.rating-big { font-family:'Raleway',sans-serif; font-size:44px; font-weight:800; color:var(--green); line-height:1; }
+.rating-label { font-size:12px; color:rgba(255,255,255,.6); letter-spacing:1px; text-transform:uppercase; margin-top:6px; }
+.rating-divider { width:1px; height:60px; background:rgba(255,255,255,.15); }
+.healthgrades-text { font-family:'Raleway',sans-serif; font-size:22px; font-weight:700; color:#fff; }
+.verified-small { font-size:11px; color:rgba(255,255,255,.5); letter-spacing:1px; text-transform:uppercase; margin-bottom:6px; display:flex; align-items:center; justify-content:center; gap:5px; }
 
-.j-step:hover .j-icon { background: var(--gold); color: var(--white); transform: scale(1.08); }
-
-.j-phase { font-size: 9.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 7px; }
-.j-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--white); margin-bottom: 10px; }
-.j-desc { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.65; }
-
-/* ─── SOCIAL PROOF ───────────────────────────────────── */
-.proof-outer { padding: 72px 48px; border-bottom: 1px solid var(--border); }
-
-.proof-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: 0;
-  align-items: center;
-}
-
-.proof-col-divider { width: 1px; background: var(--border); align-self: stretch; margin: 0 56px; }
-
-.quote-block { padding-right: 24px; }
-
-.quote-mark {
-  font-family: Georgia, serif;
-  font-size: 72px;
-  color: var(--gold);
-  line-height: 0.6;
-  margin-bottom: 20px;
-  display: block;
-}
-
-.quote-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 19px;
-  font-style: italic;
-  color: var(--navy);
-  line-height: 1.65;
-  margin-bottom: 18px;
-}
-
-.quote-attr { font-size: 12px; color: #94a3b8; line-height: 1.5; }
-
-.rating-block { text-align: center; padding: 0 20px; }
-
-.rating-num {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 56px;
-  font-weight: 600;
-  color: var(--navy);
-  line-height: 1;
-  margin-bottom: 8px;
-}
-
-.rating-stars { color: var(--gold); font-size: 24px; letter-spacing: 4px; margin-bottom: 6px; }
-.rating-count { font-size: 12px; color: #94a3b8; margin-bottom: 24px; }
-
-.verified-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: #aaa;
-  margin-bottom: 6px;
-}
-
-.verified-check { color: #2ea8e0; font-size: 13px; }
-
-.healthgrades-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 24px;
-  font-weight: 600;
-  color: var(--navy);
-}
-
-.affil-block { padding-left: 24px; }
-
-.affil-tag { font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: #aaa; font-weight: 500; margin-bottom: 24px; }
-
-.affil-row { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
-
+/* ── AFFILIATIONS STRIP ──────────────────────────── */
+.affil-strip { background:#fff; padding:36px 0; border-top:1px solid var(--grey); border-bottom:1px solid var(--grey); }
+.affil-inner { max-width:1200px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:center; gap:48px; flex-wrap:wrap; }
+.affil-label { font-family:'Raleway',sans-serif; font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--muted); white-space:nowrap; }
+.affil-divider { width:1px; height:36px; background:var(--grey); }
+.affil-badge-row { display:flex; align-items:center; gap:10px; }
 .affil-badge {
-  padding: 6px 10px;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--navy);
-  letter-spacing: 0.5px;
-  white-space: nowrap;
-  min-width: 68px;
-  text-align: center;
-  line-height: 1.4;
+  padding:8px 16px; border:2px solid var(--grey); border-radius:4px;
+  font-family:'Raleway',sans-serif; font-size:13px; font-weight:800; color:var(--navy);
+  transition:border-color .2s, color .2s;
 }
+.affil-badge:hover { border-color:var(--navy); }
+.affil-badge.clinic { background:var(--navy); color:#fff; font-size:12px; padding:8px 14px; }
+.affil-badge-sub { font-size:11.5px; color:var(--muted); line-height:1.4; }
 
-.affil-name { font-size: 12px; color: #555; line-height: 1.45; }
-
-/* ─── BOTTOM CTA ─────────────────────────────────────── */
-.cta-outer { background: var(--navy); padding: 56px 48px; }
-
-.cta-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  flex-wrap: wrap;
+/* ── CTA SECTION ─────────────────────────────────── */
+.cta-section { background:var(--green); padding:64px 0; }
+.cta-inner { max-width:1200px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap; }
+.cta-copy h2 { font-size:34px; font-weight:800; color:#fff; line-height:1.2; margin-bottom:8px; }
+.cta-copy p { font-size:15px; color:rgba(255,255,255,.85); }
+.cta-opts { display:flex; align-items:center; gap:32px; flex-wrap:wrap; }
+.cta-opt { display:flex; align-items:center; gap:12px; }
+.cta-opt-icon { color:rgba(255,255,255,.9); flex-shrink:0; }
+.cta-opt-title { font-family:'Raleway',sans-serif; font-size:15px; font-weight:700; color:#fff; white-space:nowrap; }
+.cta-opt-sub { font-size:12px; color:rgba(255,255,255,.75); }
+.btn-white-cta {
+  padding:15px 30px; background:#fff; color:var(--green);
+  font-family:'Raleway',sans-serif; font-size:13px; font-weight:700; letter-spacing:.5px; text-transform:uppercase;
+  border-radius:3px; border:2px solid #fff; cursor:pointer; white-space:nowrap;
+  transition:background .2s, color .2s, transform .15s;
 }
+.btn-white-cta:hover { background:transparent; color:#fff; transform:translateY(-1px); }
 
-.cta-copy h2 { font-size: 36px; font-weight: 600; color: var(--white); line-height: 1.2; margin-bottom: 6px; }
-.cta-copy p { font-size: 13px; color: rgba(255,255,255,0.6); }
-
-.cta-opts { display: flex; align-items: center; gap: 36px; flex-wrap: wrap; }
-
-.cta-opt { display: flex; align-items: center; gap: 12px; }
-.cta-opt-icon { color: var(--gold); flex-shrink: 0; }
-.cta-opt-title { font-size: 14.5px; font-weight: 500; color: var(--white); margin-bottom: 2px; white-space: nowrap; }
-.cta-opt-sub { font-size: 11px; color: rgba(255,255,255,0.55); }
-
-.btn-gold {
-  padding: 16px 30px;
-  background: var(--gold);
-  color: var(--white);
-  font-family: 'Inter', sans-serif;
-  font-size: 11.5px;
-  font-weight: 500;
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  border: none;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: background 0.2s, transform 0.15s;
-}
-
-.btn-gold:hover { background: #c9a84c; transform: translateY(-1px); }
-
-/* ─── FOOTER ─────────────────────────────────────────── */
-footer {
-  background: #0c1626;
-  padding: 48px 48px 28px;
-  color: rgba(255,255,255,0.55);
-}
-
-.footer-grid {
-  max-width: 1200px;
-  margin: 0 auto 36px;
-  display: grid;
-  grid-template-columns: 200px repeat(4, 1fr);
-  gap: 44px;
-}
-
-.foot-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
-.foot-brand img { height: 38px; object-fit: contain; }
-.foot-brand-name { font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 600; color: var(--white); display: block; line-height: 1.2; letter-spacing: 0.3px; }
-.foot-brand-sub { font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.35); display: block; }
-
-.foot-social { display: flex; gap: 9px; margin-top: 4px; }
-
+/* ── FOOTER ──────────────────────────────────────── */
+footer { background:var(--navy); padding:52px 0 24px; color:rgba(255,255,255,.65); }
+.footer-inner { max-width:1200px; margin:0 auto; padding:0 24px; display:grid; grid-template-columns:240px repeat(4,1fr); gap:44px; margin-bottom:36px; }
+.foot-logo-wrap { display:flex; align-items:center; gap:11px; margin-bottom:18px; }
+.foot-logo-wrap img { height:46px; object-fit:contain; }
+.foot-brand-name { font-family:'Raleway',sans-serif; font-size:15px; font-weight:700; color:#fff; line-height:1.2; }
+.foot-brand-sub { font-size:9px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.4); display:block; margin-top:2px; }
+.foot-social { display:flex; gap:9px; margin-top:8px; }
 .s-icon {
-  width: 30px;
-  height: 30px;
-  border: 1px solid rgba(255,255,255,0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255,255,255,0.4);
-  font-size: 12px;
-  font-weight: 700;
-  transition: border-color 0.2s, color 0.2s;
+  width:32px; height:32px; border-radius:50%; border:1px solid rgba(255,255,255,.2);
+  display:flex; align-items:center; justify-content:center;
+  color:rgba(255,255,255,.55); font-size:12px; font-weight:700;
+  transition:background .2s, border-color .2s, color .2s;
 }
-
-.s-icon:hover { border-color: var(--gold); color: var(--gold); }
-
-.foot-col-head { font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.3); font-weight: 500; margin-bottom: 14px; }
-.foot-col p { font-size: 12px; line-height: 1.75; color: rgba(255,255,255,0.55); margin-bottom: 6px; }
-.foot-col a { font-size: 11px; color: rgba(255,255,255,0.38); letter-spacing: 0.5px; transition: color 0.2s; }
-.foot-col a:hover { color: var(--gold); }
-
+.s-icon:hover { background:var(--green); border-color:var(--green); color:#fff; }
+.foot-col-head { font-family:'Raleway',sans-serif; font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.4); margin-bottom:16px; padding-bottom:10px; border-bottom:1px solid rgba(255,255,255,.1); }
+.foot-col p { font-size:12.5px; color:rgba(255,255,255,.58); line-height:1.75; margin-bottom:6px; }
+.foot-col a { font-size:12px; color:rgba(255,255,255,.4); transition:color .2s; display:block; margin-bottom:4px; }
+.foot-col a:hover { color:var(--green); }
 .footer-bottom {
-  max-width: 1200px;
-  margin: 0 auto;
-  border-top: 1px solid rgba(255,255,255,0.07);
-  padding-top: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 11px;
-  color: rgba(255,255,255,0.28);
+  max-width:1200px; margin:0 auto; padding:20px 24px 0;
+  border-top:1px solid rgba(255,255,255,.08);
+  display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;
+  font-size:12px; color:rgba(255,255,255,.3);
 }
+.footer-bottom a { color:rgba(255,255,255,.4); transition:color .2s; }
+.footer-bottom a:hover { color:var(--green); }
 
-.footer-bottom a { color: rgba(255,255,255,0.38); transition: color 0.2s; }
-.footer-bottom a:hover { color: var(--gold); }
-
-/* ─── SCROLL TO TOP ──────────────────────────────────── */
+/* ── SCROLL TOP ──────────────────────────────────── */
 #scrollTop {
-  position: fixed;
-  bottom: 28px;
-  right: 28px;
-  width: 44px;
-  height: 44px;
-  background: var(--navy);
-  color: var(--white);
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.3s, transform 0.3s, background 0.2s;
-  z-index: 500;
-  border-radius: 2px;
+  position:fixed; bottom:24px; right:24px; width:44px; height:44px;
+  background:var(--green); color:#fff; border:none; cursor:pointer; border-radius:3px;
+  display:flex; align-items:center; justify-content:center;
+  opacity:0; transform:translateY(20px); transition:opacity .3s, transform .3s, background .2s;
+  z-index:500;
 }
-
-#scrollTop.show { opacity: 1; transform: translateY(0); }
-#scrollTop:hover { background: var(--gold); }
+#scrollTop.show { opacity:1; transform:translateY(0); }
+#scrollTop:hover { background:var(--green2); }
 </style>
 </head>
 <body>
 
-<!-- ═══ NAVIGATION ═══════════════════════════════════════ -->
-<nav id="mainNav">
-  <a href="#" class="nav-brand">
-    <img src="logo mma.png" alt="MMA Logo">
-    <div>
-      <span class="brand-name">MOHAMMED AHMED, MD</span>
-      <span class="brand-sub">Hip &amp; Knee Replacement</span>
+<!-- ══ TOP UTILITY BAR ══════════════════════════════ -->
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="top-bar-left">
+      <span>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Lombard &bull; Naperville &bull; Arlington Heights, IL
+      </span>
+      <div class="divider"></div>
+      <span>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Most Insurance &amp; Medicare Accepted
+      </span>
     </div>
-  </a>
-
-  <ul class="nav-links">
-    <li><a href="#">About Dr. Ahmed</a></li>
-    <li class="has-dd"><a href="#">Procedures</a></li>
-    <li><a href="#">My Approach</a></li>
-    <li><a href="#">Recovery</a></li>
-    <li class="has-dd"><a href="#">Patient Resources</a></li>
-    <li><a href="#">Reviews</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-
-  <div class="nav-actions">
-    <a href="#" class="btn-consult">Request Consultation</a>
-    <div class="nav-phone">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.39 2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      (630) 646-7000
-    </div>
-  </div>
-</nav>
-
-<!-- ═══ HERO ══════════════════════════════════════════════ -->
-<section>
-  <div class="hero">
-    <div class="hero-content">
-      <div class="hero-tag fade-up">Hip &amp; Knee Replacement &nbsp;&bull;&nbsp; Western Chicago Suburbs</div>
-      <h1 class="fade-up delay-1">
-        Precision care.
-        <span class="gold-italic">Personal to you.</span>
-      </h1>
-      <p class="hero-body fade-up delay-2">
-        I help patients move beyond pain with robotic-assisted, minimally invasive joint replacement&mdash;so they can get back to the life they love.
-      </p>
-      <div class="hero-btns fade-up delay-3">
-        <a href="#" class="btn-primary">Request a Consultation</a>
-        <a href="#" class="btn-outline">
-          <span class="play-btn">&#9654;</span>
-          How Robotic Surgery Works
-        </a>
-      </div>
-      <div class="hero-stats fade-up delay-4">
-        <div class="h-stat">
-          <span class="h-stat-num">1,500+</span>
-          <span class="h-stat-label">Joint Replacements Performed</span>
-        </div>
-        <div class="h-stat">
-          <span class="h-stat-num">4.9/5</span>
-          <span class="h-stat-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <span class="h-stat-label">Patient Rating</span>
-        </div>
-        <div class="h-stat">
-          <span class="h-stat-num">98%</span>
-          <span class="h-stat-label">Patients Would Recommend Dr. Ahmed</span>
-        </div>
-        <div class="h-stat">
-          <span class="h-stat-num">One Goal</span>
-          <span class="h-stat-label">Getting You Back To Your Life</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-img-wrap fade-right delay-1">
-      <img src="https://drahmedtest.lovable.app/assets/dr-hero-BdZ6fiAz.jpg" alt="Dr. Mohammed Ahmed">
-    </div>
-  </div>
-</section>
-
-<!-- ═══ CREDENTIAL STRIP ══════════════════════════════════ -->
-<div class="cred-strip">
-  <div class="cred-item fade-up">
-    <div class="cred-circle">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8943F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-    </div>
-    <div>
-      <div class="cred-title">Board-Certified</div>
-      <div class="cred-desc">American Board of<br>Orthopaedic Surgery</div>
-    </div>
-  </div>
-  <div class="cred-item fade-up delay-1">
-    <div class="cred-circle">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8943F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-    </div>
-    <div>
-      <div class="cred-title">Fellowship-Trained</div>
-      <div class="cred-desc">Adult Reconstruction,<br>Cleveland Clinic</div>
-    </div>
-  </div>
-  <div class="cred-item fade-up delay-2">
-    <div class="cred-circle">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8943F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-    </div>
-    <div>
-      <div class="cred-title">Robotic-Assisted</div>
-      <div class="cred-desc">Mako robotic-arm hip &amp;<br>knee replacement</div>
-    </div>
-  </div>
-  <div class="cred-item fade-up delay-3">
-    <div class="cred-circle">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8943F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-    </div>
-    <div>
-      <div class="cred-title">Subspecialized</div>
-      <div class="cred-desc">Practice focused on<br>hip &amp; knee replacement</div>
+    <div class="top-bar-right">
+      <a href="#" class="top-social">f</a>
+      <a href="#" class="top-social">in</a>
+      <a href="#" class="top-social">&#9654;</a>
+      <a href="#" class="top-social">&#9711;</a>
     </div>
   </div>
 </div>
 
-<!-- ═══ PROCEDURES ════════════════════════════════════════ -->
-<section class="proc-outer">
-  <div class="proc-inner">
-    <div>
-      <div class="section-tag fade-left">Procedures</div>
-      <h2 class="section-title fade-left delay-1">Focused on what moves you.</h2>
-      <p class="section-body fade-left delay-2">Subspecialization matters. My practice is dedicated to hip and knee replacement&mdash;not a little bit of everything.</p>
-      <a href="#" class="link-arrow fade-left delay-3">View All Procedures &rarr;</a>
-    </div>
-
-    <div class="proc-grid">
-      <div class="proc-card fade-up">
-        <div class="proc-card-img">
-          <img src="https://drahmedtest.lovable.app/assets/proc-knee-total-B_iZfErq.jpg" alt="Total Knee Replacement">
+<!-- ══ LOGO BAR ══════════════════════════════════════ -->
+<div class="logo-bar">
+  <div class="logo-bar-inner">
+    <a href="#" class="logo-wrap">
+      <img src="logo mma.png" alt="MMA Logo">
+      <div>
+        <div class="logo-text-main">MOHAMMED AHMED, MD</div>
+        <span class="logo-text-sub">Hip &amp; Knee Replacement Specialist</span>
+      </div>
+    </a>
+    <div class="logo-bar-right">
+      <div class="phone-cta">
+        <div class="phone-cta-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.39 2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         </div>
+        <div class="phone-cta-text">
+          <div class="label">Call to Schedule</div>
+          <div class="number">(630) 646-7000</div>
+        </div>
+      </div>
+      <a href="#" class="btn-appt">Request Appointment</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ NAV BAR ════════════════════════════════════════ -->
+<nav class="nav-bar" id="mainNav">
+  <div class="nav-inner">
+    <a href="#" class="active">Home</a>
+    <a href="#">About Dr. Ahmed</a>
+    <a href="#" class="has-dd">Procedures</a>
+    <a href="#">My Approach</a>
+    <a href="#">Recovery</a>
+    <a href="#" class="has-dd">Patient Resources</a>
+    <a href="#">Reviews</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══════════════════════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <img src="https://drahmedtest.lovable.app/assets/dr-hero-BdZ6fiAz.jpg" alt="Dr. Mohammed Ahmed">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-tag reveal">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Western Chicago Suburbs
+    </div>
+    <h1 class="reveal d1">
+      Hip &amp; Knee Replacement<br>
+      <span>Done Right. Done for You.</span>
+    </h1>
+    <p class="hero-sub reveal d2">
+      Robotic-assisted, minimally invasive joint replacement with a surgeon who puts precision and personal care at the center of every procedure.
+    </p>
+    <div class="hero-btns reveal d3">
+      <a href="#" class="btn-hero-primary">Request a Consultation</a>
+      <a href="#" class="btn-hero-outline">
+        <span class="play-circle">&#9654;</span>
+        How Robotic Surgery Works
+      </a>
+    </div>
+    <div class="hero-stats reveal d4">
+      <div class="h-stat">
+        <div class="h-stat-num" data-count="1500" data-suffix="+">1,500+</div>
+        <div class="h-stat-label">Joint Replacements</div>
+      </div>
+      <div class="h-stat">
+        <div class="h-stat-num">4.9/5</div>
+        <div class="h-stat-label">Patient Rating</div>
+      </div>
+      <div class="h-stat">
+        <div class="h-stat-num" data-count="98" data-suffix="%">98%</div>
+        <div class="h-stat-label">Would Recommend</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CREDENTIAL STRIP ══════════════════════════════ -->
+<div class="cred-strip">
+  <div class="cred-item reveal">
+    <div class="cred-icon-box">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    </div>
+    <div>
+      <div class="cred-label">Board-Certified</div>
+      <div class="cred-desc">American Board of Orthopaedic Surgery</div>
+    </div>
+  </div>
+  <div class="cred-item reveal d1">
+    <div class="cred-icon-box">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+    </div>
+    <div>
+      <div class="cred-label">Fellowship-Trained</div>
+      <div class="cred-desc">Adult Reconstruction, Cleveland Clinic</div>
+    </div>
+  </div>
+  <div class="cred-item reveal d2">
+    <div class="cred-icon-box">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+    </div>
+    <div>
+      <div class="cred-label">Robotic-Assisted</div>
+      <div class="cred-desc">Mako Robotic-Arm Hip &amp; Knee</div>
+    </div>
+  </div>
+  <div class="cred-item reveal d3">
+    <div class="cred-icon-box">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    </div>
+    <div>
+      <div class="cred-label">Subspecialized</div>
+      <div class="cred-desc">100% Focused on Hip &amp; Knee</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ABOUT SECTION ══════════════════════════════════ -->
+<section class="about-section">
+  <div class="about-inner">
+    <div class="about-img-wrap reveal left">
+      <img src="https://drahmedtest.lovable.app/assets/dr-standing-_eDNeDeE.jpg" alt="Dr. Mohammed Ahmed">
+      <div class="about-img-badge">
+        <div class="badge-num">1,500+</div>
+        <div class="badge-text">Procedures Performed</div>
+      </div>
+    </div>
+    <div class="reveal right">
+      <div class="section-eyebrow">Your Surgeon</div>
+      <h2 class="section-h2">Mohammed Ahmed, MD &mdash; Hip &amp; Knee Replacement Specialist</h2>
+      <p class="section-body">Dr. Ahmed is a fellowship-trained orthopaedic surgeon subspecialized exclusively in hip and knee replacement. Using Mako robotic-arm technology, he delivers smaller incisions, greater accuracy, and faster recoveries for every patient.</p>
+      <ul class="about-list">
+        <li>University of Illinois at Chicago &mdash; College of Medicine</li>
+        <li>Orthopaedic Surgery Residency, Saint Louis University</li>
+        <li>Fellowship in Adult Reconstruction (Hip &amp; Knee), Cleveland Clinic</li>
+        <li>Board-Certified, American Board of Orthopaedic Surgery</li>
+        <li>Serving Lombard, Naperville &amp; Arlington Heights, IL</li>
+      </ul>
+      <div class="about-btns">
+        <a href="#" class="btn-green">About Dr. Ahmed</a>
+        <a href="#" class="btn-navy">Watch His Story</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROCEDURES ═════════════════════════════════════ -->
+<section class="proc-section">
+  <div class="proc-inner">
+    <div class="proc-header reveal">
+      <div class="section-eyebrow" style="justify-content:center;"><span style="display:block;width:32px;height:3px;background:var(--green);"></span> Procedures</div>
+      <h2 class="section-h2">Focused on What Moves You</h2>
+      <p class="section-body">My practice is dedicated entirely to hip and knee replacement &mdash; subspecialization that means better outcomes for every patient.</p>
+    </div>
+    <div class="proc-grid">
+      <div class="proc-card reveal">
+        <div class="proc-card-img"><img src="https://drahmedtest.lovable.app/assets/proc-knee-total-B_iZfErq.jpg" alt="Total Knee Replacement"></div>
         <div class="proc-card-body">
           <div class="proc-cat">Knee</div>
-          <div class="proc-title">Total knee replacement</div>
+          <div class="proc-title">Total Knee Replacement</div>
           <p class="proc-desc">For advanced arthritis affecting the whole knee. Robotic planning for balance and natural movement.</p>
           <a href="#" class="proc-link">Learn More &rarr;</a>
         </div>
       </div>
-      <div class="proc-card fade-up delay-1">
-        <div class="proc-card-img">
-          <img src="https://drahmedtest.lovable.app/assets/proc-knee-partial-CVy689SG.jpg" alt="Partial Knee Replacement">
-        </div>
+      <div class="proc-card reveal d1">
+        <div class="proc-card-img"><img src="https://drahmedtest.lovable.app/assets/proc-knee-partial-CVy689SG.jpg" alt="Partial Knee Replacement"></div>
         <div class="proc-card-body">
           <div class="proc-cat">Knee</div>
-          <div class="proc-title">Partial knee replacement</div>
+          <div class="proc-title">Partial Knee Replacement</div>
           <p class="proc-desc">Resurface only the damaged compartment. Preserve healthy bone and ligaments.</p>
           <a href="#" class="proc-link">Learn More &rarr;</a>
         </div>
       </div>
-      <div class="proc-card fade-up delay-2">
-        <div class="proc-card-img">
-          <img src="https://drahmedtest.lovable.app/assets/proc-hip-anterior-w4nLZAuS.jpg" alt="Anterior Approach Hip Replacement">
-        </div>
+      <div class="proc-card reveal d2">
+        <div class="proc-card-img"><img src="https://drahmedtest.lovable.app/assets/proc-hip-anterior-w4nLZAuS.jpg" alt="Anterior Hip Replacement"></div>
         <div class="proc-card-body">
           <div class="proc-cat">Hip</div>
-          <div class="proc-title">Anterior approach hip replacement</div>
+          <div class="proc-title">Anterior Approach Hip Replacement</div>
           <p class="proc-desc">Muscle-sparing approach from the front for faster early mobility.</p>
           <a href="#" class="proc-link">Learn More &rarr;</a>
         </div>
       </div>
-      <div class="proc-card fade-up delay-3">
-        <div class="proc-card-img">
-          <img src="https://drahmedtest.lovable.app/assets/proc-revision-DjxB73uc.jpg" alt="Complex & Revision Joint Replacement">
-        </div>
+      <div class="proc-card reveal d3">
+        <div class="proc-card-img"><img src="https://drahmedtest.lovable.app/assets/proc-revision-DjxB73uc.jpg" alt="Complex Revision Surgery"></div>
         <div class="proc-card-body">
           <div class="proc-cat">Hip &amp; Knee</div>
-          <div class="proc-title">Complex &amp; revision joint replacement</div>
-          <p class="proc-desc">Expertise in complex primary and revision surgery for challenging cases.</p>
+          <div class="proc-title">Complex &amp; Revision Joint Replacement</div>
+          <p class="proc-desc">Expertise in complex primary and revision surgery for the most challenging cases.</p>
           <a href="#" class="proc-link">Learn More &rarr;</a>
         </div>
       </div>
@@ -1089,173 +696,192 @@ footer {
   </div>
 </section>
 
-<!-- ═══ MY APPROACH ═══════════════════════════════════════ -->
-<section class="approach-outer">
+<!-- ══ APPROACH DARK ══════════════════════════════════ -->
+<section class="approach-section">
   <div class="approach-inner">
     <div class="approach-left">
-      <div class="section-tag fade-left">My Approach</div>
-      <h2 class="approach-title fade-left delay-1">Technology is powerful.<br>Care is personal.</h2>
-      <p class="section-body fade-left delay-2">I combine advanced technology with a patient-first approach to deliver smaller, more precise surgery and a faster, more predictable recovery.</p>
-      <div class="steps">
-        <div class="step fade-left delay-2">
-          <div class="step-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B8943F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
-          </div>
+      <div class="section-eyebrow reveal">My Approach</div>
+      <h2 class="section-h2 reveal d1">Technology Is Powerful.<br>Care Is Personal.</h2>
+      <p class="section-body reveal d2">I combine the precision of Mako robotic-arm technology with a patient-first philosophy &mdash; because the best outcomes happen when advanced tools and genuine care work together.</p>
+      <div class="steps-list reveal d2">
+        <div class="step-item">
+          <div class="step-num">1</div>
           <div>
-            <div class="step-head">Plan</div>
-            <div class="step-body">Advanced imaging builds a 3D plan customized to your anatomy.</div>
+            <div class="step-title">Plan</div>
+            <div class="step-body">Advanced imaging builds a custom 3D plan tailored to your unique anatomy before we enter the OR.</div>
           </div>
         </div>
-        <div class="step fade-left delay-3">
-          <div class="step-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B8943F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-          </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
           <div>
-            <div class="step-head">Perform</div>
-            <div class="step-body">Robotic-arm precision helps execute the plan with accuracy and control.</div>
+            <div class="step-title">Perform</div>
+            <div class="step-body">Robotic-arm precision executes the plan with accuracy and control that hand techniques alone can't match.</div>
           </div>
         </div>
-        <div class="step fade-left delay-4">
-          <div class="step-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B8943F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
           <div>
-            <div class="step-head">Recover</div>
-            <div class="step-body">Minimally invasive techniques and modern protocols help you get back to life&mdash;sooner.</div>
+            <div class="step-title">Recover</div>
+            <div class="step-body">Minimally invasive techniques and modern protocols get you back to the activities you love &mdash; faster.</div>
           </div>
         </div>
       </div>
+      <div class="approach-btns reveal d3">
+        <a href="#" class="btn-green">Learn About My Approach</a>
+        <a href="#" class="btn-outline-white">Request Consultation</a>
+      </div>
     </div>
-
-    <div class="approach-center fade-up delay-1">
-      <img class="approach-photo" src="https://drahmedtest.lovable.app/assets/dr-patient-Ccpom9ar.jpg" alt="Dr. Ahmed with Patient">
+    <div class="reveal right d1">
+      <img class="approach-img" src="https://drahmedtest.lovable.app/assets/dr-patient-Ccpom9ar.jpg" alt="Dr. Ahmed with Patient">
     </div>
+  </div>
+</section>
 
-    <div class="approach-right">
-      <img class="surgeon-photo fade-right" src="https://drahmedtest.lovable.app/assets/dr-standing-_eDNeDeE.jpg" alt="Dr. Mohammed Ahmed">
-      <div class="surgeon-label fade-right delay-1">Your Surgeon. Your Partner.</div>
-      <p class="surgeon-quote fade-right delay-2">I believe the best outcomes start with understanding your goals. At your consultation, you'll meet with me&mdash;not a team or rotating providers.</p>
-      <div class="surgeon-sig fade-right delay-2">Mohammed Ahmed, MD</div>
-      <div class="cred-list fade-right delay-3">
-        <div class="cred-row">
-          <div class="cred-row-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B8943F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
-          <div><div class="cred-row-head">Medical Degree</div><div class="cred-row-val">University of Illinois at Chicago<br>College of Medicine</div></div>
+<!-- ══ CREDENTIALS CARDS ══════════════════════════════ -->
+<section class="creds-section">
+  <div class="creds-inner">
+    <div class="creds-header reveal">
+      <div class="section-eyebrow" style="justify-content:center;"><span style="display:block;width:32px;height:3px;background:var(--green);"></span> Credentials</div>
+      <h2 class="section-h2">Training &amp; Certification</h2>
+      <p class="section-body">A foundation of rigorous education and subspecialized training &mdash; so you can operate with confidence in your care.</p>
+    </div>
+    <div class="creds-grid">
+      <div class="cred-card reveal">
+        <div class="cred-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#003364" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
         </div>
-        <div class="cred-row">
-          <div class="cred-row-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B8943F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
-          <div><div class="cred-row-head">Residency</div><div class="cred-row-val">Orthopaedic Surgery<br>Saint Louis University</div></div>
+        <div class="cred-card-title">Medical Degree</div>
+        <div class="cred-card-val">University of Illinois at Chicago</div>
+        <div class="cred-card-sub">College of Medicine</div>
+      </div>
+      <div class="cred-card reveal d1">
+        <div class="cred-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#003364" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
         </div>
-        <div class="cred-row">
-          <div class="cred-row-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B8943F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-          <div><div class="cred-row-head">Fellowship</div><div class="cred-row-val">Adult Reconstruction (Hip &amp; Knee)<br>Cleveland Clinic</div></div>
+        <div class="cred-card-title">Residency</div>
+        <div class="cred-card-val">Saint Louis University</div>
+        <div class="cred-card-sub">Orthopaedic Surgery</div>
+      </div>
+      <div class="cred-card reveal d2">
+        <div class="cred-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#003364" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
         </div>
-        <div class="cred-row">
-          <div class="cred-row-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B8943F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-          <div><div class="cred-row-head">Certification</div><div class="cred-row-val">Board-Certified, Orthopaedic Surgery<br>American Board of Orthopaedic Surgery</div></div>
+        <div class="cred-card-title">Fellowship</div>
+        <div class="cred-card-val">Cleveland Clinic</div>
+        <div class="cred-card-sub">Adult Reconstruction (Hip &amp; Knee)</div>
+      </div>
+      <div class="cred-card reveal d3">
+        <div class="cred-card-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#003364" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
+        <div class="cred-card-title">Certification</div>
+        <div class="cred-card-val">American Board of Orthopaedic Surgery</div>
+        <div class="cred-card-sub">Board-Certified</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ YOUR JOURNEY ══════════════════════════════════════ -->
-<section class="journey-outer">
-  <div class="journey-bg">
-    <img src="https://drahmedtest.lovable.app/assets/journey-hike-AM8S07yG.jpg" alt="Couple hiking in mountains">
-  </div>
+<!-- ══ JOURNEY ════════════════════════════════════════ -->
+<section class="journey-section">
   <div class="journey-inner">
-    <div class="journey-tag fade-up">Your Journey</div>
-    <h2 class="journey-title fade-up delay-1">A clear path back to the life you love.</h2>
+    <div class="journey-header reveal">
+      <div class="section-eyebrow" style="justify-content:center;"><span style="display:block;width:32px;height:3px;background:var(--green);"></span> Your Journey</div>
+      <h2 class="section-h2">A Clear Path Back to the Life You Love</h2>
+      <p class="section-body">From the day of surgery to getting back on the golf course &mdash; here&rsquo;s what recovery looks like with Dr. Ahmed.</p>
+    </div>
     <div class="journey-grid">
-      <div class="j-step fade-up delay-1">
-        <div class="j-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M12 7v8"/><path d="M9 10l3 2 3-2"/><path d="M9 20l3-3 3 3"/></svg>
-        </div>
+      <div class="j-card reveal">
+        <div class="j-circle"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#003364" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M12 7v8"/><path d="M9 10l3 2 3-2"/><path d="M9 20l3-3 3 3"/></svg></div>
         <div class="j-phase">Day of Surgery</div>
-        <div class="j-title">Up and walking</div>
-        <p class="j-desc">Most patients stand and take their first steps within hours of surgery, many go home the same day.</p>
+        <div class="j-title">Up and Walking</div>
+        <p class="j-desc">Most patients stand and take their first steps within hours. Many go home the same day.</p>
       </div>
-      <div class="j-step fade-up delay-2">
-        <div class="j-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
+      <div class="j-card reveal d1">
+        <div class="j-circle"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#003364" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
         <div class="j-phase">Weeks 1&ndash;2</div>
-        <div class="j-title">Moving at home</div>
+        <div class="j-title">Moving at Home</div>
         <p class="j-desc">Walking, stairs and therapy focused on motion, confidence and comfort.</p>
       </div>
-      <div class="j-step fade-up delay-3">
-        <div class="j-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-        </div>
+      <div class="j-card reveal d2">
+        <div class="j-circle"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#003364" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
         <div class="j-phase">Weeks 3&ndash;8</div>
-        <div class="j-title">Back to daily life</div>
-        <p class="j-desc">Driving, errands and desk work as strength and endurance build.</p>
+        <div class="j-title">Back to Daily Life</div>
+        <p class="j-desc">Driving, errands and desk work as strength and endurance build back up.</p>
       </div>
-      <div class="j-step fade-up delay-4">
-        <div class="j-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 17 8 12 12 16 16 11 21 17"/><polyline points="3 7 8 3 12 7 16 4 21 7"/></svg>
-        </div>
+      <div class="j-card reveal d3">
+        <div class="j-circle"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#003364" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 17 8 12 12 16 16 11 21 17"/><polyline points="3 7 8 3 12 7 16 4 21 7"/></svg></div>
         <div class="j-phase">Months 2&ndash;3+</div>
-        <div class="j-title">Back to active life</div>
-        <p class="j-desc">Golf, biking, hiking, travel, pickleball&mdash;the activities that matter most to you.</p>
+        <div class="j-title">Back to Active Life</div>
+        <p class="j-desc">Golf, biking, hiking, travel, pickleball &mdash; the activities that matter most to you.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ SOCIAL PROOF ══════════════════════════════════════ -->
-<section class="proof-outer">
-  <div class="proof-inner">
-    <div class="quote-block fade-left">
-      <span class="quote-mark">&ldquo;</span>
-      <p class="quote-text">From the first consult, the focus was about my goals&mdash;and the robotic knee replacement was precision delivered. Dr. Ahmed is an impressive surgeon, and his team is the best of the best.</p>
-      <div class="quote-attr">&mdash; Linda M. &nbsp;&bull;&nbsp; <span style="color:#cbd5e1;">Knee Replacement</span></div>
+<!-- ══ TESTIMONIALS ════════════════════════════════════ -->
+<section class="testimonial-section">
+  <div class="testimonial-inner">
+    <div class="section-eyebrow reveal" style="justify-content:center; color:var(--green);">Patient Reviews</div>
+    <h2 class="section-h2 reveal d1" style="color:#fff; margin-bottom:48px;">What Patients Are Saying</h2>
+    <div class="testimonial-card reveal d2">
+      <p class="t-quote">From the first consult, the focus was about my goals &mdash; and the robotic knee replacement was precision delivered. Dr. Ahmed is an impressive surgeon, and his team is the best of the best.</p>
+      <div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="t-author">Linda M.</div>
+      <div class="t-role">Knee Replacement Patient</div>
     </div>
-
-    <div class="proof-col-divider"></div>
-
-    <div class="rating-block fade-up">
-      <div class="rating-num">4.9/5</div>
-      <div class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-      <div class="rating-count">(300+ Reviews)</div>
-      <div class="verified-row">
-        <span class="verified-check">&#10003;</span>
-        Verified by
+    <div class="rating-row reveal d3">
+      <div class="rating-box">
+        <div class="rating-big">4.9/5</div>
+        <div class="rating-label">Overall Rating</div>
       </div>
-      <div class="healthgrades-text">healthgrades.</div>
-    </div>
-
-    <div class="proof-col-divider"></div>
-
-    <div class="affil-block fade-right">
-      <div class="affil-tag">As Seen In &amp; Affiliated With</div>
-      <div class="affil-row">
-        <div class="affil-badge" style="background:#003087; color:#fff; font-size:9px; line-height:1.4;">Cleveland<br>Clinic</div>
-        <div class="affil-name">Center for Adult<br>Reconstructive Surgery</div>
+      <div class="rating-divider"></div>
+      <div class="rating-box">
+        <div class="rating-big">300+</div>
+        <div class="rating-label">Verified Reviews</div>
       </div>
-      <div class="affil-row">
-        <div class="affil-badge" style="border-color:#003087;"><span style="color:#003087; font-weight:800; font-size:11px;">AAHKS</span></div>
-        <div class="affil-name">American Association of<br>Hip and Knee Surgeons</div>
-      </div>
-      <div class="affil-row">
-        <div class="affil-badge"><span style="font-weight:800; font-size:11px;">AAOS</span></div>
-        <div class="affil-name">American Academy of<br>Orthopaedic Surgeons</div>
+      <div class="rating-divider"></div>
+      <div class="rating-box">
+        <div class="verified-small"><span style="color:#2ea8e0;">&#10003;</span> Verified by</div>
+        <div class="healthgrades-text">healthgrades.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ BOTTOM CTA ════════════════════════════════════════ -->
-<section class="cta-outer">
+<!-- ══ AFFILIATIONS ════════════════════════════════════ -->
+<div class="affil-strip">
+  <div class="affil-inner">
+    <div class="affil-label">As Seen In &amp; Affiliated With</div>
+    <div class="affil-divider"></div>
+    <div class="affil-badge-row">
+      <div class="affil-badge clinic">Cleveland<br>Clinic</div>
+      <div class="affil-badge-sub">Center for Adult<br>Reconstructive Surgery</div>
+    </div>
+    <div class="affil-divider"></div>
+    <div class="affil-badge-row">
+      <div class="affil-badge">AAHKS</div>
+      <div class="affil-badge-sub">American Association of<br>Hip and Knee Surgeons</div>
+    </div>
+    <div class="affil-divider"></div>
+    <div class="affil-badge-row">
+      <div class="affil-badge">AAOS</div>
+      <div class="affil-badge-sub">American Academy of<br>Orthopaedic Surgeons</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CTA SECTION ════════════════════════════════════ -->
+<section class="cta-section">
   <div class="cta-inner">
-    <div class="cta-copy fade-left">
-      <h2>Let&rsquo;s talk about your joint<br>&mdash; and your goals.</h2>
+    <div class="cta-copy reveal left">
+      <h2>Let&rsquo;s Talk About Your Joint &mdash; and Your Goals.</h2>
       <p>A consultation is a conversation, not a commitment.</p>
     </div>
-    <div class="cta-opts fade-right">
+    <div class="cta-opts reveal right">
       <div class="cta-opt">
         <div class="cta-opt-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B8943F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.39 2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.39 2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         </div>
         <div>
           <div class="cta-opt-title">(630) 646-7000</div>
@@ -1264,35 +890,26 @@ footer {
       </div>
       <div class="cta-opt">
         <div class="cta-opt-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B8943F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         </div>
         <div>
-          <div class="cta-opt-title">Schedule online</div>
+          <div class="cta-opt-title">Schedule Online</div>
           <div class="cta-opt-sub">It only takes a minute</div>
         </div>
       </div>
-      <div class="cta-opt">
-        <div class="cta-opt-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B8943F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <div>
-          <div class="cta-opt-title">Most major insurance</div>
-          <div class="cta-opt-sub">plans &amp; Medicare accepted</div>
-        </div>
-      </div>
-      <a href="#" class="btn-gold">Request Consultation</a>
+      <a href="#" class="btn-white-cta">Request Consultation</a>
     </div>
   </div>
 </section>
 
-<!-- ═══ FOOTER ════════════════════════════════════════════ -->
+<!-- ══ FOOTER ══════════════════════════════════════════ -->
 <footer>
-  <div class="footer-grid">
+  <div class="footer-inner">
     <div>
-      <div class="foot-brand">
+      <div class="foot-logo-wrap">
         <img src="logo mma.png" alt="MMA Logo">
         <div>
-          <span class="foot-brand-name">MOHAMMED AHMED, MD</span>
+          <div class="foot-brand-name">MOHAMMED AHMED, MD</div>
           <span class="foot-brand-sub">Hip &amp; Knee Replacement</span>
         </div>
       </div>
@@ -1303,39 +920,34 @@ footer {
         <a href="#" class="s-icon">&#9711;</a>
       </div>
     </div>
-
     <div class="foot-col">
-      <div class="foot-col-head">Where I Operate &amp; See Patients</div>
+      <div class="foot-col-head">Where I Operate</div>
       <p>Lombard &mdash; Clinic<br>Orthopaedic &amp; joint replacement<br>clinic, western suburbs</p>
       <a href="#">View on Map &rarr;</a>
-      <p style="margin-top:12px;">Naperville, IL</p>
+      <p style="margin-top:10px;">Naperville, IL</p>
       <a href="#">View on Map &rarr;</a>
-      <p style="margin-top:12px;">Arlington Heights, IL</p>
+      <p style="margin-top:10px;">Arlington Heights, IL</p>
       <a href="#">View on Map &rarr;</a>
     </div>
-
     <div class="foot-col">
       <div class="foot-col-head">Endeavor Health</div>
       <p>Elmhurst Hospital<br>Elmhurst, IL</p>
       <a href="#">View on Map &rarr;</a>
     </div>
-
     <div class="foot-col">
       <div class="foot-col-head">Endeavor Health</div>
       <p>Edward Hospital<br>Naperville, IL</p>
       <a href="#">View on Map &rarr;</a>
     </div>
-
     <div class="foot-col">
       <div class="foot-col-head">Endeavor Health</div>
       <p>Northwest Community Hospital<br>Arlington Heights, IL</p>
       <a href="#">View on Map &rarr;</a>
     </div>
   </div>
-
   <div class="footer-bottom">
     <span>&copy; 2026 Mohammed Ahmed, MD. All rights reserved.</span>
-    <div style="display:flex; gap:20px;">
+    <div style="display:flex;gap:20px;">
       <a href="#">Privacy Policy</a>
       <a href="#">Accessibility</a>
       <a href="#">HIPAA Notice</a>
@@ -1343,79 +955,37 @@ footer {
   </div>
 </footer>
 
-<!-- ═══ SCROLL TO TOP ══════════════════════════════════════ -->
-<button id="scrollTop" aria-label="Scroll to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
 </button>
 
-<!-- ═══ JAVASCRIPT ════════════════════════════════════════ -->
 <script>
-  // ── Intersection Observer for scroll animations ──
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
-    });
+  // Scroll animations
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-  document.querySelectorAll('.fade-up, .fade-left, .fade-right').forEach(el => {
-    observer.observe(el);
+  // Hero image zoom on load
+  window.addEventListener('load', () => {
+    document.getElementById('hero').classList.add('loaded');
   });
 
-  // ── Nav shadow on scroll ──
+  // Sticky nav shadow
   const nav = document.getElementById('mainNav');
-  const scrollTopBtn = document.getElementById('scrollTop');
-
+  const scrollBtn = document.getElementById('scrollTop');
   window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY > 40;
-    nav.classList.toggle('scrolled', scrolled);
-    scrollTopBtn.classList.toggle('show', window.scrollY > 500);
+    nav.classList.toggle('scrolled', window.scrollY > 80);
+    scrollBtn.classList.toggle('show', window.scrollY > 500);
   }, { passive: true });
 
-  // ── Animate hero immediately (already in viewport) ──
-  document.querySelectorAll('.hero .fade-up, .hero .fade-right, .hero .fade-left').forEach(el => {
-    // Small timeout to let CSS transitions register first
-    setTimeout(() => el.classList.add('visible'), 80);
+  // Hero immediately visible
+  document.querySelectorAll('.hero .reveal').forEach((el, i) => {
+    setTimeout(() => el.classList.add('visible'), 100 + i * 120);
   });
-
-  // ── Credential strip immediate animate ──
-  document.querySelectorAll('.cred-strip .fade-up').forEach(el => {
-    setTimeout(() => el.classList.add('visible'), 200);
+  document.querySelectorAll('.cred-strip .reveal').forEach((el, i) => {
+    setTimeout(() => el.classList.add('visible'), 300 + i * 100);
   });
-
-  // ── Number counter animation for hero stats ──
-  function animateCount(el, target, suffix, duration) {
-    let start = 0;
-    const step = target / (duration / 16);
-    const timer = setInterval(() => {
-      start += step;
-      if (start >= target) {
-        el.textContent = target.toLocaleString() + suffix;
-        clearInterval(timer);
-      } else {
-        el.textContent = Math.floor(start).toLocaleString() + suffix;
-      }
-    }, 16);
-  }
-
-  // Trigger counters when hero stats come into view
-  const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const nums = entry.target.querySelectorAll('.h-stat-num');
-        nums.forEach(n => {
-          const text = n.textContent.trim();
-          if (text === '1,500+') { n.textContent = '0'; animateCount(n, 1500, '+', 1200); }
-          else if (text === '98%') { n.textContent = '0%'; animateCount(n, 98, '%', 900); }
-        });
-        statsObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  const statsEl = document.querySelector('.hero-stats');
-  if (statsEl) statsObserver.observe(statsEl);
 </script>
 </body>
 </html>
