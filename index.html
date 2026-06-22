@@ -6,6 +6,7 @@
 <title>Mohammed Ahmed, MD | Hip &amp; Knee Replacement</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" as="script">
 <style>
 /* ─── RESET ──────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -73,7 +74,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px;
+  height: 84px;
   transition: box-shadow 0.3s;
 }
 
@@ -86,7 +87,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(27,43,75,0.08); }
 }
 
 .nav-brand img {
-  height: 46px;
+  height: 66px;
   width: auto;
   object-fit: contain;
 }
@@ -162,6 +163,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(27,43,75,0.08); }
   border: 1.5px solid var(--gold);
   color: var(--gold);
   background: transparent;
+  border-radius: 4px;
   font-family: 'Inter', sans-serif;
   font-size: 11px;
   font-weight: 500;
@@ -245,6 +247,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(27,43,75,0.08); }
   letter-spacing: 0.8px;
   text-transform: uppercase;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
   transition: background 0.2s, transform 0.15s;
 }
@@ -256,6 +259,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(27,43,75,0.08); }
   background: transparent;
   color: var(--navy);
   border: 1.5px solid #c8d0dc;
+  border-radius: 5px;
   font-family: 'Inter', sans-serif;
   font-size: 12px;
   font-weight: 400;
@@ -349,7 +353,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(27,43,75,0.08); }
 .cred-circle {
   width: 42px;
   height: 42px;
-  border: 1.5px solid rgba(184,148,63,0.45);
+  border: 1.5px solid rgba(184,148,63,0.75);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -825,6 +829,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(27,43,75,0.08); }
   letter-spacing: 1.2px;
   text-transform: uppercase;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
   white-space: nowrap;
   transition: background 0.2s, transform 0.15s;
@@ -848,7 +853,7 @@ footer {
 }
 
 .foot-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
-.foot-brand img { height: 38px; object-fit: contain; }
+.foot-brand img { height: 54px; object-fit: contain; }
 .foot-brand-name { font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 600; color: var(--white); display: block; line-height: 1.2; letter-spacing: 0.3px; }
 .foot-brand-sub { font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.35); display: block; }
 
@@ -912,6 +917,9 @@ footer {
 
 #scrollTop.show { opacity: 1; transform: translateY(0); }
 #scrollTop:hover { background: var(--gold); }
+
+.nav-links a.active { color: var(--gold); }
+.nav-links a.active::after { width: 100%; }
 </style>
 </head>
 <body>
@@ -927,26 +935,25 @@ footer {
   </a>
 
   <ul class="nav-links">
-    <li><a href="#">About Dr. Ahmed</a></li>
-    <li class="has-dd"><a href="#">Procedures</a></li>
-    <li><a href="#">My Approach</a></li>
-    <li><a href="#">Recovery</a></li>
-    <li class="has-dd"><a href="#">Patient Resources</a></li>
-    <li><a href="#">Reviews</a></li>
-    <li><a href="#">Contact</a></li>
+    <li><a href="#about">About Dr. Ahmed</a></li>
+    <li><a href="#procedures">Procedures</a></li>
+    <li><a href="#approach">My Approach</a></li>
+    <li><a href="#recovery">Recovery</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
 
   <div class="nav-actions">
-    <a href="#" class="btn-consult">Request Consultation</a>
+    <a href="#contact" class="btn-consult">Request Consultation</a>
     <div class="nav-phone">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.39 2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <i data-lucide="phone-call" style="width:15px;height:15px;color:var(--gold)"></i>
       (630) 646-7000
     </div>
   </div>
 </nav>
 
 <!-- ═══ HERO ══════════════════════════════════════════════ -->
-<section>
+<section id="about">
   <div class="hero">
     <div class="hero-content">
       <div class="hero-tag fade-up">Hip &amp; Knee Replacement &nbsp;&bull;&nbsp; Western Chicago Suburbs</div>
@@ -955,7 +962,7 @@ footer {
         <span class="gold-italic">Personal to you.</span>
       </h1>
       <p class="hero-body fade-up delay-2">
-        I help patients move beyond pain with robotic-assisted, minimally invasive joint replacement&mdash;so they can get back to the life they love.
+        I help patients move beyond pain with robotic-assisted, minimally invasive joint replacement, so they can get back to the life they love.
       </p>
       <div class="hero-btns fade-up delay-3">
         <a href="#" class="btn-primary">Request a Consultation</a>
@@ -995,7 +1002,7 @@ footer {
 <div class="cred-strip">
   <div class="cred-item fade-up">
     <div class="cred-circle">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8943F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <i data-lucide="shield-check" style="width:22px;height:22px;color:#B8943F"></i>
     </div>
     <div>
       <div class="cred-title">Board-Certified</div>
@@ -1004,7 +1011,7 @@ footer {
   </div>
   <div class="cred-item fade-up delay-1">
     <div class="cred-circle">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8943F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+      <i data-lucide="graduation-cap" style="width:22px;height:22px;color:#B8943F"></i>
     </div>
     <div>
       <div class="cred-title">Fellowship-Trained</div>
@@ -1013,7 +1020,7 @@ footer {
   </div>
   <div class="cred-item fade-up delay-2">
     <div class="cred-circle">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8943F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+      <i data-lucide="cpu" style="width:22px;height:22px;color:#B8943F"></i>
     </div>
     <div>
       <div class="cred-title">Robotic-Assisted</div>
@@ -1022,7 +1029,7 @@ footer {
   </div>
   <div class="cred-item fade-up delay-3">
     <div class="cred-circle">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B8943F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      <i data-lucide="stethoscope" style="width:22px;height:22px;color:#B8943F"></i>
     </div>
     <div>
       <div class="cred-title">Subspecialized</div>
@@ -1032,12 +1039,12 @@ footer {
 </div>
 
 <!-- ═══ PROCEDURES ════════════════════════════════════════ -->
-<section class="proc-outer">
+<section class="proc-outer" id="procedures">
   <div class="proc-inner">
     <div>
       <div class="section-tag fade-left">Procedures</div>
       <h2 class="section-title fade-left delay-1">Focused on what moves you.</h2>
-      <p class="section-body fade-left delay-2">Subspecialization matters. My practice is dedicated to hip and knee replacement&mdash;not a little bit of everything.</p>
+      <p class="section-body fade-left delay-2">Subspecialization matters. My practice is dedicated entirely to hip and knee replacement, not a little bit of everything.</p>
       <a href="#" class="link-arrow fade-left delay-3">View All Procedures &rarr;</a>
     </div>
 
@@ -1091,7 +1098,7 @@ footer {
 </section>
 
 <!-- ═══ MY APPROACH ═══════════════════════════════════════ -->
-<section class="approach-outer">
+<section class="approach-outer" id="approach">
   <div class="approach-inner">
     <div class="approach-left">
       <div class="section-tag fade-left">My Approach</div>
@@ -1100,7 +1107,7 @@ footer {
       <div class="steps">
         <div class="step fade-left delay-2">
           <div class="step-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B8943F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+            <i data-lucide="layers" style="width:18px;height:18px;color:#B8943F"></i>
           </div>
           <div>
             <div class="step-head">Plan</div>
@@ -1109,7 +1116,7 @@ footer {
         </div>
         <div class="step fade-left delay-3">
           <div class="step-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B8943F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+            <i data-lucide="crosshair" style="width:18px;height:18px;color:#B8943F"></i>
           </div>
           <div>
             <div class="step-head">Perform</div>
@@ -1118,11 +1125,11 @@ footer {
         </div>
         <div class="step fade-left delay-4">
           <div class="step-icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B8943F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            <i data-lucide="zap" style="width:18px;height:18px;color:#B8943F"></i>
           </div>
           <div>
             <div class="step-head">Recover</div>
-            <div class="step-body">Minimally invasive techniques and modern protocols help you get back to life&mdash;sooner.</div>
+            <div class="step-body">Minimally invasive techniques and modern protocols help you get back to life, faster.</div>
           </div>
         </div>
       </div>
@@ -1135,23 +1142,23 @@ footer {
     <div class="approach-right">
       <img class="surgeon-photo fade-right" src="https://drahmedtest.lovable.app/assets/dr-standing-_eDNeDeE.jpg" alt="Dr. Mohammed Ahmed">
       <div class="surgeon-label fade-right delay-1">Your Surgeon. Your Partner.</div>
-      <p class="surgeon-quote fade-right delay-2">I believe the best outcomes start with understanding your goals. At your consultation, you'll meet with me&mdash;not a team or rotating providers.</p>
+      <p class="surgeon-quote fade-right delay-2">I believe the best outcomes start with understanding your goals. At your consultation, you will meet with me, not a team or rotating providers.</p>
       <div class="surgeon-sig fade-right delay-2">Mohammed Ahmed, MD</div>
       <div class="cred-list fade-right delay-3">
         <div class="cred-row">
-          <div class="cred-row-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B8943F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+          <div class="cred-row-icon"><i data-lucide="graduation-cap" style="width:17px;height:17px"></i></div>
           <div><div class="cred-row-head">Medical Degree</div><div class="cred-row-val">University of Illinois at Chicago<br>College of Medicine</div></div>
         </div>
         <div class="cred-row">
-          <div class="cred-row-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B8943F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+          <div class="cred-row-icon"><i data-lucide="building-2" style="width:17px;height:17px"></i></div>
           <div><div class="cred-row-head">Residency</div><div class="cred-row-val">Orthopaedic Surgery<br>Saint Louis University</div></div>
         </div>
         <div class="cred-row">
-          <div class="cred-row-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B8943F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+          <div class="cred-row-icon"><i data-lucide="star" style="width:17px;height:17px"></i></div>
           <div><div class="cred-row-head">Fellowship</div><div class="cred-row-val">Adult Reconstruction (Hip &amp; Knee)<br>Cleveland Clinic</div></div>
         </div>
         <div class="cred-row">
-          <div class="cred-row-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B8943F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="cred-row-icon"><i data-lucide="shield-check" style="width:17px;height:17px"></i></div>
           <div><div class="cred-row-head">Certification</div><div class="cred-row-val">Board-Certified, Orthopaedic Surgery<br>American Board of Orthopaedic Surgery</div></div>
         </div>
       </div>
@@ -1160,7 +1167,7 @@ footer {
 </section>
 
 <!-- ═══ YOUR JOURNEY ══════════════════════════════════════ -->
-<section class="journey-outer">
+<section class="journey-outer" id="recovery">
   <div class="journey-bg">
     <img src="https://drahmedtest.lovable.app/assets/journey-hike-AM8S07yG.jpg" alt="Couple hiking in mountains">
   </div>
@@ -1170,7 +1177,7 @@ footer {
     <div class="journey-grid">
       <div class="j-step fade-up delay-1">
         <div class="j-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M12 7v8"/><path d="M9 10l3 2 3-2"/><path d="M9 20l3-3 3 3"/></svg>
+          <i data-lucide="footprints" style="width:24px;height:24px"></i>
         </div>
         <div class="j-phase">Day of Surgery</div>
         <div class="j-title">Up and walking</div>
@@ -1178,7 +1185,7 @@ footer {
       </div>
       <div class="j-step fade-up delay-2">
         <div class="j-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <i data-lucide="home" style="width:24px;height:24px"></i>
         </div>
         <div class="j-phase">Weeks 1&ndash;2</div>
         <div class="j-title">Moving at home</div>
@@ -1186,7 +1193,7 @@ footer {
       </div>
       <div class="j-step fade-up delay-3">
         <div class="j-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="1"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          <i data-lucide="car" style="width:24px;height:24px"></i>
         </div>
         <div class="j-phase">Weeks 3&ndash;8</div>
         <div class="j-title">Back to daily life</div>
@@ -1194,22 +1201,22 @@ footer {
       </div>
       <div class="j-step fade-up delay-4">
         <div class="j-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 17 8 12 12 16 16 11 21 17"/><polyline points="3 7 8 3 12 7 16 4 21 7"/></svg>
+          <i data-lucide="bike" style="width:24px;height:24px"></i>
         </div>
         <div class="j-phase">Months 2&ndash;3+</div>
         <div class="j-title">Back to active life</div>
-        <p class="j-desc">Golf, biking, hiking, travel, pickleball&mdash;the activities that matter most to you.</p>
+        <p class="j-desc">Golf, biking, hiking, travel, pickleball. The activities that matter most to you.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ═══ SOCIAL PROOF ══════════════════════════════════════ -->
-<section class="proof-outer">
+<section class="proof-outer" id="reviews">
   <div class="proof-inner">
     <div class="quote-block fade-left">
       <span class="quote-mark">&ldquo;</span>
-      <p class="quote-text">From the first consult, the focus was about my goals&mdash;and the robotic knee replacement was precision delivered. Dr. Ahmed is an impressive surgeon, and his team is the best of the best.</p>
+      <p class="quote-text">From the first consult, the focus was about my goals, and the robotic knee replacement was precision delivered. Dr. Ahmed is an impressive surgeon, and his team is the best of the best.</p>
       <div class="quote-attr">&mdash; Linda M. &nbsp;&bull;&nbsp; <span style="color:#cbd5e1;">Knee Replacement</span></div>
     </div>
 
@@ -1220,7 +1227,7 @@ footer {
       <div class="rating-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
       <div class="rating-count">(300+ Reviews)</div>
       <div class="verified-row">
-        <span class="verified-check">&#10003;</span>
+        <i data-lucide="check-circle-2" style="width:14px;height:14px;color:#2ea8e0"></i>
         Verified by
       </div>
       <div class="healthgrades-text">healthgrades.</div>
@@ -1247,16 +1254,16 @@ footer {
 </section>
 
 <!-- ═══ BOTTOM CTA ════════════════════════════════════════ -->
-<section class="cta-outer">
+<section class="cta-outer" id="contact">
   <div class="cta-inner">
     <div class="cta-copy fade-left">
-      <h2>Let&rsquo;s talk about your joint<br>&mdash; and your goals.</h2>
+      <h2>Let&rsquo;s talk about your joint<br>and your goals.</h2>
       <p>A consultation is a conversation, not a commitment.</p>
     </div>
     <div class="cta-opts fade-right">
       <div class="cta-opt">
         <div class="cta-opt-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B8943F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.39 2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <i data-lucide="phone-call" style="width:22px;height:22px"></i>
         </div>
         <div>
           <div class="cta-opt-title">(630) 646-7000</div>
@@ -1265,7 +1272,7 @@ footer {
       </div>
       <div class="cta-opt">
         <div class="cta-opt-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B8943F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <i data-lucide="calendar-days" style="width:22px;height:22px"></i>
         </div>
         <div>
           <div class="cta-opt-title">Schedule online</div>
@@ -1274,7 +1281,7 @@ footer {
       </div>
       <div class="cta-opt">
         <div class="cta-opt-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B8943F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <i data-lucide="shield-check" style="width:22px;height:22px"></i>
         </div>
         <div>
           <div class="cta-opt-title">Most major insurance</div>
@@ -1298,16 +1305,16 @@ footer {
         </div>
       </div>
       <div class="foot-social">
-        <a href="#" class="s-icon">f</a>
-        <a href="#" class="s-icon">in</a>
-        <a href="#" class="s-icon">&#9654;</a>
-        <a href="#" class="s-icon">&#9711;</a>
+        <a href="#" class="s-icon"><i data-lucide="facebook" style="width:14px;height:14px"></i></a>
+        <a href="#" class="s-icon"><i data-lucide="linkedin" style="width:14px;height:14px"></i></a>
+        <a href="#" class="s-icon"><i data-lucide="youtube" style="width:14px;height:14px"></i></a>
+        <a href="#" class="s-icon"><i data-lucide="globe" style="width:14px;height:14px"></i></a>
       </div>
     </div>
 
     <div class="foot-col">
       <div class="foot-col-head">Where I Operate &amp; See Patients</div>
-      <p>Lombard &mdash; Clinic<br>Orthopaedic &amp; joint replacement<br>clinic, western suburbs</p>
+      <p>Lombard Clinic<br>Orthopaedic &amp; joint replacement<br>clinic, western suburbs</p>
       <a href="#">View on Map &rarr;</a>
       <p style="margin-top:12px;">Naperville, IL</p>
       <a href="#">View on Map &rarr;</a>
@@ -1346,11 +1353,30 @@ footer {
 
 <!-- ═══ SCROLL TO TOP ══════════════════════════════════════ -->
 <button id="scrollTop" aria-label="Scroll to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  <i data-lucide="arrow-up" style="width:17px;height:17px"></i>
 </button>
+
+<!-- ═══ LUCIDE ICONS ══════════════════════════════════════ -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 
 <!-- ═══ JAVASCRIPT ════════════════════════════════════════ -->
 <script>
+  // ── Lucide icons ──
+  lucide.createIcons();
+
+  // ── Active nav on scroll ──
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.getAttribute('id');
+    });
+    navLinks.forEach(l => {
+      l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+    });
+  }, { passive: true });
+
   // ── Intersection Observer for scroll animations ──
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
