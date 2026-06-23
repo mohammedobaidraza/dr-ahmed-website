@@ -87,9 +87,15 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(27,43,75,0.08); }
 }
 
 .nav-brand img {
-  height: 66px;
-  width: auto;
+  height: 52px;
+  width: 52px;
   object-fit: contain;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: box-shadow 0.35s;
+}
+nav.scrolled .nav-brand img {
+  box-shadow: 0 0 0 1px var(--border);
 }
 
 .brand-name {
@@ -187,6 +193,8 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(27,43,75,0.08); }
 }
 
 /* ─── HERO ───────────────────────────────────────────── */
+#about { background: var(--navy); }
+
 .hero {
   max-width: 1280px;
   margin: 0 auto;
@@ -210,7 +218,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(27,43,75,0.08); }
 .hero h1 {
   font-size: 60px;
   font-weight: 600;
-  color: var(--navy);
+  color: var(--white);
   line-height: 1.0;
   margin-bottom: 4px;
 }
@@ -224,7 +232,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(27,43,75,0.08); }
 .hero-body {
   font-size: 15.5px;
   line-height: 1.75;
-  color: #4a5568;
+  color: rgba(255,255,255,0.72);
   margin: 22px 0 34px;
   max-width: 430px;
 }
@@ -239,7 +247,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(27,43,75,0.08); }
 
 .btn-primary {
   padding: 14px 26px;
-  background: var(--navy);
+  background: var(--gold);
   color: var(--white);
   font-family: 'Inter', sans-serif;
   font-size: 12px;
@@ -252,13 +260,13 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(27,43,75,0.08); }
   transition: background 0.2s, transform 0.15s;
 }
 
-.btn-primary:hover { background: #243860; transform: translateY(-1px); }
+.btn-primary:hover { background: #c9a84c; transform: translateY(-1px); }
 
 .btn-outline {
   padding: 13px 20px;
   background: transparent;
-  color: var(--navy);
-  border: 1.5px solid #c8d0dc;
+  color: rgba(255,255,255,0.85);
+  border: 1.5px solid rgba(255,255,255,0.28);
   border-radius: 5px;
   font-family: 'Inter', sans-serif;
   font-size: 12px;
@@ -270,7 +278,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(27,43,75,0.08); }
   transition: border-color 0.2s, color 0.2s, transform 0.15s;
 }
 
-.btn-outline:hover { border-color: var(--navy); transform: translateY(-1px); }
+.btn-outline:hover { border-color: var(--gold); color: var(--white); transform: translateY(-1px); }
 
 .play-btn {
   width: 26px;
@@ -289,7 +297,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(27,43,75,0.08); }
   display: flex;
   gap: 32px;
   padding-top: 32px;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(255,255,255,0.12);
   flex-wrap: wrap;
 }
 
@@ -299,7 +307,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(27,43,75,0.08); }
   font-family: 'Cormorant Garamond', serif;
   font-size: 24px;
   font-weight: 600;
-  color: var(--navy);
+  color: var(--white);
   line-height: 1;
 }
 
@@ -309,7 +317,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(27,43,75,0.08); }
   font-size: 9.5px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #94a3b8;
+  color: rgba(255,255,255,0.5);
   line-height: 1.5;
   max-width: 110px;
 }
@@ -330,6 +338,15 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(27,43,75,0.08); }
 }
 
 .hero-img-wrap:hover img { transform: scale(1.02); }
+
+.hero-img-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, var(--navy) 0%, transparent 30%);
+  pointer-events: none;
+  z-index: 1;
+}
 
 /* ─── CREDENTIAL STRIP ───────────────────────────────── */
 .cred-strip {
@@ -412,7 +429,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(27,43,75,0.08); }
 .link-arrow:hover { color: var(--gold); border-color: var(--gold); }
 
 /* ─── PROCEDURES ─────────────────────────────────────── */
-.proc-outer { background: var(--cream); padding: 80px 0; }
+.proc-outer { background: var(--white); padding: 80px 0; }
 
 .proc-inner {
   max-width: 1280px;
@@ -431,33 +448,45 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(27,43,75,0.08); }
 }
 
 .proc-card {
-  background: var(--white);
+  background: #0b1829;
   display: flex;
   flex-direction: column;
   transition: box-shadow 0.25s, transform 0.25s;
   cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.06);
 }
 
 .proc-card:hover {
-  box-shadow: 0 12px 40px rgba(27,43,75,0.12);
-  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.5);
+  transform: translateY(-5px);
+  border-color: rgba(184,148,63,0.3);
 }
 
 .proc-card-img {
   height: 168px;
   overflow: hidden;
+  position: relative;
+}
+
+.proc-card-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(11,24,41,0.25) 0%, rgba(11,24,41,0.55) 100%);
+  z-index: 1;
 }
 
 .proc-card-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  filter: grayscale(20%) contrast(1.05) brightness(0.9);
+  transition: transform 0.4s ease, filter 0.4s ease;
 }
 
-.proc-card:hover .proc-card-img img { transform: scale(1.05); }
+.proc-card:hover .proc-card-img img { transform: scale(1.05); filter: grayscale(0%) contrast(1.1) brightness(1); }
 
-.proc-card-body { padding: 18px 16px 20px; flex: 1; display: flex; flex-direction: column; }
+.proc-card-body { padding: 18px 16px 20px; flex: 1; display: flex; flex-direction: column; background: #0b1829; }
 
 .proc-cat {
   font-size: 9.5px;
@@ -472,7 +501,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(27,43,75,0.08); }
   font-family: 'Cormorant Garamond', serif;
   font-size: 20px;
   font-weight: 600;
-  color: var(--navy);
+  color: var(--white);
   line-height: 1.2;
   margin-bottom: 10px;
 }
@@ -480,7 +509,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(27,43,75,0.08); }
 .proc-desc {
   font-size: 12.5px;
   line-height: 1.65;
-  color: var(--muted);
+  color: rgba(255,255,255,0.58);
   flex: 1;
   margin-bottom: 14px;
 }
@@ -490,7 +519,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(27,43,75,0.08); }
   font-weight: 500;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: var(--navy);
+  color: rgba(255,255,255,0.75);
   display: inline-flex;
   align-items: center;
   gap: 6px;
@@ -511,7 +540,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(27,43,75,0.08); }
   margin: 0 auto;
   padding: 0 48px;
   display: grid;
-  grid-template-columns: 1fr 1.1fr 1fr;
+  grid-template-columns: 1fr 1.2fr 0.9fr;
   gap: 0;
   align-items: start;
 }
@@ -571,8 +600,9 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(27,43,75,0.08); }
 .surgeon-photo {
   width: 100%;
   aspect-ratio: 3 / 4;
-  object-fit: contain;
-  background: #ede8e0;
+  object-fit: cover;
+  object-position: top center;
+  background: var(--navy);
   border-radius: 2px;
   margin-bottom: 28px;
 }
@@ -853,26 +883,28 @@ footer {
 }
 
 .foot-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
-.foot-brand img { height: 54px; object-fit: contain; }
+.foot-brand img { height: 48px; width: 48px; object-fit: contain; border-radius: 50%; flex-shrink: 0; }
 .foot-brand-name { font-family: 'Cormorant Garamond', serif; font-size: 14px; font-weight: 600; color: var(--white); display: block; line-height: 1.2; letter-spacing: 0.3px; }
 .foot-brand-sub { font-size: 8.5px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.35); display: block; }
 
 .foot-social { display: flex; gap: 9px; margin-top: 4px; }
 
 .s-icon {
-  width: 30px;
-  height: 30px;
-  border: 1px solid rgba(255,255,255,0.15);
+  width: 32px;
+  height: 32px;
+  border: 1.5px solid rgba(255,255,255,0.6);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255,255,255,0.4);
+  color: #ffffff;
   font-size: 12px;
   font-weight: 700;
   transition: border-color 0.2s, color 0.2s;
 }
 
 .s-icon:hover { border-color: var(--gold); color: var(--gold); }
+.s-icon svg { stroke: #ffffff !important; width: 15px; height: 15px; transition: stroke 0.2s; }
+.s-icon:hover svg { stroke: var(--gold) !important; }
 
 .foot-col-head { font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.3); font-weight: 500; margin-bottom: 14px; }
 .foot-col p { font-size: 12px; line-height: 1.75; color: rgba(255,255,255,0.55); margin-bottom: 6px; }
@@ -920,6 +952,235 @@ footer {
 
 .nav-links a.active { color: var(--gold); }
 .nav-links a.active::after { width: 100%; }
+
+/* ─── NAV MONOGRAM ───────────────────────────────────── */
+.nav-monogram {
+  width: 46px;
+  height: 46px;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: -0.5px;
+  flex-shrink: 0;
+  transition: border-color 0.35s, color 0.35s;
+}
+nav.scrolled .nav-monogram { border-color: var(--navy); color: var(--navy); }
+
+/* ─── FOOTER MONOGRAM ────────────────────────────────── */
+.foot-monogram {
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: -0.5px;
+  flex-shrink: 0;
+}
+
+/* ─── HERO STAT ICON ROW ─────────────────────────────── */
+.h-stat { display: flex; flex-direction: column; gap: 2px; }
+.h-stat-icon { color: var(--gold); margin-bottom: 4px; line-height: 1; }
+
+/* ─── INTERACTIVE QUIZ ───────────────────────────────── */
+.quiz-outer {
+  background: #111827;
+  padding: 80px 48px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.quiz-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 72px;
+  align-items: start;
+}
+.quiz-sidebar .section-tag { margin-bottom: 14px; }
+.quiz-title {
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+.quiz-sub { font-size: 13.5px; color: rgba(255,255,255,0.55); line-height: 1.7; }
+
+.quiz-progress { display: flex; gap: 6px; margin-bottom: 40px; }
+.quiz-progress-dot {
+  height: 3px;
+  flex: 1;
+  background: rgba(255,255,255,0.15);
+  border-radius: 2px;
+  transition: background 0.4s;
+}
+.quiz-progress-dot.done { background: var(--gold); }
+
+.quiz-step { display: none; animation: quizFadeIn 0.35s ease; }
+.quiz-step.active { display: block; }
+@keyframes quizFadeIn { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+
+.quiz-step-label {
+  font-size: 9.5px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.quiz-step-q {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.25;
+  margin-bottom: 28px;
+}
+.quiz-options { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 28px; }
+.quiz-option-btn {
+  padding: 14px 26px;
+  background: rgba(255,255,255,0.04);
+  border: 1.5px solid rgba(255,255,255,0.18);
+  border-radius: 6px;
+  color: rgba(255,255,255,0.8);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+.quiz-option-btn:hover,
+.quiz-option-btn.selected { border-color: var(--gold); background: rgba(184,148,63,0.12); color: var(--white); }
+
+.quiz-radio-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+.quiz-radio-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1.5px solid rgba(255,255,255,0.15);
+  border-radius: 6px;
+  color: rgba(255,255,255,0.8);
+  font-size: 13px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  text-align: left;
+}
+.quiz-radio-btn:hover,
+.quiz-radio-btn.selected { border-color: var(--gold); background: rgba(184,148,63,0.1); color: var(--white); }
+.quiz-radio-circle {
+  width: 18px; height: 18px;
+  border: 1.5px solid rgba(255,255,255,0.35);
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color 0.2s, background 0.2s;
+}
+.quiz-radio-btn.selected .quiz-radio-circle { border-color: var(--gold); background: var(--gold); }
+.quiz-radio-dot { width: 7px; height: 7px; background: var(--white); border-radius: 50%; display: none; }
+.quiz-radio-btn.selected .quiz-radio-dot { display: block; }
+
+.quiz-slider-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px;
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 14px;
+}
+.quiz-slider {
+  width: 100%; max-width: 420px;
+  -webkit-appearance: none;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.2);
+  outline: none;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+.quiz-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid var(--white);
+  cursor: pointer;
+}
+.quiz-slider::-moz-range-thumb {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid var(--white);
+  cursor: pointer;
+}
+.quiz-slider-labels {
+  display: flex; justify-content: space-between;
+  max-width: 420px;
+  font-size: 10px; letter-spacing: 1px; text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 28px;
+}
+
+.quiz-nav { display: flex; align-items: center; gap: 20px; }
+.quiz-btn-next {
+  padding: 13px 28px;
+  background: var(--gold);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.quiz-btn-next:hover { background: #c9a84c; transform: translateY(-1px); }
+.quiz-btn-back {
+  font-size: 12px; color: rgba(255,255,255,0.4);
+  background: none; border: none; cursor: pointer;
+  letter-spacing: 0.5px; transition: color 0.2s;
+}
+.quiz-btn-back:hover { color: rgba(255,255,255,0.75); }
+
+.quiz-result { display: none; }
+.quiz-result.show { display: block; animation: quizFadeIn 0.4s ease; }
+.quiz-result-check {
+  width: 52px; height: 52px;
+  border: 1.5px solid var(--gold);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold); margin-bottom: 20px;
+}
+.quiz-result h3 {
+  font-size: 28px; font-weight: 600;
+  color: var(--white); line-height: 1.2; margin-bottom: 12px;
+}
+.quiz-result p { font-size: 13.5px; color: rgba(255,255,255,0.6); line-height: 1.75; margin-bottom: 24px; }
+.quiz-restart {
+  background: none; border: none; cursor: pointer;
+  font-size: 11px; color: rgba(255,255,255,0.35);
+  letter-spacing: 0.5px; margin-top: 14px;
+  display: block; transition: color 0.2s;
+}
+.quiz-restart:hover { color: rgba(255,255,255,0.65); }
 </style>
 </head>
 <body>
@@ -973,19 +1234,23 @@ footer {
       </div>
       <div class="hero-stats fade-up delay-4">
         <div class="h-stat">
+          <div class="h-stat-icon"><i data-lucide="activity" style="width:18px;height:18px"></i></div>
           <span class="h-stat-num">1,500+</span>
           <span class="h-stat-label">Joint Replacements Performed</span>
         </div>
         <div class="h-stat">
+          <div class="h-stat-icon"><i data-lucide="star" style="width:18px;height:18px"></i></div>
           <span class="h-stat-num">4.9/5</span>
           <span class="h-stat-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
           <span class="h-stat-label">Patient Rating</span>
         </div>
         <div class="h-stat">
+          <div class="h-stat-icon"><i data-lucide="thumbs-up" style="width:18px;height:18px"></i></div>
           <span class="h-stat-num">98%</span>
           <span class="h-stat-label">Patients Would Recommend Dr. Ahmed</span>
         </div>
         <div class="h-stat">
+          <div class="h-stat-icon"><i data-lucide="target" style="width:18px;height:18px"></i></div>
           <span class="h-stat-num">One Goal</span>
           <span class="h-stat-label">Getting You Back To Your Life</span>
         </div>
@@ -1253,6 +1518,119 @@ footer {
   </div>
 </section>
 
+<!-- ═══ INTERACTIVE QUIZ ══════════════════════════════════ -->
+<section class="quiz-outer" id="quiz">
+  <div class="quiz-inner">
+
+    <!-- Sidebar -->
+    <div class="quiz-sidebar fade-left">
+      <div class="section-tag">Interactive Experience</div>
+      <h2 class="quiz-title">Is robotic joint replacement right for me?</h2>
+      <p class="quiz-sub">Answer a few quick questions to get personalized insights.</p>
+    </div>
+
+    <!-- Quiz Engine -->
+    <div class="quiz-body fade-right delay-1">
+      <!-- Progress -->
+      <div class="quiz-progress">
+        <div class="quiz-progress-dot done"></div>
+        <div class="quiz-progress-dot"></div>
+        <div class="quiz-progress-dot"></div>
+        <div class="quiz-progress-dot"></div>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="quiz-step active" data-step="0">
+        <div class="quiz-step-label">Step 01</div>
+        <div class="quiz-step-q">Which joint is causing you pain?</div>
+        <div class="quiz-options">
+          <button class="quiz-option-btn" data-group="joint" data-value="hip">
+            <i data-lucide="circle-dot" style="width:16px;height:16px"></i> Hip
+          </button>
+          <button class="quiz-option-btn" data-group="joint" data-value="knee">
+            <i data-lucide="zap" style="width:16px;height:16px"></i> Knee
+          </button>
+          <button class="quiz-option-btn" data-group="joint" data-value="both">
+            <i data-lucide="layers" style="width:16px;height:16px"></i> Both
+          </button>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-btn-next">Continue &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="quiz-step" data-step="1">
+        <div class="quiz-step-label">Step 02</div>
+        <div class="quiz-step-q">How would you rate your pain?</div>
+        <div class="quiz-slider-val" id="quizPainVal">5</div>
+        <input type="range" min="0" max="10" value="5" class="quiz-slider" id="quizPainSlider">
+        <div class="quiz-slider-labels"><span>No pain</span><span>Severe pain</span></div>
+        <div class="quiz-nav">
+          <button class="quiz-btn-next">Continue &rarr;</button>
+          <button class="quiz-btn-back">&#8592; Back</button>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="quiz-step" data-step="2">
+        <div class="quiz-step-label">Step 03</div>
+        <div class="quiz-step-q">How long have you been experiencing pain?</div>
+        <div class="quiz-radio-options">
+          <button class="quiz-radio-btn" data-group="duration" data-value="short">
+            <div class="quiz-radio-circle"><div class="quiz-radio-dot"></div></div>
+            Less than 3 months
+          </button>
+          <button class="quiz-radio-btn" data-group="duration" data-value="medium">
+            <div class="quiz-radio-circle"><div class="quiz-radio-dot"></div></div>
+            3 – 12 months
+          </button>
+          <button class="quiz-radio-btn" data-group="duration" data-value="long">
+            <div class="quiz-radio-circle"><div class="quiz-radio-dot"></div></div>
+            More than 12 months
+          </button>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-btn-next">Continue &rarr;</button>
+          <button class="quiz-btn-back">&#8592; Back</button>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="quiz-step" data-step="3">
+        <div class="quiz-step-label">Step 04</div>
+        <div class="quiz-step-q">Have you tried other treatments?</div>
+        <div class="quiz-radio-options">
+          <button class="quiz-radio-btn" data-group="treatments" data-value="yes">
+            <div class="quiz-radio-circle"><div class="quiz-radio-dot"></div></div>
+            Yes — injections, physical therapy, or medication
+          </button>
+          <button class="quiz-radio-btn" data-group="treatments" data-value="no">
+            <div class="quiz-radio-circle"><div class="quiz-radio-dot"></div></div>
+            No, not yet
+          </button>
+        </div>
+        <div class="quiz-nav">
+          <button class="quiz-btn-next">See My Results &rarr;</button>
+          <button class="quiz-btn-back">&#8592; Back</button>
+        </div>
+      </div>
+
+      <!-- Result -->
+      <div class="quiz-result" id="quizResult">
+        <div class="quiz-result-check">
+          <i data-lucide="check" style="width:22px;height:22px"></i>
+        </div>
+        <h3>A consultation can help confirm your options.</h3>
+        <p>Based on your answers, you may be a strong candidate for robotic-assisted joint replacement. A conversation with Dr. Ahmed is the best next step.</p>
+        <a href="#contact" class="btn-gold" style="display:inline-block;">Request a Consultation</a>
+        <button class="quiz-restart">Start over</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- ═══ BOTTOM CTA ════════════════════════════════════════ -->
 <section class="cta-outer" id="contact">
   <div class="cta-inner">
@@ -1443,6 +1821,77 @@ footer {
 
   const statsEl = document.querySelector('.hero-stats');
   if (statsEl) statsObserver.observe(statsEl);
+
+  // ── Interactive Quiz ──
+  (function() {
+    const steps = Array.from(document.querySelectorAll('.quiz-step'));
+    const dots  = Array.from(document.querySelectorAll('.quiz-progress-dot'));
+    const result = document.getElementById('quizResult');
+    let current = 0;
+
+    function goTo(idx) {
+      steps.forEach((s, i) => s.classList.toggle('active', i === idx));
+      dots.forEach((d, i) => d.classList.toggle('done', i <= idx));
+      if (result) result.classList.remove('show');
+      current = idx;
+    }
+
+    function showResult() {
+      steps.forEach(s => s.classList.remove('active'));
+      dots.forEach(d => d.classList.add('done'));
+      if (result) result.classList.add('show');
+    }
+
+    // Option buttons (joint selection)
+    document.querySelectorAll('.quiz-option-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const group = btn.dataset.group;
+        document.querySelectorAll(`.quiz-option-btn[data-group="${group}"]`)
+          .forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+      });
+    });
+
+    // Radio buttons
+    document.querySelectorAll('.quiz-radio-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const group = btn.dataset.group;
+        document.querySelectorAll(`.quiz-radio-btn[data-group="${group}"]`)
+          .forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+      });
+    });
+
+    // Pain slider live update
+    const slider = document.getElementById('quizPainSlider');
+    const painVal = document.getElementById('quizPainVal');
+    if (slider && painVal) {
+      slider.addEventListener('input', () => { painVal.textContent = slider.value; });
+    }
+
+    // Next buttons
+    document.querySelectorAll('.quiz-btn-next').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (current < steps.length - 1) goTo(current + 1);
+        else showResult();
+      });
+    });
+
+    // Back buttons
+    document.querySelectorAll('.quiz-btn-back').forEach(btn => {
+      btn.addEventListener('click', () => { if (current > 0) goTo(current - 1); });
+    });
+
+    // Restart
+    const restartBtn = document.querySelector('.quiz-restart');
+    if (restartBtn) {
+      restartBtn.addEventListener('click', () => {
+        document.querySelectorAll('.quiz-option-btn, .quiz-radio-btn')
+          .forEach(b => b.classList.remove('selected'));
+        goTo(0);
+      });
+    }
+  })();
 </script>
 </body>
 </html>
