@@ -1,26 +1,193 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-navy: #061B33;
+  --color-navy-deep: #040F1E;
+  --color-navy-mid: #071D49;
+  --color-navy-card: #0B2348;
+  --color-gold: #C8A25A;
+  --color-gold-light: #D9B96E;
+  --color-gold-dark: #A8823A;
+  --color-cream: #F8F7F4;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: auto;
+  scroll-padding-top: 160px;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #061B33;
+  color: #ffffff;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-playfair {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+}
+
+/* Gold gradient text */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #B8923F 0%, #C8A25A 40%, #E8C980 70%, #C8A25A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glassmorphism navbar */
+.glass-nav {
+  background: rgba(4, 15, 30, 0.9) !important;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(200, 162, 90, 0.2);
+}
+
+/* Procedure card hover */
+.procedure-card {
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.4s ease;
+}
+
+.procedure-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 0 2px #C8A25A, 0 32px 64px rgba(0,0,0,0.5);
+}
+
+.procedure-card:hover .card-img {
+  transform: scale(1.05);
+}
+
+.card-img {
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Quiz card selected state */
+.quiz-option {
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.quiz-option:hover {
+  border-color: #C8A25A;
+  background: rgba(200, 162, 90, 0.08);
+}
+
+.quiz-option.selected {
+  border-color: #C8A25A;
+  background: rgba(200, 162, 90, 0.12);
+}
+
+/* Gold range slider */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 3px;
+  background: linear-gradient(to right, #C8A25A 0%, #C8A25A var(--val, 0%), #D4D0C8 var(--val, 0%), #D4D0C8 100%);
+  border-radius: 2px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  background: #C8A25A;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  background: #C8A25A;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #040F1E;
+}
+::-webkit-scrollbar-thumb {
+  background: #C8A25A;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D9B96E;
+}
+
+/* Recovery timeline */
+.timeline-line {
+  height: 2px;
+  background: rgba(200, 162, 90, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #C8A25A, #D9B96E);
+  transition: width 0.1s linear;
+}
+
+/* Star rating */
+.star-filled {
+  color: #C8A25A;
+}
+
+/* Button pulse animation */
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200, 162, 90, 0.4); }
+  50% { box-shadow: 0 0 0 10px rgba(200, 162, 90, 0); }
+}
+
+.btn-pulse {
+  animation: pulse-gold 2s infinite;
+}
+
+/* Robotic step cards */
+.robotic-card {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.robotic-card.animated {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
