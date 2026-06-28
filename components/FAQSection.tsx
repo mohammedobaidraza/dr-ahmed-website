@@ -75,7 +75,9 @@ export default function FAQSection() {
               answers specific to your situation.
             </p>
             <a
-              href="#contact"
+              href="https://www.endeavorhealth.org/providers/mohammed-m-ahmed"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#C8A25A] hover:bg-[#D9B96E] text-[#061B33] font-bold px-6 py-3 rounded text-[12px] tracking-[0.1em] uppercase transition-all duration-200 shadow-sm hover:shadow-[0_6px_24px_rgba(200,162,90,0.3)]"
             >
               Request a Consultation
@@ -176,7 +178,9 @@ export default function FAQSection() {
                 Every patient is different. Let&rsquo;s discuss your specific situation and find the right path forward together.
               </p>
               <a
-                href="#contact"
+                href="https://www.endeavorhealth.org/providers/mohammed-m-ahmed"
+              target="_blank"
+              rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-[#C8A25A] hover:bg-[#D9B96E] text-[#061B33] font-bold px-5 py-2.5 rounded text-[12px] tracking-[0.08em] uppercase transition-all duration-200"
               >
                 Schedule a Consultation

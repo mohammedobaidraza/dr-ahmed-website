@@ -18,7 +18,6 @@ const footerNav = [
   { label: "About Dr. Ahmed", href: "#about" },
   { label: "Procedures", href: "#procedures" },
   { label: "My Approach", href: "#approach" },
-  { label: "Recovery", href: "#recovery" },
   { label: "Reviews", href: "#reviews" },
   { label: "FAQ", href: "#faq" },
 ];
@@ -47,11 +46,11 @@ export default function Footer() {
       <div className="max-w-[1400px] mx-auto px-6 lg:px-10">
 
         {/* ── Main grid ─────────────────────────────────────────────── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[220px_1fr_1fr_160px] gap-x-10 gap-y-12 py-14 border-b border-white/[0.06]">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[220px_1fr_160px_1fr_120px] gap-x-10 gap-y-12 py-14 border-b border-white/[0.06]">
 
           {/* Col 1 — Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-5">
+            <div className="flex items-center gap-3 mb-3">
               <Image
                 src="/assets/mma-logo.png"
                 alt="MMA logo"
@@ -69,6 +68,12 @@ export default function Footer() {
                 </p>
               </div>
             </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/assets/endeavor-health-logo.svg"
+              alt="Endeavor Health"
+              style={{ height: 22, width: "auto", opacity: 0.45, marginBottom: 16 }}
+            />
             <p className="text-white/35 text-[12.5px] leading-relaxed mb-5">
               Board-certified, fellowship-trained. Subspecialized in minimally
               invasive robotic-assisted joint replacement.
@@ -103,9 +108,29 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Col 3 — Operates At */}
+          {/* Col 3 — Professional Memberships */}
           <div>
-            {/* Endeavor Health logo */}
+            <p className="text-[#C8A25A] text-[10px] font-bold tracking-[0.24em] uppercase mb-4">
+              Memberships
+            </p>
+            <div className="space-y-6">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/assets/aaos-logo.svg"
+                alt="AAOS – American Academy of Orthopaedic Surgeons"
+                style={{ height: 52, width: "auto", objectFit: "contain", display: "block", opacity: 0.85 }}
+              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/assets/aahks-logo.svg"
+                alt="AAHKS – American Association of Hip and Knee Surgeons"
+                style={{ height: 52, width: "auto", objectFit: "contain", display: "block", opacity: 0.85 }}
+              />
+            </div>
+          </div>
+
+          {/* Col 4 — Operates At */}
+          <div>
             <div className="mb-4">
               <p className="text-white/25 text-[9px] tracking-[0.2em] uppercase mb-2">Operates At</p>
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -129,7 +154,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Col 4 — Navigation */}
+          {/* Col 5 — Navigation */}
           <div>
             <p className="text-[#C8A25A] text-[10px] font-bold tracking-[0.24em] uppercase mb-4">
               Navigate

@@ -8,14 +8,13 @@ const navLinks = [
   { label: "About Dr. Ahmed", href: "#about" },
   { label: "Procedures", href: "#procedures" },
   { label: "My Approach", href: "#approach" },
-  { label: "Recovery", href: "#recovery" },
   { label: "Reviews", href: "#reviews" },
   { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
 ];
 
 const NAVBAR_OFFSET = 160;
-const TRACKED_SECTIONS = ["about", "locations", "procedures", "approach", "recovery", "reviews", "faq", "contact"];
+const TRACKED_SECTIONS = ["about", "locations", "procedures", "approach", "reviews", "faq", "contact"];
 
 const clinicLocations = ["Elmhurst Center For Health", "Addison", "Lombard"];
 const hospitalAffiliations = ["Elmhurst Hospital", "Plainfield Surgical Center", "Edwards Hospital"];
@@ -90,18 +89,6 @@ export default function Navbar() {
           <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 py-1.5 flex items-center justify-between gap-6">
             <div className="flex items-center gap-2 min-w-0">
               <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#C8A25A" strokeWidth="2.2" strokeLinecap="round" className="shrink-0">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
-              </svg>
-              <span className={`text-[9.5px] font-bold tracking-[0.16em] uppercase mr-1 shrink-0 ${scrolled ? "text-[#061B33]/45" : "text-white/40"}`}>Clinic:</span>
-              {clinicLocations.map((loc, i) => (
-                <span key={loc} className="flex items-center gap-2">
-                  <span className={`text-[10.5px] font-medium whitespace-nowrap ${scrolled ? "text-[#061B33]/70" : "text-white/70"}`}>{loc}</span>
-                  {i < clinicLocations.length - 1 && <span className={`text-[9px] ${scrolled ? "text-[#061B33]/25" : "text-white/25"}`}>·</span>}
-                </span>
-              ))}
-            </div>
-            <div className="flex items-center gap-2 min-w-0">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#C8A25A" strokeWidth="2.2" strokeLinecap="round" className="shrink-0">
                 <rect x="3" y="3" width="18" height="18" rx="2" /><path d="M9 12h6M12 9v6" />
               </svg>
               <span className={`text-[9.5px] font-bold tracking-[0.16em] uppercase mr-1 shrink-0 ${scrolled ? "text-[#061B33]/45" : "text-white/40"}`}>Operates At:</span>
@@ -109,6 +96,18 @@ export default function Navbar() {
                 <span key={h} className="flex items-center gap-2">
                   <span className={`text-[10.5px] font-medium whitespace-nowrap ${scrolled ? "text-[#061B33]/70" : "text-white/70"}`}>{h}</span>
                   {i < hospitalAffiliations.length - 1 && <span className={`text-[9px] ${scrolled ? "text-[#061B33]/25" : "text-white/25"}`}>·</span>}
+                </span>
+              ))}
+            </div>
+            <div className="flex items-center gap-2 min-w-0">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#C8A25A" strokeWidth="2.2" strokeLinecap="round" className="shrink-0">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
+              </svg>
+              <span className={`text-[9.5px] font-bold tracking-[0.16em] uppercase mr-1 shrink-0 ${scrolled ? "text-[#061B33]/45" : "text-white/40"}`}>Clinic:</span>
+              {clinicLocations.map((loc, i) => (
+                <span key={loc} className="flex items-center gap-2">
+                  <span className={`text-[10.5px] font-medium whitespace-nowrap ${scrolled ? "text-[#061B33]/70" : "text-white/70"}`}>{loc}</span>
+                  {i < clinicLocations.length - 1 && <span className={`text-[9px] ${scrolled ? "text-[#061B33]/25" : "text-white/25"}`}>·</span>}
                 </span>
               ))}
             </div>
@@ -132,7 +131,14 @@ export default function Navbar() {
               <div className="leading-snug min-w-0">
                 <p className={`font-semibold text-[12px] sm:text-[14px] tracking-[0.14em] uppercase truncate ${scrolled ? "text-[#061B33]" : "text-white"}`}>MOHAMMED AHMED, MD</p>
                 <p className="text-[#C8A25A] text-[9px] sm:text-[10.5px] tracking-[0.18em] uppercase">HIP &amp; KNEE REPLACEMENT</p>
-                <p className={`text-[9px] sm:text-[9.5px] tracking-[0.13em] uppercase mt-0.5 font-medium ${scrolled ? "text-[#061B33]/40" : "text-white/35"}`}>Endeavor Health</p>
+                <Image
+                  src="/assets/endeavor-health-logo.svg"
+                  alt="Endeavor Health"
+                  width={130}
+                  height={22}
+                  className="object-contain mt-1"
+                  style={scrolled ? { filter: "brightness(0)", opacity: 0.45 } : { filter: "brightness(0) invert(1)", opacity: 0.5 }}
+                />
               </div>
             </a>
 

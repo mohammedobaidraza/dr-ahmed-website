@@ -42,3 +42,6 @@ next-env.d.ts
 
 # large video files (host separately via CDN)
 public/assets/*.mp4
+
+# Local Netlify folder
+.netlify

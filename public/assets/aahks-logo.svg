@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 68" role="img" aria-label="AAHKS – American Association of Hip and Knee Surgeons">
+
+  <!-- Thin top rule -->
+  <rect x="0" y="0" width="280" height="1.5" rx="0.75" fill="#C8A25A" opacity="0.7"/>
+
+  <!-- AAHKS wordmark -->
+  <text
+    x="0" y="38"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="36"
+    font-weight="700"
+    letter-spacing="6"
+    fill="#ffffff"
+  >AAHKS</text>
+
+  <!-- Thin divider -->
+  <rect x="0" y="46" width="184" height="1" fill="rgba(255,255,255,0.18)"/>
+
+  <!-- Full name -->
+  <text
+    x="0" y="60"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="7.8"
+    font-weight="400"
+    letter-spacing="1.8"
+    fill="rgba(255,255,255,0.5)"
+  >AMERICAN ASSOCIATION OF HIP AND KNEE SURGEONS</text>
+
+</svg>

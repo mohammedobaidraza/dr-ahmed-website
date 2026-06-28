@@ -167,7 +167,7 @@ export default function RoboticProcess() {
             </div>
           </motion.div>
 
-          {/* ── Col 2: consultation photo ── */}
+          {/* ── Col 2: video ── */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -191,14 +191,12 @@ export default function RoboticProcess() {
               onPause={() => setPlaying(false)}
               onEnded={() => setPlaying(false)}
             />
-            {/* Vignette — hidden once playing so controls are visible */}
             {!playing && (
               <div
                 className="absolute inset-0 pointer-events-none"
                 style={{ background: "linear-gradient(to bottom, transparent 60%, rgba(6,27,51,0.2) 100%)" }}
               />
             )}
-            {/* Big play button overlay — only shown before first play */}
             {!playing && (
               <button
                 onClick={togglePlay}
