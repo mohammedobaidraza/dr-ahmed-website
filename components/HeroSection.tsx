@@ -115,17 +115,27 @@ export default function HeroSection() {
       <div className="lg:hidden relative flex flex-col min-h-[100svh]">
         {/* Doctor photo */}
         <div className="relative w-full" style={{ height: "85vw", minHeight: 320, maxHeight: 560 }}>
+          {/* Radial glow behind doctor */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: "radial-gradient(ellipse 80% 75% at 50% 45%, rgba(15,42,105,0.38) 0%, transparent 70%)",
+            }}
+          />
+          {/* Transparent PNG cutout — floats directly on hero background */}
           <Image
-            src="/assets/dr-ahmed-profile.png"
+            src="/assets/dr-ahmed-cutout.png"
             alt="Dr. Mohammed Ahmed, MD"
             fill
             className="object-contain object-top"
             priority
           />
+          {/* Bottom coat fade */}
           <div
-            className="absolute inset-0 pointer-events-none"
+            className="absolute inset-x-0 bottom-0 pointer-events-none"
             style={{
-              background: "linear-gradient(to bottom, rgba(4,15,30,0.15) 0%, transparent 40%, rgba(6,27,51,1) 100%)",
+              height: "38%",
+              background: "linear-gradient(to top, #061B33 0%, rgba(6,27,51,0.7) 45%, transparent 100%)",
             }}
           />
         </div>
@@ -323,21 +333,29 @@ export default function HeroSection() {
           transition={{ duration: 1.2, delay: 0.3, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
           className="flex-1 relative overflow-hidden"
         >
-          {/* Full-height image anchored to bottom */}
-          <Image
-            src="/assets/dr-ahmed-profile.png"
-            alt="Dr. Mohammed Ahmed, MD – Hip & Knee Replacement Surgeon"
-            fill
-            className="object-contain object-bottom"
-            style={{ filter: "brightness(1.08) contrast(1.02)" }}
-            priority
-          />
-          {/* Blend: left edge into navy + bottom coat into navy. Face (top 55%) untouched. */}
+          {/* Radial navy glow behind doctor — depth only, no rectangle */}
           <div
             className="absolute inset-0 pointer-events-none"
             style={{
-              background:
-                "linear-gradient(to right, #061B33 0%, rgba(6,27,51,0.55) 18%, transparent 42%), linear-gradient(to top, #061B33 0%, rgba(6,27,51,0.4) 22%, transparent 50%)",
+              background: "radial-gradient(ellipse 72% 62% at 56% 40%, rgba(15,42,105,0.48) 0%, transparent 68%)",
+            }}
+          />
+
+          {/* Transparent PNG cutout — doctor floats directly on hero background */}
+          <Image
+            src="/assets/dr-ahmed-cutout.png"
+            alt="Dr. Mohammed Ahmed, MD – Hip & Knee Replacement Surgeon"
+            fill
+            className="object-contain object-bottom"
+            priority
+          />
+
+          {/* Bottom coat fade into hero */}
+          <div
+            className="absolute inset-x-0 bottom-0 pointer-events-none"
+            style={{
+              height: "32%",
+              background: "linear-gradient(to top, #061B33 0%, rgba(6,27,51,0.6) 48%, transparent 100%)",
             }}
           />
 
@@ -363,51 +381,53 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* ── Credentials strip — full width, bottom of hero ── */}
+      {/* ── Credentials trust bar ── */}
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.9 }}
         className="relative z-10"
-        style={{ borderTop: "1px solid rgba(200,162,90,0.15)" }}
+        style={{ borderTop: "1px solid rgba(200,162,90,0.18)" }}
       >
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
           <div className="grid grid-cols-2 lg:grid-cols-4">
             {[
               {
-                icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8A25A" strokeWidth="1.6" strokeLinecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9,12 11,14 15,10" strokeWidth="1.8"/></svg>,
+                icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C8A25A" strokeWidth="1.6" strokeLinecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9,12 11,14 15,10" strokeWidth="1.8"/></svg>,
                 label: "Board-Certified",
                 sub: "American Board of Orthopaedic Surgery",
               },
               {
-                icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8A25A" strokeWidth="1.6" strokeLinecap="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>,
+                icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C8A25A" strokeWidth="1.6" strokeLinecap="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>,
                 label: "Fellowship-Trained",
                 sub: "Adult Reconstruction, Cleveland Clinic",
               },
               {
-                icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8A25A" strokeWidth="1.6" strokeLinecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>,
+                icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C8A25A" strokeWidth="1.6" strokeLinecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>,
                 label: "Robotic-Assisted",
-                sub: "Robot-assisted knee & hip replacement",
+                sub: "Stryker Mako robotic knee & hip replacement",
               },
               {
-                icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C8A25A" strokeWidth="1.6" strokeLinecap="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="#C8A25A"/></svg>,
+                icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C8A25A" strokeWidth="1.6" strokeLinecap="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="#C8A25A"/></svg>,
                 label: "Subspecialized",
-                sub: "Practice focused on hip & knee replacement",
+                sub: "Practice exclusively focused on hip & knee",
               },
-            ].map((item, i) => (
+            ].map((cred, i) => (
               <div
-                key={item.label}
-                className="px-6 py-6 flex flex-col gap-2"
+                key={cred.label}
+                className="flex items-start gap-4 px-6 lg:px-8 py-7"
                 style={{
-                  borderRight: i < 3 ? "1px solid rgba(200,162,90,0.1)" : "none",
-                  borderTop: i >= 2 ? "1px solid rgba(200,162,90,0.08)" : "none",
+                  borderRight: i < 3 ? "1px solid rgba(255,255,255,0.05)" : "none",
+                  borderTop: i >= 2 ? "1px solid rgba(255,255,255,0.04)" : "none",
                 }}
               >
-                <div className="mb-1">{item.icon}</div>
-                <p className="text-[#C8A25A] text-[10px] font-bold tracking-[0.22em] uppercase leading-none">
-                  {item.label}
-                </p>
-                <p className="text-white/50 text-[12.5px] leading-snug">{item.sub}</p>
+                <div className="shrink-0 mt-0.5 opacity-90">{cred.icon}</div>
+                <div>
+                  <p className="text-[#C8A25A] text-[10px] font-bold tracking-[0.22em] uppercase mb-1.5 leading-none">
+                    {cred.label}
+                  </p>
+                  <p className="text-white/40 text-[12px] leading-snug">{cred.sub}</p>
+                </div>
               </div>
             ))}
           </div>
