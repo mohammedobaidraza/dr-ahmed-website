@@ -116,15 +116,15 @@ export default function Footer() {
             <div className="space-y-6">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/assets/aaos-logo.svg"
+                src="/assets/aaos-logo.png"
                 alt="AAOS – American Academy of Orthopaedic Surgeons"
-                style={{ height: 52, width: "auto", objectFit: "contain", display: "block", opacity: 0.85 }}
+                style={{ height: 52, width: "auto", objectFit: "contain", display: "block", opacity: 0.8 }}
               />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/assets/aahks-logo.svg"
+                src="/assets/aahks-logo.png"
                 alt="AAHKS – American Association of Hip and Knee Surgeons"
-                style={{ height: 52, width: "auto", objectFit: "contain", display: "block", opacity: 0.85 }}
+                style={{ height: 52, width: "auto", objectFit: "contain", display: "block", opacity: 0.8 }}
               />
             </div>
           </div>

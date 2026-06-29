@@ -99,6 +99,12 @@ export default function Navbar() {
                 </span>
               ))}
             </div>
+
+            {/* Center tagline */}
+            <p className={`hidden 2xl:block text-[9.5px] tracking-[0.14em] text-center shrink-0 italic ${scrolled ? "text-[#061B33]/40" : "text-white/38"}`}>
+              Board-certified &middot; Fellowship-trained &middot; Subspecialized in minimally invasive robotic-assisted joint replacement
+            </p>
+
             <div className="flex items-center gap-2 min-w-0">
               <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#C8A25A" strokeWidth="2.2" strokeLinecap="round" className="shrink-0">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
