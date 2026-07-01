@@ -20,12 +20,12 @@ export default function RelatedProcedures({ currentSlug }: RelatedProceduresProp
             href={`/blog/${p.slug}`}
             className="group block rounded-lg overflow-hidden bg-[#0e2038] hover:opacity-90 transition"
           >
-            <div className="aspect-[3/4]">
+            <div className="aspect-video">
               <img
-                src={p.heroImage}
+                src={p.blogHeroImage}
                 alt={p.title}
-                width={380}
-                height={620}
+                width={480}
+                height={270}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -42,7 +42,7 @@ export default function RelatedProcedures({ currentSlug }: RelatedProceduresProp
       </div>
       <div className="mt-8">
         <Link
-          href="/#procedures"
+          href="/procedures"
           className="text-[#c9974a] font-bold text-sm tracking-wide hover:underline"
         >
           &larr; View All Procedures
