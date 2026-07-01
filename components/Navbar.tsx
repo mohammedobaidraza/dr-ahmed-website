@@ -132,7 +132,6 @@ export default function Navbar() {
               <div className="leading-snug min-w-0">
                 <p className={`font-semibold text-[13px] sm:text-[15.5px] tracking-[0.14em] uppercase truncate ${scrolled ? "text-[#061B33]" : "text-white"}`}>MOHAMMED M. AHMED, MD</p>
                 <p className="text-[#C8A25A] text-[10px] sm:text-[11.5px] tracking-[0.18em] uppercase">HIP &amp; KNEE REPLACEMENT</p>
-                
                 <p className={`hidden sm:block text-[9.5px] leading-snug mt-1.5 max-w-[230px] ${scrolled ? "text-[#061B33]/55" : "text-white/55"}`}>
                   Board-certified, fellowship-trained. Specialized in minimally invasive robotic-assisted joint replacement.
                 </p>
@@ -150,8 +149,8 @@ export default function Navbar() {
                 className="object-contain"
                 style={
                   scrolled
-                    ? { filter: "brightness(0)", opacity: 0.45 }
-                    : { filter: "brightness(0) invert(1)", opacity: 0.55 }
+                    ? { filter: "brightness(0)", opacity: 0.85 }
+                    : { filter: "brightness(0) invert(1)", opacity: 0.9 }
                 }
               />
 
@@ -166,7 +165,6 @@ export default function Navbar() {
                 href="tel:+16306467000"
                 className="flex items-center gap-2"
               >
-                {/* phone icon */}
                 <span className={`text-[12px] ${scrolled ? "text-[#061B33]/60" : "text-white/60"}`}>
                   (630) 646-7000
                 </span>

@@ -8,15 +8,16 @@ import ProcedureBreadcrumb from "@/components/blog/ProcedureBreadcrumb";
 import RelatedProcedures from "@/components/blog/RelatedProcedures";
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export function generateStaticParams() {
   return procedures.map((p) => ({ slug: p.slug }));
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const procedure = getProcedureBySlug(params.slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const procedure = getProcedureBySlug(slug);
   if (!procedure) return {};
 
   const url = `${SITE_URL}/blog/${procedure.slug}`;
@@ -37,9 +38,10 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-export default function ProcedureBlogPost({ params }: Props) {
-  const procedure = getProcedureBySlug(params.slug);
-  const content = blogContent[params.slug];
+export default async function ProcedureBlogPost({ params }: Props) {
+  const { slug } = await params;
+  const procedure = getProcedureBySlug(slug);
+  const content = blogContent[slug];
 
   if (!procedure || !content) {
     notFound();
@@ -61,7 +63,8 @@ export default function ProcedureBlogPost({ params }: Props) {
   };
 
   return (
-    <main className="max-w-3xl mx-auto px-6 py-16">
+    <main className="min-h-screen bg-[#F8F7F4]">
+    <div className="max-w-3xl mx-auto px-6 py-16">
       <script
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger
@@ -90,7 +93,7 @@ export default function ProcedureBlogPost({ params }: Props) {
       */}
       <div className="w-full aspect-[16/9] rounded-xl overflow-hidden mb-10 bg-[#0e2038]">
         <img
-          src={procedure!.heroImage}
+          src={procedure!.blogHeroImage}
           alt={procedure!.title}
           width={1600}
           height={900}
@@ -157,6 +160,7 @@ export default function ProcedureBlogPost({ params }: Props) {
       </div>
 
       <RelatedProcedures currentSlug={procedure!.slug} />
+    </div>
     </main>
   );
 }

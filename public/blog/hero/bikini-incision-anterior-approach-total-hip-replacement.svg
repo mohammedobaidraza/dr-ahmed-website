@@ -1,0 +1,80 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1730"/>
+      <stop offset="100%" stop-color="#122745"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3a7dc4" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#0a1730" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bone" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faf6ee"/>
+      <stop offset="55%" stop-color="#e4dccb"/>
+      <stop offset="100%" stop-color="#b8ae9a"/>
+    </linearGradient>
+    <linearGradient id="boneShine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8edf2"/>
+      <stop offset="50%" stop-color="#aebbc9"/>
+      <stop offset="100%" stop-color="#7c8a9a"/>
+    </linearGradient>
+    <linearGradient id="implantGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8c580"/>
+      <stop offset="100%" stop-color="#b8903f"/>
+    </linearGradient>
+    <filter id="softShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="14" result="blur"/>
+      <feOffset in="blur" dx="0" dy="10" result="offsetBlur"/>
+      <feComponentTransfer in="offsetBlur" result="shadow">
+        <feFuncA type="linear" slope="0.45"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+</defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="992.0" cy="378.0" r="480" fill="url(#glow)"/>
+
+  <text x="100" y="90" font-family="Arial, sans-serif" font-size="22" font-weight="700"
+        letter-spacing="3" fill="#d4a15c">HIP · MINIMALLY INVASIVE</text>
+
+  <g filter="url(#softShadow)">
+    
+  <g transform="translate(950,420)">
+    <!-- iliac wing -->
+    <path d="M-160,-190 C-90,-260 30,-255 90,-190 C130,-145 130,-90 95,-55
+             C70,-30 30,-25 -5,-40 C-10,-60 -18,-75 -35,-85
+             C-70,-105 -110,-100 -140,-75 C-165,-115 -180,-155 -160,-190 Z"
+          fill="url(#bone)" stroke="#8f8672" stroke-width="2.5"/>
+    <path d="M-150,-185 C-90,-245 20,-240 80,-185" fill="none" stroke="url(#boneShine)" stroke-width="16" stroke-linecap="round" opacity="0.45"/>
+
+    <!-- acetabulum (socket) -->
+    <circle cx="10" cy="-10" r="46" fill="#0a1730" stroke="url(#bone)" stroke-width="10"/>
+    <circle cx="10" cy="-10" r="34" fill="url(#glow)" opacity="0.6"/>
+
+    <!-- femoral head + neck -->
+    <circle cx="10" cy="-10" r="26" fill="url(#bone)" stroke="#8f8672" stroke-width="2"/>
+    <ellipse cx="2" cy="-18" rx="10" ry="8" fill="url(#boneShine)" opacity="0.6"/>
+    <path d="M-2,14 C-14,40 -22,70 -18,100" fill="none" stroke="url(#bone)" stroke-width="30" stroke-linecap="round"/>
+
+    <!-- femoral shaft -->
+    <path d="M-30,95 C-40,150 -38,220 -26,300 L14,300 C24,220 26,150 16,95 Z"
+          fill="url(#bone)" stroke="#8f8672" stroke-width="2"/>
+    <path d="M-24,105 C-32,155 -30,210 -22,270" fill="none" stroke="url(#boneShine)" stroke-width="12" stroke-linecap="round" opacity="0.4"/>
+
+    <!-- bikini incision: shallow curve along the inguinal crease -->
+    <path d="M-95,-40 C-55,-5 5,10 55,-15" fill="none" stroke="#c0392b" stroke-width="5"
+          stroke-linecap="round" stroke-dasharray="2 10"/>
+  </g>
+
+  </g>
+
+  <text font-family="Georgia, 'Times New Roman', serif" font-size="46" font-weight="700" fill="#ffffff"><tspan x="100" y="724">Bikini Incision Anterior</tspan><tspan x="100" y="780">Approach Total Hip Replacement</tspan></text>
+</svg>

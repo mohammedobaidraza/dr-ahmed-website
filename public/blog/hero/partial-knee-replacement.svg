@@ -1,0 +1,82 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1730"/>
+      <stop offset="100%" stop-color="#122745"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3a7dc4" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#0a1730" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bone" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faf6ee"/>
+      <stop offset="55%" stop-color="#e4dccb"/>
+      <stop offset="100%" stop-color="#b8ae9a"/>
+    </linearGradient>
+    <linearGradient id="boneShine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8edf2"/>
+      <stop offset="50%" stop-color="#aebbc9"/>
+      <stop offset="100%" stop-color="#7c8a9a"/>
+    </linearGradient>
+    <linearGradient id="implantGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8c580"/>
+      <stop offset="100%" stop-color="#b8903f"/>
+    </linearGradient>
+    <filter id="softShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="14" result="blur"/>
+      <feOffset in="blur" dx="0" dy="10" result="offsetBlur"/>
+      <feComponentTransfer in="offsetBlur" result="shadow">
+        <feFuncA type="linear" slope="0.45"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+</defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="992.0" cy="378.0" r="480" fill="url(#glow)"/>
+
+  <text x="100" y="90" font-family="Arial, sans-serif" font-size="22" font-weight="700"
+        letter-spacing="3" fill="#d4a15c">KNEE</text>
+
+  <g filter="url(#softShadow)">
+    
+  <g transform="translate(950,430)">
+    <path d="M-42,-260 C-50,-190 -48,-100 -40,-30" fill="none" stroke="url(#bone)" stroke-width="46" stroke-linecap="round"/>
+    <path d="M-42,-260 C-50,-190 -48,-120 -42,-60" fill="none" stroke="url(#boneShine)" stroke-width="16" stroke-linecap="round" opacity="0.4"/>
+    <path d="M40,-260 C48,-190 46,-100 38,-30" fill="none" stroke="url(#bone)" stroke-width="46" stroke-linecap="round"/>
+
+    <!-- medial condyle: replaced with metal implant -->
+    <path d="M-58,-10 C-62,10 -58,32 -40,38 C-24,42 -10,34 -6,14 C-2,-6 -8,-24 -26,-28 C-42,-31 -54,-24 -58,-10 Z"
+          fill="url(#metal)" stroke="#5c6b7a" stroke-width="2"/>
+    <path d="M-54,-8 C-57,6 -54,22 -42,28" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity="0.55"/>
+
+    <!-- lateral condyle: preserved natural bone -->
+    <ellipse cx="34" cy="6" rx="28" ry="30" fill="url(#bone)" stroke="#8f8672" stroke-width="2"/>
+    <ellipse cx="26" cy="-4" rx="12" ry="10" fill="url(#boneShine)" opacity="0.5"/>
+
+    <!-- joint line -->
+    <rect x="-60" y="46" width="120" height="12" rx="6" fill="#0a1730"/>
+
+    <!-- tibial tray under medial side -->
+    <path d="M-58,58 C-64,68 -62,84 -46,88 L-4,88 C6,86 8,74 4,60 Z"
+          fill="url(#metal)" stroke="#5c6b7a" stroke-width="2"/>
+    <path d="M-52,62 C-56,70 -55,80 -44,84" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+
+    <!-- tibial shaft -->
+    <path d="M-40,86 C-46,190 -42,270 -30,340 L28,340 C38,270 42,190 36,86 Z"
+          fill="url(#bone)" stroke="#8f8672" stroke-width="2"/>
+    <path d="M-34,95 C-40,180 -37,250 -28,310" fill="none" stroke="url(#boneShine)" stroke-width="12" stroke-linecap="round" opacity="0.4"/>
+    <ellipse cx="-1" cy="352" rx="28" ry="14" fill="url(#bone)" stroke="#8f8672" stroke-width="2"/>
+  </g>
+
+  </g>
+
+  <text font-family="Georgia, 'Times New Roman', serif" font-size="46" font-weight="700" fill="#ffffff"><tspan x="100" y="780">Partial Knee Replacement</tspan></text>
+</svg>

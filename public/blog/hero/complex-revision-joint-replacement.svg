@@ -1,0 +1,91 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1730"/>
+      <stop offset="100%" stop-color="#122745"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3a7dc4" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#0a1730" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bone" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faf6ee"/>
+      <stop offset="55%" stop-color="#e4dccb"/>
+      <stop offset="100%" stop-color="#b8ae9a"/>
+    </linearGradient>
+    <linearGradient id="boneShine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8edf2"/>
+      <stop offset="50%" stop-color="#aebbc9"/>
+      <stop offset="100%" stop-color="#7c8a9a"/>
+    </linearGradient>
+    <linearGradient id="implantGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8c580"/>
+      <stop offset="100%" stop-color="#b8903f"/>
+    </linearGradient>
+    <filter id="softShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="14" result="blur"/>
+      <feOffset in="blur" dx="0" dy="10" result="offsetBlur"/>
+      <feComponentTransfer in="offsetBlur" result="shadow">
+        <feFuncA type="linear" slope="0.45"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+</defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="992.0" cy="378.0" r="480" fill="url(#glow)"/>
+
+  <text x="100" y="90" font-family="Arial, sans-serif" font-size="22" font-weight="700"
+        letter-spacing="3" fill="#d4a15c">HIP &amp; KNEE</text>
+
+  <g filter="url(#softShadow)">
+    
+  <g transform="translate(900,430)">
+    <!-- lumbar spine, stacked above the pelvis, fully in-frame -->
+    <g transform="translate(-10,-330)">
+      <rect x="-24" y="0"  width="48" height="34" rx="8" fill="url(#bone)" stroke="#8f8672" stroke-width="2"/>
+      <rect x="-24" y="42" width="48" height="34" rx="8" fill="url(#bone)" stroke="#8f8672" stroke-width="2"/>
+      <rect x="-24" y="84" width="48" height="34" rx="8" fill="url(#bone)" stroke="#8f8672" stroke-width="2"/>
+      <rect x="-20" y="4" width="10" height="26" rx="4" fill="url(#boneShine)" opacity="0.4"/>
+      <rect x="-20" y="46" width="10" height="26" rx="4" fill="url(#boneShine)" opacity="0.4"/>
+    </g>
+
+    <!-- pelvis -->
+    <path d="M-165,-170 C-100,-235 -10,-235 25,-195 C40,-178 100,-178 130,-215
+             C160,-175 165,-115 135,-75 C110,-42 65,-35 30,-55
+             C15,-75 -20,-80 -50,-65 C-75,-52 -90,-25 -85,10
+             C-115,5 -140,-25 -150,-65 C-170,-95 -180,-130 -165,-170 Z"
+          fill="url(#bone)" stroke="#8f8672" stroke-width="2.5"/>
+    <path d="M-155,-165 C-95,-220 -15,-220 20,-185" fill="none" stroke="url(#boneShine)" stroke-width="14" stroke-linecap="round" opacity="0.4"/>
+
+    <!-- left hip: natural socket + head -->
+    <circle cx="-55" cy="-20" r="34" fill="#0a1730" stroke="url(#bone)" stroke-width="8"/>
+    <circle cx="-55" cy="-20" r="20" fill="url(#bone)" stroke="#8f8672" stroke-width="2"/>
+    <path d="M-60,-2 C-68,25 -70,60 -64,95" fill="none" stroke="url(#bone)" stroke-width="24" stroke-linecap="round"/>
+    <path d="M-72,95 C-78,170 -74,250 -64,320 L-40,320 C-34,250 -32,170 -40,95 Z"
+          fill="url(#bone)" stroke="#8f8672" stroke-width="2"/>
+
+    <!-- right hip: revision implant with long stem (metallic gold) -->
+    <circle cx="80" cy="-40" r="34" fill="#0a1730" stroke="url(#implantGold)" stroke-width="8"/>
+    <circle cx="80" cy="-40" r="18" fill="url(#implantGold)" stroke="#8a6a28" stroke-width="2"/>
+    <path d="M74,-24 C68,10 66,55 72,100 L96,100 C102,55 100,10 92,-24 Z"
+          fill="url(#implantGold)" stroke="#8a6a28" stroke-width="2"/>
+    <path d="M78,-18 C74,10 73,45 77,80" fill="none" stroke="#fff3d6" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+    <path d="M70,105 C64,180 66,255 76,320 L98,320 C106,255 106,180 96,105 Z"
+          fill="url(#bone)" stroke="#8f8672" stroke-width="2"/>
+    <!-- fixation screws -->
+    <circle cx="82" cy="20" r="4" fill="#8a6a28"/>
+    <circle cx="86" cy="55" r="4" fill="#8a6a28"/>
+  </g>
+
+  </g>
+
+  <text font-family="Georgia, 'Times New Roman', serif" font-size="46" font-weight="700" fill="#ffffff"><tspan x="100" y="724">Complex &amp; Revision Joint</tspan><tspan x="100" y="780">Replacement</tspan></text>
+</svg>

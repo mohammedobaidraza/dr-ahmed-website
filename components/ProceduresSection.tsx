@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { procedures as procedureData } from "@/lib/procedures";
 
 /* ── X-ray style SVG illustrations ── */
 const XrayTotalKnee = () => (
@@ -168,41 +169,6 @@ const XrayRevision = () => (
   </svg>
 );
 
-/* ── Procedure data ── */
-const procedures = [
-  {
-    slug: "muscle-tendon-sparing-subvastus-total-knee-replacement",
-    category: "KNEE · MINIMALLY INVASIVE",
-    title: "Muscle/Tendon Sparing Subvastus Total Knee Replacement",
-    description:
-      "Works below the quadriceps tendon, avoiding cutting through it, for less pain, better early function, and a more natural feel after surgery.",
-    photo: "https://drahmedtest.lovable.app/assets/proc-knee-total-B_iZfErq.jpg",
-  },
-  {
-    slug: "partial-knee-replacement",
-    category: "KNEE",
-    title: "Partial knee replacement",
-    description:
-      "Resurface only the damaged compartment. Preserve healthy bone and ligaments for a more natural outcome.",
-    photo: "https://drahmedtest.lovable.app/assets/proc-knee-partial-CVy689SG.jpg",
-  },
-  {
-    slug: "bikini-incision-anterior-approach-total-hip-replacement",
-    category: "HIP · MINIMALLY INVASIVE",
-    title: "Bikini Incision Anterior Approach Total Hip Replacement",
-    description:
-      "Muscle-sparing approach from the front with a cosmetically placed incision. Faster recovery, fewer restrictions, and reduced dislocation risk.",
-    photo: "https://drahmedtest.lovable.app/assets/proc-hip-anterior-w4nLZAuS.jpg",
-  },
-  {
-    slug: "complex-revision-joint-replacement",
-    category: "HIP & KNEE",
-    title: "Complex & revision joint replacement",
-    description:
-      "Expertise in complex primary and revision surgery for challenging cases requiring advanced reconstruction.",
-    photo: "https://drahmedtest.lovable.app/assets/proc-revision-DjxB73uc.jpg",
-  },
-];
 
 export default function ProceduresSection() {
   return (
@@ -238,21 +204,21 @@ export default function ProceduresSection() {
               Subspecialization matters. My practice is dedicated to hip and knee
               replacement, not a little bit of everything.
             </p>
-            <a
-              href="#contact"
+            <Link
+              href="/procedures"
               className="inline-flex items-center gap-2 text-[#C8A25A] text-[12px] font-bold tracking-[0.18em] uppercase hover:gap-4 transition-all duration-200"
             >
               VIEW ALL PROCEDURES
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12,5 19,12 12,19" />
               </svg>
-            </a>
+            </Link>
           </motion.div>
 
           {/* ── Cards ── */}
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
-            {procedures.map(({ slug, category, title, description, photo }, i) => (
-              <Link key={title} href={`/blog/${slug}`} className="block">
+            {procedureData.map(({ slug, label, title, cardBlurb, blogHeroImage }, i) => (
+              <Link key={slug} href={`/blog/${slug}`} className="block">
               <motion.div
                 initial={{ opacity: 0, y: 28 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -268,7 +234,7 @@ export default function ProceduresSection() {
                 {/* Photo area */}
                 <div className="relative overflow-hidden" style={{ height: 200 }}>
                   <img
-                    src={photo}
+                    src={blogHeroImage}
                     alt={title}
                     className="absolute inset-0 w-full h-full object-cover object-center card-img"
                     loading="lazy"
@@ -285,7 +251,7 @@ export default function ProceduresSection() {
                   {/* Category badge */}
                   <div className="absolute top-3 left-4 z-10">
                     <span className="text-[#C8A25A] text-[10px] font-bold tracking-[0.22em] uppercase">
-                      {category}
+                      {label}
                     </span>
                   </div>
                 </div>
@@ -299,7 +265,7 @@ export default function ProceduresSection() {
                     {title}
                   </h3>
                   <p className="text-white/50 text-[13px] leading-relaxed flex-1 mb-5">
-                    {description}
+                    {cardBlurb}
                   </p>
                   <span className="inline-flex items-center gap-1.5 text-[#C8A25A] text-[11px] font-bold tracking-[0.18em] uppercase group-hover:gap-3 transition-all duration-200">
                     LEARN MORE

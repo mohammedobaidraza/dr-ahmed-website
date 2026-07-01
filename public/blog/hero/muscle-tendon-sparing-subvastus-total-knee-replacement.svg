@@ -1,0 +1,86 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1730"/>
+      <stop offset="100%" stop-color="#122745"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3a7dc4" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#0a1730" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bone" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#faf6ee"/>
+      <stop offset="55%" stop-color="#e4dccb"/>
+      <stop offset="100%" stop-color="#b8ae9a"/>
+    </linearGradient>
+    <linearGradient id="boneShine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8edf2"/>
+      <stop offset="50%" stop-color="#aebbc9"/>
+      <stop offset="100%" stop-color="#7c8a9a"/>
+    </linearGradient>
+    <linearGradient id="implantGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8c580"/>
+      <stop offset="100%" stop-color="#b8903f"/>
+    </linearGradient>
+    <filter id="softShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="14" result="blur"/>
+      <feOffset in="blur" dx="0" dy="10" result="offsetBlur"/>
+      <feComponentTransfer in="offsetBlur" result="shadow">
+        <feFuncA type="linear" slope="0.45"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="shadow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+</defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="992.0" cy="378.0" r="480" fill="url(#glow)"/>
+
+  <text x="100" y="90" font-family="Arial, sans-serif" font-size="22" font-weight="700"
+        letter-spacing="3" fill="#d4a15c">KNEE · MINIMALLY INVASIVE</text>
+
+  <g filter="url(#softShadow)">
+    
+  <g transform="translate(950,430)">
+    <!-- distal femoral shaft -->
+    <path d="M-38,-280 C-46,-200 -44,-120 -36,-50 C-32,-25 -26,-12 -14,-8
+             L18,-8 C30,-12 36,-25 40,-50 C48,-120 50,-200 42,-282 Z"
+          fill="url(#bone)" stroke="#8f8672" stroke-width="2.5"/>
+    <path d="M-34,-270 C-42,-195 -40,-125 -32,-60" fill="none" stroke="url(#boneShine)" stroke-width="14" stroke-linecap="round" opacity="0.45"/>
+
+    <!-- vastus medialis muscle overlay, sitting over the LOWER third of
+         the shaft (this is the muscle the subvastus approach works below) -->
+    <path d="M-46,-95 C-58,-70 -58,-35 -44,-14 C-32,2 -10,6 6,-4
+             C-4,-18 -10,-40 -8,-64 C-6,-82 -16,-95 -32,-98 C-38,-99 -42,-98 -46,-95 Z"
+          fill="url(#bone)" fill-opacity="0.55" stroke="#8f8672" stroke-width="1.5"/>
+
+    <!-- subvastus incision: curves under the muscle -->
+    <path d="M-50,-30 C-30,-6 2,-2 20,-18" fill="none" stroke="#c0392b" stroke-width="5"
+          stroke-linecap="round" stroke-dasharray="2 10"/>
+
+    <!-- femoral condyles -->
+    <ellipse cx="-16" cy="18" rx="32" ry="28" fill="url(#bone)" stroke="#8f8672" stroke-width="2.5"/>
+    <ellipse cx="26" cy="18" rx="28" ry="26" fill="url(#bone)" stroke="#8f8672" stroke-width="2.5"/>
+    <ellipse cx="-24" cy="6" rx="13" ry="10" fill="url(#boneShine)" opacity="0.55"/>
+
+    <!-- joint space -->
+    <rect x="-46" y="38" width="98" height="14" rx="6" fill="#0a1730"/>
+
+    <!-- tibial plateau + shaft -->
+    <path d="M-46,52 C-52,60 -52,78 -46,92 C-40,195 -36,270 -24,330
+             L28,330 C40,270 44,195 50,92 C56,78 56,60 50,52 Z"
+          fill="url(#bone)" stroke="#8f8672" stroke-width="2.5"/>
+    <path d="M-42,60 C-48,68 -48,80 -42,90" fill="none" stroke="url(#boneShine)" stroke-width="10" stroke-linecap="round" opacity="0.4"/>
+    <ellipse cx="2" cy="342" rx="28" ry="14" fill="url(#bone)" stroke="#8f8672" stroke-width="2.5"/>
+  </g>
+
+  </g>
+
+  <text font-family="Georgia, 'Times New Roman', serif" font-size="46" font-weight="700" fill="#ffffff"><tspan x="100" y="668">Muscle/Tendon Sparing</tspan><tspan x="100" y="724">Subvastus Total Knee</tspan><tspan x="100" y="780">Replacement</tspan></text>
+</svg>
