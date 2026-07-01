@@ -22,7 +22,7 @@ export const procedures: Procedure[] = [
     metaDescription:
       "Dr. Mohammed Ahmed explains the muscle/tendon sparing subvastus approach to total knee replacement — a quad-sparing technique built for faster early recovery.",
     heroImage: "/blog/muscle-tendon-sparing-subvastus-total-knee-replacement.svg",
-    blogHeroImage: "/blog/hero/muscle-tendon-sparing-subvastus-total-knee-replacement.svg",
+    blogHeroImage: "/blog/hero/muscle-tendon-sparing-subvastus-total-knee-replacement.webp",
   },
   {
     slug: "partial-knee-replacement",
@@ -33,7 +33,7 @@ export const procedures: Procedure[] = [
     metaDescription:
       "Learn who's a candidate for partial (unicompartmental) knee replacement, how it differs from total knee replacement, and what recovery looks like.",
     heroImage: "/blog/partial-knee-replacement.svg",
-    blogHeroImage: "/blog/hero/partial-knee-replacement.svg",
+    blogHeroImage: "/blog/hero/partial-knee-replacement.webp",
   },
   {
     slug: "bikini-incision-anterior-approach-total-hip-replacement",
@@ -44,7 +44,7 @@ export const procedures: Procedure[] = [
     metaDescription:
       "What the bikini incision anterior approach to total hip replacement is, how it differs from posterior hip replacement, and why it's muscle-sparing.",
     heroImage: "/blog/bikini-incision-anterior-approach-total-hip-replacement.svg",
-    blogHeroImage: "/blog/hero/bikini-incision-anterior-approach-total-hip-replacement.svg",
+    blogHeroImage: "/blog/hero/bikini-incision-anterior-approach-total-hip-replacement.webp",
   },
   {
     slug: "complex-revision-joint-replacement",
@@ -55,7 +55,7 @@ export const procedures: Procedure[] = [
     metaDescription:
       "When revision hip or knee replacement is needed, why it differs from primary joint replacement, and why subspecialized expertise matters.",
     heroImage: "/blog/complex-revision-joint-replacement.svg",
-    blogHeroImage: "/blog/hero/complex-revision-joint-replacement.svg",
+    blogHeroImage: "/blog/hero/complex-revision-joint-replacement.webp",
   },
 ];
 
