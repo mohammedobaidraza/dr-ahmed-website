@@ -62,7 +62,7 @@ export default function LocationsSection() {
               fontSize: "clamp(1.7rem, 2.8vw, 2.4rem)",
             }}
           >
-            Three convenient clinic locations.
+            Three convenient orthopedic clinic locations near Chicago.
           </h2>
         </motion.div>
 

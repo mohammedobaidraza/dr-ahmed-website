@@ -69,12 +69,12 @@ export default function Navbar() {
         style={
           scrolled
             ? {
-                background: "rgba(248,247,244,0.97)",
-                backdropFilter: "blur(20px)",
-                WebkitBackdropFilter: "blur(20px)",
-                borderBottom: "1px solid rgba(6,27,51,0.1)",
-                boxShadow: "0 4px 24px rgba(6,27,51,0.08)",
-              }
+              background: "rgba(248,247,244,0.97)",
+              backdropFilter: "blur(20px)",
+              WebkitBackdropFilter: "blur(20px)",
+              borderBottom: "1px solid rgba(6,27,51,0.1)",
+              boxShadow: "0 4px 24px rgba(6,27,51,0.08)",
+            }
             : { background: "transparent" }
         }
       >
@@ -122,47 +122,57 @@ export default function Navbar() {
               <Image
                 src="/assets/mma-logo.png"
                 alt="MMA logo"
-                width={72}
-                height={72}
-                className="object-contain shrink-0 sm:w-[80px] sm:h-[80px] transition-all duration-500"
+                width={82}
+                height={82}
+                className="object-contain shrink-0 sm:w-[92px] sm:h-[92px] transition-all duration-500"
                 style={scrolled ? {} : { filter: "brightness(0) invert(1) drop-shadow(0 0 4px rgba(200,162,90,0.4))" }}
                 priority
               />
-              <div className="hidden sm:block h-12 w-px shrink-0" style={{ background: scrolled ? "rgba(6,27,51,0.14)" : "rgba(255,255,255,0.18)" }} />
+              <div className="hidden sm:block h-14 w-px shrink-0" style={{ background: scrolled ? "rgba(6,27,51,0.14)" : "rgba(255,255,255,0.18)" }} />
               <div className="leading-snug min-w-0">
-                <p className={`font-semibold text-[12px] sm:text-[14px] tracking-[0.14em] uppercase truncate ${scrolled ? "text-[#061B33]" : "text-white"}`}>MOHAMMED AHMED, MD</p>
-                <p className="text-[#C8A25A] text-[9px] sm:text-[10.5px] tracking-[0.18em] uppercase">HIP &amp; KNEE REPLACEMENT</p>
-                <Image
-                  src="/assets/endeavor-health-logo.svg"
-                  alt="Endeavor Health"
-                  width={130}
-                  height={22}
-                  className="object-contain mt-1"
-                  style={scrolled ? { filter: "brightness(0)", opacity: 0.45 } : { filter: "brightness(0) invert(1)", opacity: 0.5 }}
-                />
-                <p className={`hidden sm:block text-[8.5px] leading-snug mt-1.5 max-w-[230px] ${scrolled ? "text-[#061B33]/45" : "text-white/35"}`}>
-                  Board-certified, fellowship-trained. Subspecialized in minimally invasive robotic-assisted joint replacement.
+                <p className={`font-semibold text-[13px] sm:text-[15.5px] tracking-[0.14em] uppercase truncate ${scrolled ? "text-[#061B33]" : "text-white"}`}>MOHAMMED M. AHMED, MD</p>
+                <p className="text-[#C8A25A] text-[10px] sm:text-[11.5px] tracking-[0.18em] uppercase">HIP &amp; KNEE REPLACEMENT</p>
+                
+                <p className={`hidden sm:block text-[9.5px] leading-snug mt-1.5 max-w-[230px] ${scrolled ? "text-[#061B33]/55" : "text-white/55"}`}>
+                  Board-certified, fellowship-trained. Specialized in minimally invasive robotic-assisted joint replacement.
                 </p>
               </div>
             </a>
 
-            <div className="hidden lg:flex items-center gap-4 shrink-0">
-              <a href="tel:+16306467000" className="flex items-center gap-2 transition-colors whitespace-nowrap">
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#C8A25A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-                </svg>
-                <span className={`text-[13px] font-medium ${scrolled ? "text-[#061B33]/70" : "text-white/70"}`}>(630) 646-7000</span>
-              </a>
+            <div className="hidden lg:flex flex-col items-end gap-3.5 shrink-0">
+
+              {/* Endeavor */}
+              <Image
+                src="/assets/endeavor-health-logo.svg"
+                alt="Endeavor Health"
+                width={140}
+                height={32}
+                className="object-contain"
+                style={
+                  scrolled
+                    ? { filter: "brightness(0)", opacity: 0.45 }
+                    : { filter: "brightness(0) invert(1)", opacity: 0.55 }
+                }
+              />
+
               <a
                 href="https://www.endeavorhealth.org/providers/mohammed-m-ahmed"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-[#C8A25A] hover:bg-[#D9B96E] text-[#061B33] text-[12px] font-bold px-4 py-2.5 rounded tracking-[0.1em] uppercase transition-all duration-200 whitespace-nowrap shadow-sm"
+                className="bg-[#C8A25A] hover:bg-[#D9B96E] text-[#061B33] text-[12px] font-bold px-4 py-2.5 rounded tracking-[0.1em] uppercase"
               >
                 Request Consultation
               </a>
-            </div>
 
+              <a
+                href="tel:+16306467000"
+                className="flex items-center gap-2"
+              >
+                {/* phone icon */}
+                <span className={`text-[12px] ${scrolled ? "text-[#061B33]/60" : "text-white/60"}`}>
+                  (630) 646-7000
+                </span>
+              </a>
+
+            </div>
             <button
               className={`lg:hidden p-2 rounded-lg transition-colors hover:bg-white/10 ${scrolled ? "text-[#061B33]" : "text-white"}`}
               onClick={() => setMobileOpen(!mobileOpen)}
@@ -201,8 +211,8 @@ export default function Navbar() {
                       color: isActive
                         ? "#C8A25A"
                         : scrolled
-                        ? "rgba(6,27,51,0.65)"
-                        : "rgba(255,255,255,0.75)",
+                          ? "rgba(6,27,51,0.65)"
+                          : "rgba(255,255,255,0.75)",
                     }}
                   >
                     {link.label}

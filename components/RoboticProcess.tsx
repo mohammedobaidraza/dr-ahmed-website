@@ -119,7 +119,7 @@ export default function RoboticProcess() {
             transition={{ duration: 0.7 }}
           >
             <p className="text-[#C8A25A] text-[11px] tracking-[0.3em] uppercase font-semibold mb-4">
-              My Approach
+              Robotic-Assisted Surgery
             </p>
             <h2
               className="text-[#061B33] font-bold leading-tight mb-5"

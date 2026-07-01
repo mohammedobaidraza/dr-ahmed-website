@@ -1,0 +1,42 @@
+<svg width="380" height="620" viewBox="0 0 380 620" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0b1a30"/>
+      <stop offset="100%" stop-color="#0e2038"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2f6fb0" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#0b1a30" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bone" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f4efe6"/>
+      <stop offset="100%" stop-color="#c9c2b4"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="380" height="620" fill="url(#bg)"/>
+  <circle cx="190" cy="190" r="150" fill="url(#glow)"/>
+
+  <text x="32" y="40" font-family="Arial, sans-serif" font-size="12" font-weight="700"
+        letter-spacing="2" fill="#c9974a">HIP · MINIMALLY INVASIVE</text>
+
+  <g transform="translate(0,20)">
+    
+  <g transform="translate(190,150)" fill="none" stroke="url(#bone)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M-70,-60 C-40,-90 20,-90 55,-55 C70,-40 65,-15 45,0" />
+    <path d="M-70,-60 C-80,-30 -75,10 -55,35" />
+    <circle cx="30" cy="10" r="22" fill="#12233d" stroke="url(#bone)" stroke-width="5"/>
+    <path d="M20,30 C15,60 18,110 22,150" />
+    <path d="M40,30 C42,60 40,110 36,150" />
+  </g>
+  <path d="M150,158 C160,150 172,150 180,156" stroke="#c0392b" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
+  <circle cx="165" cy="154" r="3" fill="#c0392b" opacity="0.85"/>
+
+  </g>
+
+  <text font-family="Georgia, 'Times New Roman', serif" font-size="22" font-weight="700" fill="#ffffff"><tspan x="32" y="355">Bikini Incision</tspan><tspan x="32" y="383">Anterior Approach</tspan><tspan x="32" y="411">Total Hip Replacement</tspan></text>
+
+  <text font-family="Arial, sans-serif" font-size="14" fill="#9fb0c6"><tspan x="32" y="469">A muscle-sparing approach from the front of</tspan><tspan x="32" y="489">the hip, placed along a cosmetically favorable</tspan><tspan x="32" y="509">incision line, for faster recovery, fewer</tspan></text>
+
+  <text x="32" y="554" font-family="Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1.5" fill="#c9974a">READ MORE  &#8594;</text>
+</svg>

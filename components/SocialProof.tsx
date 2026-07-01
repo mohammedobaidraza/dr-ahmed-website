@@ -95,7 +95,7 @@ export default function SocialProof() {
             transition={{ duration: 0.6 }}
           >
             <p className="text-[#C8A25A] text-[11px] tracking-[0.3em] uppercase font-semibold mb-3">
-              Patient Stories
+              Patient Reviews — Hip &amp; Knee Replacement
             </p>
             <h2
               className="text-[#061B33] font-bold leading-tight"

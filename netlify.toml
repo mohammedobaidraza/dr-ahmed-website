@@ -1,3 +1,12 @@
 [build]
   command = "npm run build"
   publish = "out"
+
+# Redirect www → apex so ranking signals don't split.
+# Requires a CNAME record for www pointing at your Netlify site in DNS —
+# this rule only fires once Netlify is receiving www traffic.
+[[redirects]]
+  from = "https://www.drmohammedahmed.com/*"
+  to   = "https://drmohammedahmed.com/:splat"
+  status = 301
+  force  = true

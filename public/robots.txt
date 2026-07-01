@@ -1,0 +1,6 @@
+# robots.txt — Dr. Mohammed Ahmed, MD
+
+User-agent: *
+Allow: /
+
+Sitemap: https://drmohammedahmed.com/sitemap.xml

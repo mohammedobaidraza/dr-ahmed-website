@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 /* ── X-ray style SVG illustrations ── */
 const XrayTotalKnee = () => (
@@ -170,6 +171,7 @@ const XrayRevision = () => (
 /* ── Procedure data ── */
 const procedures = [
   {
+    slug: "muscle-tendon-sparing-subvastus-total-knee-replacement",
     category: "KNEE · MINIMALLY INVASIVE",
     title: "Muscle/Tendon Sparing Subvastus Total Knee Replacement",
     description:
@@ -177,6 +179,7 @@ const procedures = [
     photo: "https://drahmedtest.lovable.app/assets/proc-knee-total-B_iZfErq.jpg",
   },
   {
+    slug: "partial-knee-replacement",
     category: "KNEE",
     title: "Partial knee replacement",
     description:
@@ -184,6 +187,7 @@ const procedures = [
     photo: "https://drahmedtest.lovable.app/assets/proc-knee-partial-CVy689SG.jpg",
   },
   {
+    slug: "bikini-incision-anterior-approach-total-hip-replacement",
     category: "HIP · MINIMALLY INVASIVE",
     title: "Bikini Incision Anterior Approach Total Hip Replacement",
     description:
@@ -191,6 +195,7 @@ const procedures = [
     photo: "https://drahmedtest.lovable.app/assets/proc-hip-anterior-w4nLZAuS.jpg",
   },
   {
+    slug: "complex-revision-joint-replacement",
     category: "HIP & KNEE",
     title: "Complex & revision joint replacement",
     description:
@@ -218,7 +223,7 @@ export default function ProceduresSection() {
             className="lg:sticky lg:top-28"
           >
             <p className="text-[#C8A25A] text-[11px] tracking-[0.3em] uppercase font-semibold mb-4">
-              Procedures
+              Hip &amp; Knee Procedures
             </p>
             <h2
               className="text-[#061B33] leading-[1.1] font-bold mb-5"
@@ -246,7 +251,7 @@ export default function ProceduresSection() {
 
           {/* ── Cards ── */}
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
-            {procedures.map(({ category, title, description, photo }, i) => (
+            {procedures.map(({ slug, category, title, description, photo }, i) => (
               <motion.div
                 key={title}
                 initial={{ opacity: 0, y: 28 }}
@@ -296,15 +301,15 @@ export default function ProceduresSection() {
                   <p className="text-white/50 text-[13px] leading-relaxed flex-1 mb-5">
                     {description}
                   </p>
-                  <a
-                    href="#contact"
+                  <Link
+                    href={`/blog/${slug}`}
                     className="inline-flex items-center gap-1.5 text-[#C8A25A] text-[11px] font-bold tracking-[0.18em] uppercase group-hover:gap-3 transition-all duration-200"
                   >
                     LEARN MORE
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12,5 19,12 12,19" />
                     </svg>
-                  </a>
+                  </Link>
                 </div>
               </motion.div>
             ))}

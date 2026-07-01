@@ -124,7 +124,7 @@ export default function HeroSection() {
           />
           {/* Transparent PNG cutout — floats directly on hero background */}
           <Image
-            src="/assets/dr-ahmed-cutout.png"
+            src="/assets/dr-ahmed-cutout.webp"
             alt="Dr. Mohammed Ahmed, MD"
             fill
             className="object-contain object-top"
@@ -164,7 +164,7 @@ export default function HeroSection() {
 
           <motion.h1
             variants={item}
-            className="font-bold italic leading-[1.05] mb-6"
+            className="font-bold italic leading-[1.05] mb-3"
             style={{
               fontFamily: "'Playfair Display', Georgia, serif",
               fontSize: "clamp(2.2rem, 10vw, 3.2rem)",
@@ -176,6 +176,14 @@ export default function HeroSection() {
           >
             Personal to you.
           </motion.h1>
+
+          <motion.h2
+            variants={item}
+            className="text-white/45 font-light tracking-wide mb-6"
+            style={{ fontSize: "clamp(0.8rem, 3.2vw, 0.875rem)" }}
+          >
+            Board-Certified Hip &amp; Knee Replacement Surgeon &mdash; Elmhurst &middot; Addison &middot; Lombard, IL
+          </motion.h2>
 
           <motion.p variants={item} className="text-white/60 text-[15px] leading-relaxed mb-8 font-light max-w-[520px]">
             I help patients move beyond pain with robotic-assisted, minimally
@@ -261,7 +269,7 @@ export default function HeroSection() {
 
           <motion.h1
             variants={item}
-            className="font-bold italic leading-[1.02] mb-8"
+            className="font-bold italic leading-[1.02] mb-3"
             style={{
               fontFamily: "'Playfair Display', Georgia, serif",
               fontSize: "clamp(3rem,5.5vw,5.4rem)",
@@ -273,6 +281,13 @@ export default function HeroSection() {
           >
             Personal to you.
           </motion.h1>
+
+          <motion.h2
+            variants={item}
+            className="text-white/45 text-[14px] font-light tracking-wide mb-8"
+          >
+            Board-Certified Hip &amp; Knee Replacement Surgeon &mdash; Elmhurst &middot; Addison &middot; Lombard, IL
+          </motion.h2>
 
           <motion.p variants={item} className="text-white/60 text-[16px] leading-relaxed max-w-[460px] mb-10 font-light">
             I help patients move beyond pain with robotic-assisted, minimally
@@ -343,7 +358,7 @@ export default function HeroSection() {
 
           {/* Transparent PNG cutout — doctor floats directly on hero background */}
           <Image
-            src="/assets/dr-ahmed-cutout.png"
+            src="/assets/dr-ahmed-cutout.webp"
             alt="Dr. Mohammed Ahmed, MD – Hip & Knee Replacement Surgeon"
             fill
             className="object-contain object-bottom"
