@@ -252,8 +252,8 @@ export default function ProceduresSection() {
           {/* ── Cards ── */}
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
             {procedures.map(({ slug, category, title, description, photo }, i) => (
+              <Link key={title} href={`/blog/${slug}`} className="block">
               <motion.div
-                key={title}
                 initial={{ opacity: 0, y: 28 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
@@ -262,7 +262,7 @@ export default function ProceduresSection() {
                   delay: i * 0.08,
                   ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
                 }}
-                className="procedure-card rounded-xl overflow-hidden flex flex-col group cursor-pointer"
+                className="procedure-card rounded-xl overflow-hidden flex flex-col group cursor-pointer h-full"
                 style={{ background: "#0B2248", border: "1px solid rgba(255,255,255,0.07)" }}
               >
                 {/* Photo area */}
@@ -301,17 +301,15 @@ export default function ProceduresSection() {
                   <p className="text-white/50 text-[13px] leading-relaxed flex-1 mb-5">
                     {description}
                   </p>
-                  <Link
-                    href={`/blog/${slug}`}
-                    className="inline-flex items-center gap-1.5 text-[#C8A25A] text-[11px] font-bold tracking-[0.18em] uppercase group-hover:gap-3 transition-all duration-200"
-                  >
+                  <span className="inline-flex items-center gap-1.5 text-[#C8A25A] text-[11px] font-bold tracking-[0.18em] uppercase group-hover:gap-3 transition-all duration-200">
                     LEARN MORE
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12,5 19,12 12,19" />
                     </svg>
-                  </Link>
+                  </span>
                 </div>
               </motion.div>
+              </Link>
             ))}
           </div>
         </div>
