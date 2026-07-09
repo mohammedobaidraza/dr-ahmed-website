@@ -6,6 +6,9 @@ import { blogContent } from "@/content/blog/procedureContent";
 import { SITE_URL, PHYSICIAN_ID } from "@/lib/site-config";
 import ProcedureBreadcrumb from "@/components/blog/ProcedureBreadcrumb";
 import RelatedProcedures from "@/components/blog/RelatedProcedures";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -63,8 +66,10 @@ export default async function ProcedureBlogPost({ params }: Props) {
   };
 
   return (
+    <>
+    <Navbar />
     <main className="min-h-screen bg-[#F8F7F4]">
-    <div className="max-w-3xl mx-auto px-6 py-16">
+    <div className="max-w-3xl mx-auto px-6 py-28">
       <script
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger
@@ -91,13 +96,11 @@ export default async function ProcedureBlogPost({ params }: Props) {
         headers are hand-built SVGs (not raster photos needing responsive
         variants), a plain <img> avoids that config dependency entirely.
       */}
-      <div className="w-full aspect-[16/9] rounded-xl overflow-hidden mb-10 bg-[#0e2038]">
+      <div className="w-full rounded-xl overflow-hidden mb-10">
         <img
           src={procedure!.blogHeroImage}
           alt={procedure!.title}
-          width={1600}
-          height={900}
-          className="w-full h-full object-cover"
+          className="w-full h-auto block"
         />
       </div>
 
@@ -134,7 +137,7 @@ export default async function ProcedureBlogPost({ params }: Props) {
               <a
                 href={c.url}
                 target="_blank"
-                rel="noopener"
+                rel="noopener noreferrer"
                 className="text-[#0e2038] underline hover:text-[#c9974a]"
               >
                 {c.label}
@@ -162,5 +165,8 @@ export default async function ProcedureBlogPost({ params }: Props) {
       <RelatedProcedures currentSlug={procedure!.slug} />
     </div>
     </main>
+    <Footer />
+    <ScrollToTop />
+    </>
   );
 }

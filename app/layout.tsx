@@ -123,7 +123,7 @@ const jsonLd = {
     ratingValue: "4.7",
     bestRating: "5",
     worstRating: "1",
-    ratingCount: "98",
+    ratingCount: "300",
   },
 };
 
@@ -242,7 +242,7 @@ const clinicsJsonLd = [
       ratingValue: "4.7",
       bestRating: "5",
       worstRating: "1",
-      ratingCount: "98",
+      ratingCount: "300",
     },
     parentOrganization: {
       "@type": "MedicalOrganization",
@@ -281,7 +281,7 @@ const clinicsJsonLd = [
       ratingValue: "4.7",
       bestRating: "5",
       worstRating: "1",
-      ratingCount: "98",
+      ratingCount: "300",
     },
     parentOrganization: {
       "@type": "MedicalOrganization",
@@ -320,7 +320,7 @@ const clinicsJsonLd = [
       ratingValue: "4.7",
       bestRating: "5",
       worstRating: "1",
-      ratingCount: "98",
+      ratingCount: "300",
     },
     parentOrganization: {
       "@type": "MedicalOrganization",

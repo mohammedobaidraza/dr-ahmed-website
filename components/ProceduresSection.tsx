@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { procedures as procedureData } from "@/lib/procedures";
+import ProcedureCardImage from "@/components/ProcedureCardImage";
 
 /* ── X-ray style SVG illustrations ── */
 const XrayTotalKnee = () => (
@@ -217,7 +218,7 @@ export default function ProceduresSection() {
 
           {/* ── Cards ── */}
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
-            {procedureData.map(({ slug, label, title, cardBlurb, blogHeroImage }, i) => (
+            {procedureData.map(({ slug, label, title, cardBlurb, thumbnailImage, blogHeroImage }, i) => (
               <Link key={slug} href={`/blog/${slug}`} className="block">
               <motion.div
                 initial={{ opacity: 0, y: 28 }}
@@ -231,33 +232,20 @@ export default function ProceduresSection() {
                 className="procedure-card rounded-xl overflow-hidden flex flex-col group cursor-pointer h-full"
                 style={{ background: "#0B2248", border: "1px solid rgba(255,255,255,0.07)" }}
               >
-                {/* Photo area */}
-                <div className="relative overflow-hidden" style={{ height: 200 }}>
-                  <img
-                    src={blogHeroImage}
+                {/* Image banner */}
+                <div className="w-full overflow-hidden bg-[#061a35]" style={{ aspectRatio: "16 / 9" }}>
+                  <ProcedureCardImage
+                    thumbnailImage={thumbnailImage}
+                    fallbackImage={blogHeroImage}
                     alt={title}
-                    className="absolute inset-0 w-full h-full object-cover object-center card-img"
-                    loading="lazy"
                   />
-                  {/* Light navy tint so photo is visible */}
-                  <div className="absolute inset-0" style={{ background: "rgba(6,18,52,0.42)" }} />
-                  {/* Gradient fade to card body color at bottom */}
-                  <div
-                    className="absolute inset-0 pointer-events-none"
-                    style={{
-                      background: "linear-gradient(to bottom, transparent 40%, #0B2248 100%)",
-                    }}
-                  />
-                  {/* Category badge */}
-                  <div className="absolute top-3 left-4 z-10">
-                    <span className="text-[#C8A25A] text-[10px] font-bold tracking-[0.22em] uppercase">
-                      {label}
-                    </span>
-                  </div>
                 </div>
 
                 {/* Text */}
                 <div className="p-5 flex flex-col flex-1">
+                  <p className="text-[#C8A25A] text-[10px] font-bold tracking-[0.22em] uppercase mb-2">
+                    {label}
+                  </p>
                   <h3
                     className="text-white font-semibold text-[16px] leading-snug mb-3"
                     style={{ fontFamily: "'Playfair Display', Georgia, serif" }}

@@ -162,7 +162,7 @@ export default function HeroSection() {
             Precision care.
           </motion.h1>
 
-          <motion.h1
+          <motion.div
             variants={item}
             className="font-bold italic leading-[1.05] mb-3"
             style={{
@@ -175,7 +175,7 @@ export default function HeroSection() {
             }}
           >
             Personal to you.
-          </motion.h1>
+          </motion.div>
 
           <motion.h2
             variants={item}
@@ -267,7 +267,7 @@ export default function HeroSection() {
             Precision care.
           </motion.h1>
 
-          <motion.h1
+          <motion.div
             variants={item}
             className="font-bold italic leading-[1.02] mb-3"
             style={{
@@ -280,7 +280,7 @@ export default function HeroSection() {
             }}
           >
             Personal to you.
-          </motion.h1>
+          </motion.div>
 
           <motion.h2
             variants={item}

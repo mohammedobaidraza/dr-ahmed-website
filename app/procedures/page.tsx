@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { procedures } from "@/lib/procedures";
 import { SITE_URL } from "@/lib/site-config";
+import ProcedureCardImage from "@/components/ProcedureCardImage";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export const metadata: Metadata = {
   title: "Hip & Knee Replacement Procedures | Dr. Mohammed Ahmed, MD",
@@ -12,8 +16,10 @@ export const metadata: Metadata = {
 
 export default function ProceduresPage() {
   return (
+    <>
+    <Navbar />
     <main className="min-h-screen bg-[#F8F7F4]">
-      <div className="max-w-[1200px] mx-auto px-6 py-20">
+      <div className="max-w-[1200px] mx-auto px-6 py-28">
 
         {/* Header */}
         <div className="mb-14">
@@ -38,7 +44,7 @@ export default function ProceduresPage() {
 
         {/* Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {procedures.map(({ slug, label, title, cardBlurb, blogHeroImage }) => (
+          {procedures.map(({ slug, label, title, cardBlurb, thumbnailImage, blogHeroImage }) => (
             <Link key={slug} href={`/blog/${slug}`} className="block group">
               <div
                 className="rounded-xl overflow-hidden flex flex-col h-full"
@@ -47,34 +53,20 @@ export default function ProceduresPage() {
                   border: "1px solid rgba(255,255,255,0.07)",
                 }}
               >
-                {/* Image */}
-                <div className="relative overflow-hidden" style={{ height: 200 }}>
-                  <img
-                    src={blogHeroImage}
+                {/* Image banner */}
+                <div className="w-full overflow-hidden bg-[#061a35]" style={{ aspectRatio: "16 / 9" }}>
+                  <ProcedureCardImage
+                    thumbnailImage={thumbnailImage}
+                    fallbackImage={blogHeroImage}
                     alt={title}
-                    className="absolute inset-0 w-full h-full object-cover object-center"
-                    loading="lazy"
                   />
-                  <div
-                    className="absolute inset-0"
-                    style={{ background: "rgba(6,18,52,0.42)" }}
-                  />
-                  <div
-                    className="absolute inset-0 pointer-events-none"
-                    style={{
-                      background:
-                        "linear-gradient(to bottom, transparent 40%, #0B2248 100%)",
-                    }}
-                  />
-                  <div className="absolute top-3 left-4 z-10">
-                    <span className="text-[#C8A25A] text-[10px] font-bold tracking-[0.22em] uppercase">
-                      {label}
-                    </span>
-                  </div>
                 </div>
 
                 {/* Text */}
                 <div className="p-5 flex flex-col flex-1">
+                  <p className="text-[#C8A25A] text-[10px] font-bold tracking-[0.22em] uppercase mb-2">
+                    {label}
+                  </p>
                   <h2
                     className="text-white font-semibold text-[16px] leading-snug mb-3"
                     style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
@@ -118,5 +110,8 @@ export default function ProceduresPage() {
 
       </div>
     </main>
+    <Footer />
+    <ScrollToTop />
+    </>
   );
 }

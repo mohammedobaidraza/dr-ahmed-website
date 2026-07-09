@@ -9,7 +9,8 @@ export type Procedure = {
   cardBlurb: string; // short blurb used on the homepage card
   metaDescription: string; // ~150-160 char SEO description for the blog post
   heroImage: string; // portrait card image — used on homepage grid + Related Procedures
-  blogHeroImage: string; // 16:9 landscape image — used only on the blog post hero
+  thumbnailImage: string; // clean crop for homepage/listing cards (no text overlay)
+  blogHeroImage: string; // full 16:9 educational infographic — used on the blog post hero
 };
 
 export const procedures: Procedure[] = [
@@ -21,8 +22,9 @@ export const procedures: Procedure[] = [
       "Works below the quadriceps tendon, avoiding cutting through it, for less pain, better early function, and a more natural feel after surgery.",
     metaDescription:
       "Dr. Mohammed Ahmed explains the muscle/tendon sparing subvastus approach to total knee replacement — a quad-sparing technique built for faster early recovery.",
-    heroImage: "/blog/muscle-tendon-sparing-subvastus-total-knee-replacement.svg",
-    blogHeroImage: "/blog/hero/muscle-tendon-sparing-subvastus-total-knee-replacement.webp",
+    heroImage: "/assets/Muscle Sparing Image.png",
+    thumbnailImage: "/assets/procedures/Muscle Sparing   Thumbanil.png",
+    blogHeroImage: "/assets/Muscle Sparing Image.png",
   },
   {
     slug: "partial-knee-replacement",
@@ -32,8 +34,9 @@ export const procedures: Procedure[] = [
       "Resurface only the damaged compartment. Preserve healthy bone and ligaments for a more natural outcome.",
     metaDescription:
       "Learn who's a candidate for partial (unicompartmental) knee replacement, how it differs from total knee replacement, and what recovery looks like.",
-    heroImage: "/blog/partial-knee-replacement.svg",
-    blogHeroImage: "/blog/hero/partial-knee-replacement.webp",
+    heroImage: "/assets/Patrial Knee Image.png",
+    thumbnailImage: "/assets/procedures/Partial Knee Thumbnail.png",
+    blogHeroImage: "/assets/Patrial Knee Image.png",
   },
   {
     slug: "bikini-incision-anterior-approach-total-hip-replacement",
@@ -43,8 +46,9 @@ export const procedures: Procedure[] = [
       "Muscle-sparing approach from the front with a cosmetically placed incision. Faster recovery, fewer restrictions, and reduced dislocation risk.",
     metaDescription:
       "What the bikini incision anterior approach to total hip replacement is, how it differs from posterior hip replacement, and why it's muscle-sparing.",
-    heroImage: "/blog/bikini-incision-anterior-approach-total-hip-replacement.svg",
-    blogHeroImage: "/blog/hero/bikini-incision-anterior-approach-total-hip-replacement.webp",
+    heroImage: "/assets/Bikini Incision Image.png",
+    thumbnailImage: "/assets/procedures/Bikini Thumbnail.png",
+    blogHeroImage: "/assets/Bikini Incision Image.png",
   },
   {
     slug: "complex-revision-joint-replacement",
@@ -54,8 +58,9 @@ export const procedures: Procedure[] = [
       "Expertise in complex primary and revision surgery for challenging cases requiring advanced reconstruction.",
     metaDescription:
       "When revision hip or knee replacement is needed, why it differs from primary joint replacement, and why subspecialized expertise matters.",
-    heroImage: "/blog/complex-revision-joint-replacement.svg",
-    blogHeroImage: "/blog/hero/complex-revision-joint-replacement.webp",
+    heroImage: "/assets/Complex Knee Image.png",
+    thumbnailImage: "/assets/procedures/Complex Knee Thmbnail.png",
+    blogHeroImage: "/assets/Complex Knee Image.png",
   },
 ];
 

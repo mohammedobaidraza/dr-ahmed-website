@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { procedures } from "@/lib/procedures";
+import ProcedureCardImage from "@/components/ProcedureCardImage";
 
 type RelatedProceduresProps = {
   currentSlug: string;
@@ -20,13 +21,11 @@ export default function RelatedProcedures({ currentSlug }: RelatedProceduresProp
             href={`/blog/${p.slug}`}
             className="group block rounded-lg overflow-hidden bg-[#0e2038] hover:opacity-90 transition"
           >
-            <div className="aspect-video">
-              <img
-                src={p.blogHeroImage}
+            <div className="relative aspect-video overflow-hidden bg-[#0a1730]">
+              <ProcedureCardImage
+                thumbnailImage={p.thumbnailImage}
+                fallbackImage={p.blogHeroImage}
                 alt={p.title}
-                width={480}
-                height={270}
-                className="w-full h-full object-cover"
               />
             </div>
             <div className="p-4">

@@ -3,7 +3,6 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import CredentialBar from "@/components/CredentialBar";
 import ProceduresSection from "@/components/ProceduresSection";
 import RoboticProcess from "@/components/RoboticProcess";
 import SocialProof from "@/components/SocialProof";
