@@ -177,13 +177,13 @@ export default function HeroSection() {
             Personal to you.
           </motion.div>
 
-          <motion.h1
+          <motion.p
             variants={item}
             className="text-white/45 font-light tracking-wide mb-6"
             style={{ fontSize: "clamp(0.8rem, 3.2vw, 0.875rem)" }}
           >
             Board-Certified Hip &amp; Knee Replacement Surgeon &mdash; Elmhurst &middot; Addison &middot; Lombard, IL
-          </motion.h1>
+          </motion.p>
 
           <motion.p variants={item} className="text-white/60 text-[15px] leading-relaxed mb-8 font-light max-w-[520px]">
             I help patients move beyond pain with robotic-assisted, minimally

@@ -11,6 +11,8 @@ export type Procedure = {
   heroImage: string; // portrait card image — used on homepage grid + Related Procedures
   thumbnailImage: string; // clean crop for homepage/listing cards (no text overlay)
   blogHeroImage: string; // full 16:9 educational infographic — used on the blog post hero
+  datePublished: string; // ISO 8601 date — required for YMYL medical E-E-A-T
+  dateModified: string;  // ISO 8601 date — update whenever content changes
 };
 
 export const procedures: Procedure[] = [
@@ -25,6 +27,8 @@ export const procedures: Procedure[] = [
     heroImage: "/assets/Muscle Sparing Image.png",
     thumbnailImage: "/assets/procedures/Muscle Sparing   Thumbanil.png",
     blogHeroImage: "/assets/Muscle Sparing Image.png",
+    datePublished: "2026-06-15",
+    dateModified: "2026-08-13",
   },
   {
     slug: "partial-knee-replacement",
@@ -37,6 +41,8 @@ export const procedures: Procedure[] = [
     heroImage: "/assets/Patrial Knee Image.png",
     thumbnailImage: "/assets/procedures/Partial Knee Thumbnail.png",
     blogHeroImage: "/assets/Patrial Knee Image.png",
+    datePublished: "2026-06-15",
+    dateModified: "2026-08-13",
   },
   {
     slug: "bikini-incision-anterior-approach-total-hip-replacement",
@@ -49,6 +55,8 @@ export const procedures: Procedure[] = [
     heroImage: "/assets/Bikini Incision Image.png",
     thumbnailImage: "/assets/procedures/Bikini Thumbnail.png",
     blogHeroImage: "/assets/Bikini Incision Image.png",
+    datePublished: "2026-06-15",
+    dateModified: "2026-08-13",
   },
   {
     slug: "complex-revision-joint-replacement",
@@ -61,6 +69,8 @@ export const procedures: Procedure[] = [
     heroImage: "/assets/Complex Knee Image.png",
     thumbnailImage: "/assets/procedures/Complex Knee Thmbnail.png",
     blogHeroImage: "/assets/Complex Knee Image.png",
+    datePublished: "2026-06-15",
+    dateModified: "2026-08-13",
   },
 ];
 

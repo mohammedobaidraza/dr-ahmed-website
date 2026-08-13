@@ -63,6 +63,8 @@ export default async function ProcedureBlogPost({ params }: Props) {
     image: `${SITE_URL}${procedure!.heroImage}`,
     author: { "@id": PHYSICIAN_ID },
     medicalAudience: "Patient",
+    datePublished: procedure!.datePublished,
+    dateModified: procedure!.dateModified,
   };
 
   return (
@@ -84,9 +86,21 @@ export default async function ProcedureBlogPost({ params }: Props) {
       <p className="text-xs tracking-widest font-bold text-[#c9974a] mb-3">
         {procedure!.label}
       </p>
-      <h1 className="text-4xl font-serif font-bold text-slate-900 leading-tight mb-8">
+      <h1 className="text-4xl font-serif font-bold text-slate-900 leading-tight mb-4">
         {procedure!.title}
       </h1>
+      <div className="flex items-center gap-3 text-slate-400 text-sm mb-8">
+        <time dateTime={procedure!.datePublished}>
+          Published{" "}
+          {new Date(procedure!.datePublished).toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })}
+        </time>
+        <span>·</span>
+        <span>By Dr. Mohammed Ahmed, MD</span>
+      </div>
 
       {/*
         Plain <img>, not next/image: this project is a static export
