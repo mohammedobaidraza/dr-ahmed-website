@@ -59,6 +59,9 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true },
   },
+  verification: {
+    google: "bqoGFJOO4nWYoF0uWRW8Ndbnxc-tvZLFVdBcPGIMKd4",
+  },
 };
 
 const jsonLd = {
@@ -120,10 +123,10 @@ const jsonLd = {
   ],
   aggregateRating: {
     "@type": "AggregateRating",
-    ratingValue: "4.7",
+    ratingValue: "4.8",
     bestRating: "5",
     worstRating: "1",
-    ratingCount: "300",
+    ratingCount: "218",
   },
 };
 

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy | Dr. Mohammed Ahmed, MD",
   description: "Privacy policy for drmohammedahmed.com — a professional portfolio website for Dr. Mohammed Ahmed, MD, hip and knee replacement surgeon.",
   alternates: { canonical: `${SITE_URL}/privacy` },
+  robots: { index: false, follow: true },
 };
 
 export default function PrivacyPage() {
