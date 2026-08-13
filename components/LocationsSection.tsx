@@ -9,7 +9,7 @@ const locations = [
     city: "Elmhurst, IL 60126-5634",
     phone: "(630) 646-7000",
     mapSrc:
-      "https://www.google.com/maps?q=1200+S+York+St+Suite+2000+Elmhurst+IL+60126&output=embed&z=15",
+      "https://www.openstreetmap.org/export/embed.html?bbox=-87.9506%2C41.8740%2C-87.9306%2C41.8940&layer=mapnik&marker=41.8840%2C-87.9406",
     directionsUrl:
       "https://www.google.com/maps/search/?api=1&query=1200+S+York+St+Elmhurst+IL+60126",
   },
@@ -19,7 +19,7 @@ const locations = [
     city: "Addison, IL 60101-2500",
     phone: "(630) 646-7000",
     mapSrc:
-      "https://www.google.com/maps?q=303+W+Lake+St+Suite+200+Addison+IL+60101&output=embed&z=15",
+      "https://www.openstreetmap.org/export/embed.html?bbox=-87.9989%2C41.9214%2C-87.9789%2C41.9414&layer=mapnik&marker=41.9314%2C-87.9889",
     directionsUrl:
       "https://www.google.com/maps/search/?api=1&query=303+W+Lake+St+Addison+IL+60101",
   },
@@ -29,7 +29,7 @@ const locations = [
     city: "Lombard, IL 60148-2670",
     phone: "(630) 646-7000",
     mapSrc:
-      "https://www.google.com/maps?q=130+S+Main+St+Suite+202+Lombard+IL+60148&output=embed&z=15",
+      "https://www.openstreetmap.org/export/embed.html?bbox=-87.9939%2C41.8764%2C-87.9739%2C41.8964&layer=mapnik&marker=41.8864%2C-87.9839",
     directionsUrl:
       "https://www.google.com/maps/search/?api=1&query=130+S+Main+St+Lombard+IL+60148",
   },
