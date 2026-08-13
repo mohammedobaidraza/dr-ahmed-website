@@ -151,7 +151,7 @@ export default function HeroSection() {
             Hip &amp; Knee Replacement &nbsp;·&nbsp; Western Chicago Suburbs
           </motion.p>
 
-          <motion.h1
+          <motion.div
             variants={item}
             className="text-white font-bold leading-[1.05] mb-0.5"
             style={{
@@ -160,7 +160,7 @@ export default function HeroSection() {
             }}
           >
             Precision care.
-          </motion.h1>
+          </motion.div>
 
           <motion.div
             variants={item}
@@ -177,13 +177,13 @@ export default function HeroSection() {
             Personal to you.
           </motion.div>
 
-          <motion.h2
+          <motion.h1
             variants={item}
             className="text-white/45 font-light tracking-wide mb-6"
             style={{ fontSize: "clamp(0.8rem, 3.2vw, 0.875rem)" }}
           >
             Board-Certified Hip &amp; Knee Replacement Surgeon &mdash; Elmhurst &middot; Addison &middot; Lombard, IL
-          </motion.h2>
+          </motion.h1>
 
           <motion.p variants={item} className="text-white/60 text-[15px] leading-relaxed mb-8 font-light max-w-[520px]">
             I help patients move beyond pain with robotic-assisted, minimally
@@ -224,7 +224,7 @@ export default function HeroSection() {
               value={1500} suffix="+" label="Joint Replacements" />
             <StatItem
               icon={<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>}
-              value={4.7} suffix="/5" label="Patient Rating" decimals={1} isStars />
+              value={4.8} suffix="/5" label="Patient Rating" decimals={1} isStars />
             <StatItem
               icon={<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>}
               value={98} suffix="%" label="Patients Would Recommend" />
@@ -256,7 +256,7 @@ export default function HeroSection() {
             Hip &amp; Knee Replacement &nbsp;·&nbsp; Western Chicago Suburbs
           </motion.p>
 
-          <motion.h1
+          <motion.div
             variants={item}
             className="text-white font-bold leading-[1.02] mb-0.5"
             style={{
@@ -265,7 +265,7 @@ export default function HeroSection() {
             }}
           >
             Precision care.
-          </motion.h1>
+          </motion.div>
 
           <motion.div
             variants={item}
@@ -282,12 +282,12 @@ export default function HeroSection() {
             Personal to you.
           </motion.div>
 
-          <motion.h2
+          <motion.h1
             variants={item}
             className="text-white/45 text-[14px] font-light tracking-wide mb-8"
           >
             Board-Certified Hip &amp; Knee Replacement Surgeon &mdash; Elmhurst &middot; Addison &middot; Lombard, IL
-          </motion.h2>
+          </motion.h1>
 
           <motion.p variants={item} className="text-white/60 text-[16px] leading-relaxed max-w-[460px] mb-10 font-light">
             I help patients move beyond pain with robotic-assisted, minimally
@@ -323,7 +323,7 @@ export default function HeroSection() {
               value={1500} suffix="+" label="Joint Replacements Performed" />
             <StatItem
               icon={<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>}
-              value={4.7} suffix="/5" label="Patient Rating" decimals={1} isStars />
+              value={4.8} suffix="/5" label="Patient Rating" decimals={1} isStars />
             <StatItem
               icon={<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg>}
               value={98} suffix="%" label="Patients Would Recommend Dr. Ahmed" />

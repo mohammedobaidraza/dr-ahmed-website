@@ -4,60 +4,60 @@ import { motion } from "framer-motion";
 
 const reviews = [
   {
-    name: "Linda M.",
-    procedure: "Knee Replacement",
+    name: "Verified Patient",
+    date: "May 16, 2026",
     rating: 5,
-    text: "From the first consult, the focus was about my goals, and the robotic knee replacement was precision delivered. Dr. Ahmed is an impressive surgeon, and his team is the best of the best.",
-    source: "Healthgrades",
+    text: "I had Dr. Ahmed at his previous hospital. He did a great job on my left knee replacement and I wanted him to do my right knee. Well pleased with the outcome.",
+    source: "Endeavor Health",
   },
   {
-    name: "Robert K.",
-    procedure: "Hip Replacement",
+    name: "Verified Patient",
+    date: "May 15, 2026",
     rating: 5,
-    text: "I was walking the same day. Six weeks later I was hiking again. The robotic precision made all the difference in my recovery speed.",
-    source: "Google",
+    text: "Dr. Ahmed was very kind & patient with me. I did not feel rushed thru the appointment or that he had to hurry to get to the next patient. He answered my multitude of questions & I am very grateful for that!",
+    source: "Endeavor Health",
   },
   {
-    name: "Patricia H.",
-    procedure: "Total Knee Replacement",
+    name: "Verified Patient",
+    date: "May 9, 2026",
     rating: 5,
-    text: "Dr. Ahmed took the time to explain every step. I felt completely at ease going into surgery. The care from his team was truly exceptional.",
-    source: "Healthgrades",
+    text: "First meeting with him — pleasant, informative, good listener, very knowledgeable and happy I chose him for my upcoming knee replacement surgery!",
+    source: "Endeavor Health",
   },
   {
-    name: "James T.",
-    procedure: "Hip Replacement",
+    name: "Verified Patient",
+    date: "May 2, 2026",
     rating: 5,
-    text: "Best decision I ever made. I was back on the golf course in 10 weeks. Dr. Ahmed's technique is outstanding: minimal pain, fast recovery.",
-    source: "Google",
+    text: "Great experience with Dr. Mohammed M. Ahmed. He did my knee injection and removed fluid quickly and smoothly. Very helpful, explained everything clearly, and made me feel comfortable. Friendly staff too — highly recommend!",
+    source: "Endeavor Health",
   },
   {
-    name: "Susan W.",
-    procedure: "Partial Knee Replacement",
+    name: "Verified Patient",
+    date: "May 19, 2026",
     rating: 5,
-    text: "The minimally invasive approach meant a much faster recovery. Back driving in two weeks. I wish I had done this years ago.",
-    source: "Healthgrades",
+    text: "Dr. Ahmed was excellent, very knowledgeable, kind and very efficient. I would highly recommend him.",
+    source: "Endeavor Health",
   },
   {
-    name: "Michael D.",
-    procedure: "Total Hip Replacement",
+    name: "Verified Patient",
+    date: "March 28, 2026",
     rating: 5,
-    text: "After years of pain, I finally took the step. Dr. Ahmed and his team made the entire process seamless. Unbelievable outcome.",
-    source: "Google",
+    text: "Very personable and included me in planning my care.",
+    source: "Endeavor Health",
   },
   {
-    name: "Carol B.",
-    procedure: "Robotic Knee Replacement",
+    name: "Verified Patient",
+    date: "April 16, 2026",
     rating: 5,
-    text: "The robotic technology impressed me, but Dr. Ahmed's bedside manner sealed it. I felt like a person, not a patient. Remarkable experience.",
-    source: "Healthgrades",
+    text: "The doctor was very patient and answered all my questions.",
+    source: "Endeavor Health",
   },
   {
-    name: "Thomas R.",
-    procedure: "Hip Replacement",
+    name: "Verified Patient",
+    date: "June 8, 2026",
     rating: 5,
-    text: "I traveled from Indiana specifically to see Dr. Ahmed. Worth every mile. He's in a different league when it comes to precision and care.",
-    source: "Google",
+    text: "When I call the office, I get excellent service from the staff when scheduling appointments or if I have questions.",
+    source: "Endeavor Health",
   },
 ];
 
@@ -122,7 +122,7 @@ export default function SocialProof() {
                 className="text-[#061B33] font-bold leading-none"
                 style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: "2.6rem" }}
               >
-                4.7
+                4.8
               </span>
               <div>
                 <div className="flex gap-0.5 mb-1">
@@ -132,13 +132,13 @@ export default function SocialProof() {
                     </svg>
                   ))}
                 </div>
-                <p className="text-[#061B33]/45 text-[11px]">300+ reviews</p>
+                <p className="text-[#061B33]/45 text-[11px]">218 verified reviews</p>
                 <p className="text-[#061B33]/35 text-[10px] tracking-[0.1em] uppercase mt-0.5 flex items-center gap-1">
                   <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#C8A25A" strokeWidth="2.2">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                     <polyline points="9,12 11,14 15,10" strokeLinecap="round"/>
                   </svg>
-                  Verified · Healthgrades
+                  Verified · Endeavor Health
                 </p>
               </div>
             </div>
@@ -197,10 +197,8 @@ export default function SocialProof() {
                   <span
                     className="text-[10px] font-bold tracking-[0.1em] uppercase px-2 py-0.5 rounded"
                     style={{
-                      color: review.source === "Healthgrades" ? "#C8A25A" : "#4285F4",
-                      background: review.source === "Healthgrades"
-                        ? "rgba(200,162,90,0.1)"
-                        : "rgba(66,133,244,0.08)",
+                      color: "#C8A25A",
+                      background: "rgba(200,162,90,0.1)",
                     }}
                   >
                     {review.source}
@@ -211,7 +209,7 @@ export default function SocialProof() {
                 </p>
                 <div>
                   <p className="text-[#061B33] font-semibold text-[13px]">{review.name}</p>
-                  <p className="text-[#061B33]/40 text-[12px]">{review.procedure}</p>
+                  <p className="text-[#061B33]/40 text-[12px]">{review.date}</p>
                 </div>
               </div>
             ))}

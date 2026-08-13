@@ -243,11 +243,9 @@ export default function Footer() {
             In affiliation with <span className="text-white/28 font-medium">Endeavor Health</span>
           </p>
           <div className="flex gap-5">
-            {["Privacy Policy", "Terms", "Accessibility"].map((item) => (
-              <a key={item} href="#" className="text-white/18 hover:text-white/42 text-[11.5px] transition-colors duration-150">
-                {item}
-              </a>
-            ))}
+            <a href="/privacy" className="text-white/18 hover:text-white/42 text-[11.5px] transition-colors duration-150">
+              Privacy Policy
+            </a>
           </div>
         </div>
       </div>
